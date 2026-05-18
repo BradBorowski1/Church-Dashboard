@@ -16,71 +16,74 @@
     --text: #f0f0f0;
     --text-muted: #9a9a9a;
     --text-dim: #6a6a6a;
-
-    /* Yellow hues (giving) */
     --yellow-1: #fde047;
     --yellow-2: #facc15;
     --yellow-3: #eab308;
     --yellow-4: #ca8a04;
-
-    /* Blue hues (attendance) */
     --blue-adults: #3b82f6;
-    --blue-kids:   #93c5fd;
-
-    /* Orange hues (community groups) */
+    --blue-kids: #93c5fd;
     --orange-1: #fb923c;
     --orange-2: #f97316;
     --orange-3: #ea580c;
-
     --green: #22c55e;
-    --red:   #ef4444;
+    --red: #ef4444;
   }
 
   * { box-sizing: border-box; }
+
   html, body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
     background: var(--bg);
     color: var(--text);
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   .dashboard {
+    width: 100%;
     max-width: 1800px;
     margin: 0 auto;
     padding: 32px 40px 60px;
   }
 
-  /* Header */
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     margin-bottom: 28px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--card-border);
   }
+
   .header h1 {
     margin: 0;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: -0.5px;
   }
+
   .header .subtitle {
     color: var(--text-muted);
     font-size: 14px;
     margin-top: 4px;
     font-weight: 500;
   }
+
   .updated {
     text-align: right;
     color: var(--text-muted);
     font-size: 13px;
     font-weight: 500;
+    white-space: nowrap;
   }
+
   .updated .stamp { color: var(--text); font-weight: 600; }
+
   .updated .pulse {
     display: inline-block;
     width: 8px;
@@ -92,33 +95,56 @@
     animation: pulse 2s infinite;
     vertical-align: middle;
   }
+
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.7); }
     70% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
     100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
   }
 
-  /* Grid layout */
   .grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 24px;
     align-items: start;
+    width: 100%;
   }
-  .grid > *, .card, .right-col, .chart-wrap { min-width: 0; }
+
+  .grid > *,
+  .stack,
+  .right-col,
+  .card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
   .card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 24px 26px;
+    overflow: hidden;
   }
+
   .card h2 {
     margin: 0 0 4px;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.3px;
   }
+
   .card .card-sub {
     color: var(--text-muted);
     font-size: 13px;
@@ -126,32 +152,62 @@
     font-weight: 500;
   }
 
-  /* Chart canvases */
   .chart-wrap {
-    position: relative;
     width: 100%;
-    height: 280px;
-    min-width: 0;
+    max-width: 100%;
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #151515;
   }
-  .chart-wrap.tall { height: 240px; }
 
-  /* Progress bar card */
+  .chart-wrap.tall { height: 260px; }
+
+  .chart-wrap::-webkit-scrollbar { height: 12px; }
+  .chart-wrap::-webkit-scrollbar-track {
+    background: #151515;
+    border-radius: 999px;
+  }
+  .chart-wrap::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 999px;
+    border: 2px solid #151515;
+  }
+
+  .chart-inner {
+    position: relative;
+    height: calc(100% - 2px);
+    min-width: 100%;
+  }
+
+  .chart-inner canvas {
+    display: block;
+    height: 100% !important;
+  }
+
   .progress-card .progress-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 12px;
     margin-bottom: 12px;
   }
+
   .progress-raised {
     font-size: 30px;
     font-weight: 700;
     color: var(--yellow-2);
   }
+
   .progress-target {
     font-size: 15px;
     color: var(--text-muted);
     font-weight: 500;
+    text-align: right;
   }
+
   .progress-track {
     width: 100%;
     height: 26px;
@@ -161,6 +217,7 @@
     border: 1px solid #2e2e2e;
     position: relative;
   }
+
   .progress-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--yellow-4), var(--yellow-2), var(--yellow-1));
@@ -168,6 +225,7 @@
     transition: width 1.2s ease-out;
     box-shadow: 0 0 12px rgba(250, 204, 21, 0.35);
   }
+
   .progress-percent {
     position: absolute;
     right: 12px;
@@ -178,25 +236,28 @@
     color: var(--text);
     text-shadow: 0 1px 2px rgba(0,0,0,0.6);
   }
+
   .progress-meta {
     display: flex;
     justify-content: space-between;
+    gap: 12px;
     margin-top: 12px;
     color: var(--text-muted);
     font-size: 12px;
     font-weight: 500;
   }
+
   .progress-meta .note { font-style: italic; }
 
-  /* Attendance averages */
   .avg-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 18px;
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid #2e2e2e;
   }
+
   .avg-box {
     background: #1c1c1c;
     border-radius: 8px;
@@ -204,6 +265,7 @@
     text-align: center;
     border: 1px solid #2e2e2e;
   }
+
   .avg-label {
     color: var(--text-muted);
     font-size: 12px;
@@ -212,24 +274,35 @@
     letter-spacing: 0.6px;
     margin-bottom: 6px;
   }
+
   .avg-value {
     color: var(--blue-adults);
     font-size: 26px;
     font-weight: 700;
   }
 
-  /* Serve teams */
-  .teams-card { display: flex; flex-direction: column; }
+  .teams-card {
+    display: flex;
+    flex-direction: column;
+  }
+
   .teams-summary {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
     margin-bottom: 18px;
     padding: 12px 16px;
     background: #1c1c1c;
     border-radius: 8px;
     border: 1px solid #2e2e2e;
   }
-  .teams-summary .stat { text-align: center; flex: 1; }
+
+  .teams-summary .stat {
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+  }
+
   .teams-summary .stat-label {
     color: var(--text-muted);
     font-size: 11px;
@@ -237,11 +310,14 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
+
   .teams-summary .stat-value {
     font-size: 22px;
     font-weight: 700;
     margin-top: 4px;
+    overflow-wrap: anywhere;
   }
+
   .teams-summary .stat-value.gap { color: var(--red); }
   .teams-summary .stat-value.have { color: var(--green); }
   .teams-summary .stat-value.need { color: var(--yellow-2); }
@@ -254,12 +330,13 @@
     overflow-y: auto;
     padding-right: 4px;
   }
+
   .team-list::-webkit-scrollbar { width: 6px; }
   .team-list::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
 
   .team-row {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
@@ -268,11 +345,15 @@
     border: 1px solid #2e2e2e;
     transition: background 0.2s;
   }
+
   .team-row:hover { background: #222; }
+
   .team-name {
     font-size: 15px;
     font-weight: 600;
+    overflow-wrap: anywhere;
   }
+
   .team-bar-wrap {
     margin-top: 6px;
     height: 6px;
@@ -280,11 +361,13 @@
     border-radius: 3px;
     overflow: hidden;
   }
+
   .team-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--green), #4ade80);
     border-radius: 3px;
   }
+
   .team-numbers {
     display: flex;
     flex-direction: column;
@@ -292,29 +375,26 @@
     gap: 2px;
     min-width: 110px;
   }
+
   .team-counts {
     font-size: 13px;
     font-weight: 600;
     color: var(--text);
   }
+
   .team-counts .have { color: var(--green); }
   .team-counts .slash { color: var(--text-dim); margin: 0 3px; }
   .team-counts .need { color: var(--text-muted); }
+
   .team-gap {
     font-size: 12px;
     font-weight: 700;
     color: var(--red);
+    text-align: right;
   }
+
   .team-gap.filled { color: var(--green); }
 
-  /* Right column container */
-  .right-col {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  /* Footer */
   .footer {
     margin-top: 30px;
     text-align: center;
@@ -322,29 +402,48 @@
     font-size: 12px;
   }
 
-  /* Responsive */
   @media (max-width: 1200px) {
     .dashboard { padding: 24px 20px 50px; }
     .grid { grid-template-columns: 1fr; }
-    .header { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .updated { text-align: left; }
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .updated {
+      text-align: left;
+      white-space: normal;
+    }
   }
+
   @media (max-width: 650px) {
     .dashboard { padding: 18px 12px 40px; }
     .card { padding: 18px 16px; }
-    .chart-wrap { height: 240px; }
-    .chart-wrap.tall { height: 230px; }
+    .chart-wrap { height: 260px; }
+    .chart-wrap.tall { height: 240px; }
+    .progress-card .progress-header,
+    .progress-meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .progress-target { text-align: left; }
     .avg-row { grid-template-columns: 1fr; }
-    .teams-summary { flex-direction: column; gap: 10px; }
+    .teams-summary {
+      flex-direction: column;
+      gap: 10px;
+    }
     .team-row { grid-template-columns: 1fr; }
-    .team-numbers { align-items: flex-start; min-width: 0; }
+    .team-numbers {
+      align-items: flex-start;
+      min-width: 0;
+    }
+    .team-gap { text-align: left; }
   }
 </style>
 </head>
 <body>
 
 <div class="dashboard">
-
   <div class="header">
     <div>
       <h1>Church Dashboard</h1>
@@ -356,11 +455,8 @@
     </div>
   </div>
 
-  <!-- TOP ROW -->
   <div class="grid">
-
-    <!-- LEFT: Giving + Progress -->
-    <div style="display:flex; flex-direction:column; gap:24px;">
+    <div class="stack">
       <div class="card">
         <h2>Average Giving by Month</h2>
         <div class="card-sub">Full history · scroll horizontally for older months</div>
@@ -369,7 +465,7 @@
 
       <div class="card progress-card">
         <h2>ALL-IN Pledge Progress</h2>
-        <div class="card-sub">General Giving + Building fund donations since Nov 1, 2024</div>
+        <div class="card-sub">General Giving + Building fund donations</div>
         <div class="progress-header">
           <div class="progress-raised" id="raisedAmount">$0</div>
           <div class="progress-target">of <span id="targetAmount">$8.5M</span> goal</div>
@@ -380,35 +476,29 @@
         </div>
         <div class="progress-meta">
           <span id="remaining">$8.5M remaining</span>
-          <span class="note">Tracked from Nov 1, 2024</span>
+          <span class="note">Tracked from campaign dates</span>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: Attendance -->
-    <div>
-      <div class="card">
-        <h2>Weekend Attendance</h2>
-        <div class="card-sub">Adults + Kids · full history · scroll horizontally</div>
-        <div class="chart-wrap"><div class="chart-inner"><canvas id="attendanceChart"></canvas></div></div>
-        <div class="avg-row">
-          <div class="avg-box">
-            <div class="avg-label">3-Month Average</div>
-            <div class="avg-value" id="avg3"></div>
-          </div>
-          <div class="avg-box">
-            <div class="avg-label">6-Month Average</div>
-            <div class="avg-value" id="avg6"></div>
-          </div>
+    <div class="card">
+      <h2>Weekend Attendance</h2>
+      <div class="card-sub">Adults + Kids · full history · scroll horizontally</div>
+      <div class="chart-wrap"><div class="chart-inner"><canvas id="attendanceChart"></canvas></div></div>
+      <div class="avg-row">
+        <div class="avg-box">
+          <div class="avg-label">3-Month Average</div>
+          <div class="avg-value" id="avg3">0</div>
+        </div>
+        <div class="avg-box">
+          <div class="avg-label">6-Month Average</div>
+          <div class="avg-value" id="avg6">0</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- BOTTOM ROW -->
   <div class="grid" style="margin-top:24px;">
-
-    <!-- LEFT: Serve Teams -->
     <div class="card teams-card">
       <h2>Serve Teams · Volunteer Gaps</h2>
       <div class="card-sub">Auto-sorted by greatest need · live counts</div>
@@ -429,7 +519,6 @@
       <div class="team-list" id="teamList"></div>
     </div>
 
-    <!-- RIGHT: Community Groups + Members -->
     <div class="right-col">
       <div class="card">
         <h2>Community Groups</h2>
@@ -482,49 +571,44 @@ function trimEmptySeries(months, counts) {
   counts = counts || [];
   let first = counts.findIndex(v => Number(v) > 0);
   if (first === -1) first = 0;
-  return { months: months.slice(first), counts: counts.slice(first) };
-}
-
-
-function trimEmptySeries(months, counts) {
-  let first = counts.findIndex(v => Number(v) > 0);
-  if (first === -1) first = 0;
   return {
     months: months.slice(first),
     counts: counts.slice(first)
   };
 }
 
-function setChartWidth(canvasId, labelCount) {
+function prepScrollableChart(canvasId, labelCount) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
 
-  const inner = canvas.parentElement;
-  const wrap = inner ? inner.parentElement : null;
+  const inner = canvas.closest('.chart-inner');
+  const wrap = canvas.closest('.chart-wrap');
   if (!inner || !wrap) return;
 
-  const available = Math.max(320, wrap.clientWidth || 320);
-  const perMonth = window.innerWidth <= 650 ? 54 : 68;
-  const width = Math.max(available, (labelCount || 1) * perMonth);
+  const visibleWidth = Math.max(320, wrap.clientWidth || 320);
+  const perMonth = window.innerWidth <= 650 ? 58 : 72;
+  const desiredWidth = Math.max(visibleWidth, (labelCount || 1) * perMonth);
 
-  inner.style.width = width + 'px';
+  inner.style.width = desiredWidth + 'px';
+  canvas.width = desiredWidth;
+  canvas.height = wrap.clientHeight - 18;
+  canvas.style.width = desiredWidth + 'px';
+  canvas.style.height = (wrap.clientHeight - 18) + 'px';
 
-  // Start each chart scrolled to the newest data by default.
   requestAnimationFrame(() => {
     wrap.scrollLeft = wrap.scrollWidth;
   });
 }
 
-// ---------- Helpers ----------
-const fmtMoney = (n) => '$' + Math.round(n).toLocaleString();
+const fmtMoney = (n) => '$' + Math.round(Number(n) || 0).toLocaleString();
 const fmtMoneyShort = (n) => {
+  n = Number(n) || 0;
   if (n >= 1000000) return '$' + (n/1000000).toFixed(2) + 'M';
-  if (n >= 1000)    return '$' + Math.round(n/1000) + 'K';
+  if (n >= 1000) return '$' + Math.round(n/1000) + 'K';
   return '$' + Math.round(n).toLocaleString();
 };
-const fmtNum = (n) => Math.round(n).toLocaleString();
+const fmtNum = (n) => Math.round(Number(n) || 0).toLocaleString();
 
-// Chart.js defaults
 Chart.defaults.font.family = "'Montserrat', sans-serif";
 Chart.defaults.font.weight = '500';
 Chart.defaults.color = '#cfcfcf';
@@ -533,6 +617,7 @@ const baseGridOpts = {
   grid: { color: '#2e2e2e', drawBorder: false },
   ticks: { color: '#a0a0a0', font: { size: 11, weight: '500' } }
 };
+
 const baseTooltip = {
   backgroundColor: '#0f0f0f',
   borderColor: '#444',
@@ -545,18 +630,17 @@ const baseTooltip = {
   boxPadding: 6
 };
 
-// ---------- Last updated ----------
 function renderUpdated() {
   const d = new Date(DASHBOARD_DATA.lastUpdated);
   const opts = { weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit' };
   document.getElementById('updatedStamp').textContent = 'Updated ' + d.toLocaleString(undefined, opts);
 }
 
-// ---------- Giving chart ----------
 function renderGiving() {
-  const ctx = document.getElementById('givingChart');
   const { months, amounts } = DASHBOARD_DATA.giving;
-  setChartWidth('givingChart', months.length);
+  prepScrollableChart('givingChart', months.length);
+  const ctx = document.getElementById('givingChart');
+
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -564,73 +648,53 @@ function renderGiving() {
       datasets: [{
         label: 'Giving',
         data: amounts,
-        backgroundColor: amounts.map((_, i) => {
-          // Gradient across yellow hues
-          const palette = ['#fde047','#facc15','#eab308','#fbbf24','#fcd34d','#f59e0b'];
-          return palette[i % palette.length];
-        }),
+        backgroundColor: amounts.map((_, i) => ['#fde047','#facc15','#eab308','#fbbf24','#fcd34d','#f59e0b'][i % 6]),
         borderRadius: 6,
         borderSkipped: false,
         maxBarThickness: 48
       }]
     },
     options: {
-      responsive: true,
+      responsive: false,
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: {
-          ...baseTooltip,
-          callbacks: {
-            label: (ctx) => '  ' + fmtMoney(ctx.parsed.y)
-          }
-        }
+        tooltip: { ...baseTooltip, callbacks: { label: (ctx) => '  ' + fmtMoney(ctx.parsed.y) } }
       },
       scales: {
         x: { ...baseGridOpts, grid: { display: false } },
-        y: {
-          ...baseGridOpts,
-          beginAtZero: true,
-          ticks: {
-            ...baseGridOpts.ticks,
-            callback: (v) => fmtMoneyShort(v)
-          }
-        }
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, callback: (v) => fmtMoneyShort(v) } }
       }
     }
   });
 }
 
-// ---------- Pledge progress ----------
 function renderPledge() {
   const { target, raised } = DASHBOARD_DATA.pledge;
-  const pct = Math.min(100, (raised / target) * 100);
-  document.getElementById('raisedAmount').textContent  = fmtMoneyShort(raised) + ' raised';
-  document.getElementById('targetAmount').textContent  = fmtMoneyShort(target);
+  const safeTarget = Number(target) || 1;
+  const pct = Math.min(100, (Number(raised) / safeTarget) * 100);
+  document.getElementById('raisedAmount').textContent = fmtMoneyShort(raised) + ' raised';
+  document.getElementById('targetAmount').textContent = fmtMoneyShort(target);
   document.getElementById('progressPercent').textContent = pct.toFixed(1) + '%';
-  document.getElementById('remaining').textContent = fmtMoneyShort(Math.max(0, target - raised)) + ' remaining';
-  // Animate
-  setTimeout(() => {
-    document.getElementById('progressFill').style.width = pct + '%';
-  }, 80);
+  document.getElementById('remaining').textContent = fmtMoneyShort(Math.max(0, safeTarget - (Number(raised) || 0))) + ' remaining';
+  setTimeout(() => { document.getElementById('progressFill').style.width = pct + '%'; }, 80);
 }
 
-// ---------- Attendance chart ----------
 function renderAttendance() {
   const { months, adults, kids } = DASHBOARD_DATA.attendance;
-  const totals = adults.map((a, i) => a + kids[i]);
+  prepScrollableChart('attendanceChart', months.length);
 
-  // 3-mo and 6-mo averages from totals (most recent N months)
+  const totals = adults.map((a, i) => (Number(a) || 0) + (Number(kids[i]) || 0));
   const avg = (arr, n) => {
     const slice = arr.slice(-n).filter(v => Number(v) > 0);
     if (!slice.length) return 0;
     return Math.round(slice.reduce((s, v) => s + v, 0) / slice.length);
   };
+
   document.getElementById('avg3').textContent = fmtNum(avg(totals, 3));
   document.getElementById('avg6').textContent = fmtNum(avg(totals, 6));
 
   const ctx = document.getElementById('attendanceChart');
-  setChartWidth('attendanceChart', months.length);
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -657,7 +721,7 @@ function renderAttendance() {
       ]
     },
     options: {
-      responsive: true,
+      responsive: false,
       maintainAspectRatio: false,
       plugins: {
         legend: {
@@ -668,10 +732,7 @@ function renderAttendance() {
         tooltip: {
           ...baseTooltip,
           callbacks: {
-            footer: (items) => {
-              const total = items.reduce((s, it) => s + it.parsed.y, 0);
-              return 'Total: ' + fmtNum(total);
-            },
+            footer: (items) => 'Total: ' + fmtNum(items.reduce((s, it) => s + it.parsed.y, 0)),
             label: (ctx) => '  ' + ctx.dataset.label + ': ' + fmtNum(ctx.parsed.y)
           },
           footerFont: { family: 'Montserrat', weight: '700', size: 12 },
@@ -681,51 +742,51 @@ function renderAttendance() {
       },
       scales: {
         x: { ...baseGridOpts, stacked: true, grid: { display: false } },
-        y: {
-          ...baseGridOpts,
-          stacked: true,
-          beginAtZero: true,
-          ticks: { ...baseGridOpts.ticks, callback: (v) => fmtNum(v) }
-        }
+        y: { ...baseGridOpts, stacked: true, beginAtZero: true, ticks: { ...baseGridOpts.ticks, callback: (v) => fmtNum(v) } }
       }
     }
   });
 }
 
-// ---------- Serve teams ----------
 function renderTeams() {
   const teams = DASHBOARD_DATA.serveTeams
+    .map(t => ({
+      name: t.name || 'Unnamed Team',
+      current: Number(t.current) || 0,
+      needed: Number(t.needed) || 0
+    }))
     .map(t => ({ ...t, gap: Math.max(0, t.needed - t.current) }))
     .sort((a, b) => b.gap - a.gap || (b.needed - a.needed));
 
   const totals = teams.reduce((acc, t) => {
     acc.have += t.current;
     acc.need += t.needed;
-    acc.gap  += t.gap;
+    acc.gap += t.gap;
     return acc;
   }, { have: 0, need: 0, gap: 0 });
 
   document.getElementById('totalHave').textContent = fmtNum(totals.have);
   document.getElementById('totalNeed').textContent = fmtNum(totals.need);
-  document.getElementById('totalGap').textContent  = fmtNum(totals.gap);
+  document.getElementById('totalGap').textContent = fmtNum(totals.gap);
 
   const list = document.getElementById('teamList');
   list.innerHTML = '';
+
   teams.forEach(t => {
     const pct = t.needed > 0 ? Math.min(100, (t.current / t.needed) * 100) : 0;
     const row = document.createElement('div');
     row.className = 'team-row';
     row.innerHTML = `
       <div>
-        <div class="team-name">${t.name}</div>
+        <div class="team-name">${escapeHtml(t.name)}</div>
         <div class="team-bar-wrap"><div class="team-bar-fill" style="width:${pct}%"></div></div>
       </div>
       <div class="team-numbers">
         <div class="team-counts">
-          <span class="have">${t.current}</span><span class="slash">/</span><span class="need">${t.needed}</span>
+          <span class="have">${fmtNum(t.current)}</span><span class="slash">/</span><span class="need">${fmtNum(t.needed)}</span>
         </div>
         <div class="team-gap ${t.gap === 0 ? 'filled' : ''}">
-          ${t.gap === 0 ? 'Fully staffed' : 'Need ' + t.gap + ' more'}
+          ${t.gap === 0 ? 'Fully staffed' : 'Need ' + fmtNum(t.gap) + ' more'}
         </div>
       </div>
     `;
@@ -733,12 +794,12 @@ function renderTeams() {
   });
 }
 
-// ---------- Community groups count ----------
 function renderCGCount() {
-  const ctx = document.getElementById('cgCountChart');
   const raw = DASHBOARD_DATA.communityGroups;
-  const { months, counts } = trimEmptySeries(raw.months || [], raw.counts || []);
-  setChartWidth('cgCountChart', months.length);
+  const { months, counts } = trimEmptySeries(raw.months, raw.counts);
+  prepScrollableChart('cgCountChart', months.length);
+  const ctx = document.getElementById('cgCountChart');
+
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -746,43 +807,33 @@ function renderCGCount() {
       datasets: [{
         label: 'Community Groups',
         data: counts,
-        backgroundColor: counts.map((_, i) => {
-          const palette = ['#fb923c','#f97316','#ea580c','#fdba74'];
-          return palette[i % palette.length];
-        }),
+        backgroundColor: counts.map((_, i) => ['#fb923c','#f97316','#ea580c','#fdba74'][i % 4]),
         borderRadius: 5,
         borderSkipped: false,
         maxBarThickness: 40
       }]
     },
     options: {
-      responsive: true,
+      responsive: false,
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: {
-          ...baseTooltip,
-          callbacks: { label: (ctx) => '  ' + ctx.parsed.y + ' groups' }
-        }
+        tooltip: { ...baseTooltip, callbacks: { label: (ctx) => '  ' + ctx.parsed.y + ' groups' } }
       },
       scales: {
         x: { ...baseGridOpts, grid: { display: false } },
-        y: {
-          ...baseGridOpts,
-          beginAtZero: true,
-          ticks: { ...baseGridOpts.ticks, precision: 0 }
-        }
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
       }
     }
   });
 }
 
-// ---------- Community group members ----------
 function renderCGMembers() {
-  const ctx = document.getElementById('cgMembersChart');
   const raw = DASHBOARD_DATA.communityGroupMembers;
-  const { months, counts } = trimEmptySeries(raw.months || [], raw.counts || []);
-  setChartWidth('cgMembersChart', months.length);
+  const { months, counts } = trimEmptySeries(raw.months, raw.counts);
+  prepScrollableChart('cgMembersChart', months.length);
+  const ctx = document.getElementById('cgMembersChart');
+
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -790,38 +841,37 @@ function renderCGMembers() {
       datasets: [{
         label: 'Community Group Members',
         data: counts,
-        backgroundColor: counts.map((_, i) => {
-          const palette = ['#fb923c','#f97316','#ea580c','#fdba74'];
-          return palette[i % palette.length];
-        }),
+        backgroundColor: counts.map((_, i) => ['#fb923c','#f97316','#ea580c','#fdba74'][i % 4]),
         borderRadius: 5,
         borderSkipped: false,
         maxBarThickness: 40
       }]
     },
     options: {
-      responsive: true,
+      responsive: false,
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: {
-          ...baseTooltip,
-          callbacks: { label: (ctx) => '  ' + ctx.parsed.y + ' members' }
-        }
+        tooltip: { ...baseTooltip, callbacks: { label: (ctx) => '  ' + ctx.parsed.y + ' members' } }
       },
       scales: {
         x: { ...baseGridOpts, grid: { display: false } },
-        y: {
-          ...baseGridOpts,
-          beginAtZero: true,
-          ticks: { ...baseGridOpts.ticks, precision: 0 }
-        }
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
       }
     }
   });
 }
 
-// ---------- Boot ----------
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (m) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  }[m]));
+}
+
 loadDashboardData()
   .then(() => {
     renderUpdated();
