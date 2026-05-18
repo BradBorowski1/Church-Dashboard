@@ -1,9 +1,153 @@
 {
-  "lastUpdated": "2026-05-17T00:00:00.000Z",
-  "giving": { "months": [], "amounts": [] },
-  "pledge": { "target": 8500000, "raised": 0 },
-  "attendance": { "months": [], "adults": [], "kids": [] },
-  "serveTeams": [],
-  "communityGroups": { "months": [], "counts": [] },
-  "communityGroupMembers": { "months": [], "counts": [] }
+  "lastUpdated": "2026-05-18T02:15:27.613Z",
+  "giving": {
+    "months": [
+      "Jun ?25",
+      "Jul ?25",
+      "Aug ?25",
+      "Sep ?25",
+      "Oct ?25",
+      "Nov ?25",
+      "Dec ?25",
+      "Jan ?26",
+      "Feb ?26",
+      "Mar ?26",
+      "Apr ?26",
+      "May ?26"
+    ],
+    "amounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "pledge": {
+    "target": 8500000,
+    "raised": 0
+  },
+  "attendance": {
+    "months": [
+      "Jun ?25",
+      "Jul ?25",
+      "Aug ?25",
+      "Sep ?25",
+      "Oct ?25",
+      "Nov ?25",
+      "Dec ?25",
+      "Jan ?26",
+      "Feb ?26",
+      "Mar ?26",
+      "Apr ?26",
+      "May ?26"
+    ],
+    "adults": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "kids": [
+      3264,
+      2614,
+      3324,
+      3114,
+      2960,
+      4204,
+      3713,
+      3355,
+      3200,
+      3840,
+      3972,
+      2325
+    ]
+  },
+  "serveTeams": [
+    {
+      "name": "SERVICES",
+      "current": 12262,
+      "needed": 20692
+    },
+    {
+      "name": "SERVICES",
+      "current": 18,
+      "needed": 32
+    }
+  ],
+  "communityGroups": {
+    "months": [
+      "Jun ?25",
+      "Jul ?25",
+      "Aug ?25",
+      "Sep ?25",
+      "Oct ?25",
+      "Nov ?25",
+      "Dec ?25",
+      "Jan ?26",
+      "Feb ?26",
+      "Mar ?26",
+      "Apr ?26",
+      "May ?26"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36
+    ]
+  },
+  "communityGroupMembers": {
+    "months": [
+      "Jun ?25",
+      "Jul ?25",
+      "Aug ?25",
+      "Sep ?25",
+      "Oct ?25",
+      "Nov ?25",
+      "Dec ?25",
+      "Jan ?26",
+      "Feb ?26",
+      "Mar ?26",
+      "Apr ?26",
+      "May ?26"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      450
+    ]
+  }
 }
