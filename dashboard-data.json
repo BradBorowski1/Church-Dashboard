@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-05-18T15:10:03.510Z",
+  "lastUpdated": "2026-05-18T15:18:56.685Z",
   "giving": {
     "months": [
-      "Jun ?25",
-      "Jul ?25",
-      "Aug ?25",
-      "Sep ?25",
-      "Oct ?25",
-      "Nov ?25",
-      "Dec ?25",
-      "Jan ?26",
-      "Feb ?26",
-      "Mar ?26",
-      "Apr ?26",
-      "May ?26"
+      "Jun '25",
+      "Jul '25",
+      "Aug '25",
+      "Sep '25",
+      "Oct '25",
+      "Nov '25",
+      "Dec '25",
+      "Jan '26",
+      "Feb '26",
+      "Mar '26",
+      "Apr '26",
+      "May '26"
     ],
     "amounts": [
       243995,
@@ -32,7 +32,7 @@
   },
   "pledge": {
     "target": 8500000,
-    "raised": 5401878
+    "raised": 3829174
   },
   "attendance": {
     "months": [],
@@ -123,18 +123,18 @@
   ],
   "communityGroups": {
     "months": [
-      "Jun ?25",
-      "Jul ?25",
-      "Aug ?25",
-      "Sep ?25",
-      "Oct ?25",
-      "Nov ?25",
-      "Dec ?25",
-      "Jan ?26",
-      "Feb ?26",
-      "Mar ?26",
-      "Apr ?26",
-      "May ?26"
+      "Jun '25",
+      "Jul '25",
+      "Aug '25",
+      "Sep '25",
+      "Oct '25",
+      "Nov '25",
+      "Dec '25",
+      "Jan '26",
+      "Feb '26",
+      "Mar '26",
+      "Apr '26",
+      "May '26"
     ],
     "counts": [
       22,
@@ -153,18 +153,18 @@
   },
   "communityGroupMembers": {
     "months": [
-      "Jun ?25",
-      "Jul ?25",
-      "Aug ?25",
-      "Sep ?25",
-      "Oct ?25",
-      "Nov ?25",
-      "Dec ?25",
-      "Jan ?26",
-      "Feb ?26",
-      "Mar ?26",
-      "Apr ?26",
-      "May ?26"
+      "Jun '25",
+      "Jul '25",
+      "Aug '25",
+      "Sep '25",
+      "Oct '25",
+      "Nov '25",
+      "Dec '25",
+      "Jan '26",
+      "Feb '26",
+      "Mar '26",
+      "Apr '26",
+      "May '26"
     ],
     "counts": [
       192,
