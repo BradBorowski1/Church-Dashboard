@@ -437,56 +437,43 @@
    by the Google Sheets pull. Keep the keys/shape identical and the
    dashboard renders automatically.
    ===================================================================== */
-const DASHBOARD_DATA = {
-  lastUpdated: new Date().toISOString(),
+let DASHBOARD_DATA = null;
+const DATA_URL = './dashboard-data.json';
 
-  giving: {
-    // Last 12 months, oldest → newest
-    months: ['Jun ’25','Jul ’25','Aug ’25','Sep ’25','Oct ’25','Nov ’25','Dec ’25','Jan ’26','Feb ’26','Mar ’26','Apr ’26','May ’26'],
-    amounts: [118400, 124800, 109300, 132600, 128900, 141200, 188400, 142300, 138700, 151200, 147800, 145600]
-  },
+async function loadDashboardData() {
+  const res = await fetch(DATA_URL + '?v=' + Date.now(), { cache: 'no-store' });
+  if (!res.ok) throw new Error('Could not load dashboard-data.json');
+  DASHBOARD_DATA = await res.json();
+  normalizeDashboardData();
+}
 
-  pledge: {
-    target: 8500000,
-    // Sum of General Giving + Building fund since Nov 1, 2024 (rolling running total)
-    raised: 3284750
-  },
+function normalizeDashboardData() {
+  DASHBOARD_DATA.lastUpdated = DASHBOARD_DATA.lastUpdated || new Date().toISOString();
+  DASHBOARD_DATA.giving = DASHBOARD_DATA.giving || { months: [], amounts: [] };
+  DASHBOARD_DATA.pledge = DASHBOARD_DATA.pledge || { target: 8500000, raised: 0 };
+  DASHBOARD_DATA.attendance = DASHBOARD_DATA.attendance || { months: [], adults: [], kids: [] };
+  DASHBOARD_DATA.serveTeams = DASHBOARD_DATA.serveTeams || [];
+  DASHBOARD_DATA.communityGroups = DASHBOARD_DATA.communityGroups || { months: [], counts: [] };
+  DASHBOARD_DATA.communityGroupMembers = DASHBOARD_DATA.communityGroupMembers || { months: [], counts: [] };
+}
 
-  attendance: {
-    months: ['Jun ’25','Jul ’25','Aug ’25','Sep ’25','Oct ’25','Nov ’25','Dec ’25','Jan ’26','Feb ’26','Mar ’26','Apr ’26','May ’26'],
-    adults: [482, 458, 471, 524, 538, 549, 612, 567, 583, 591, 604, 618],
-    kids:   [148, 132, 141, 167, 174, 182, 198, 184, 191, 196, 203, 211]
-  },
+function showDashboardError(err) {
+  document.getElementById('updatedStamp').textContent = 'Data failed to load';
+  const msg = document.createElement('div');
+  msg.style.cssText = 'margin:20px 0;padding:16px;border:1px solid #7f1d1d;background:#2a1111;color:#fecaca;border-radius:8px;font-weight:600;';
+  msg.textContent = 'Dashboard data could not be loaded. Make sure dashboard-data.json exists in this GitHub repo and Netlify has redeployed.';
+  document.querySelector('.dashboard').prepend(msg);
+  console.error(err);
+}
 
-  serveTeams: [
-    { name: 'Kids Ministry',           current: 42, needed: 60 },
-    { name: 'Worship Team',            current: 18, needed: 24 },
-    { name: 'Welcome / Hospitality',   current: 22, needed: 30 },
-    { name: 'Production / AV / Tech',  current: 11, needed: 18 },
-    { name: 'Cafe / Coffee',           current: 14, needed: 18 },
-    { name: 'Parking',                 current:  8, needed: 14 },
-    { name: 'Youth Ministry',          current: 16, needed: 22 },
-    { name: 'Prayer Team',             current: 19, needed: 22 },
-    { name: 'Ushers',                  current: 15, needed: 18 },
-    { name: 'Greeters',                current: 24, needed: 28 },
-    { name: 'Communion Prep',          current:  6, needed:  8 },
-    { name: 'First Impressions',       current: 12, needed: 14 },
-    { name: 'Connect Team',            current:  9, needed: 12 },
-    { name: 'Setup / Teardown',        current: 11, needed: 12 }
-  ],
-
-  communityGroups: {
-    months: ['Jun ’25','Jul ’25','Aug ’25','Sep ’25','Oct ’25','Nov ’25','Dec ’25','Jan ’26','Feb ’26','Mar ’26','Apr ’26','May ’26'],
-    counts: [28, 28, 27, 31, 32, 33, 31, 34, 36, 37, 38, 39]
-  },
-
-  communityGroupMembers: {
-    months: ['Jun ’25','Jul ’25','Aug ’25','Sep ’25','Oct ’25','Nov ’25','Dec ’25','Jan ’26','Feb ’26','Mar ’26','Apr ’26','May ’26'],
-    counts: [296, 292, 288, 318, 332, 348, 336, 362, 384, 396, 412, 428]
-  }
-};
-/* ===================================================================== */
-
+function trimEmptySeries(months, counts) {
+  let first = counts.findIndex(v => Number(v) > 0);
+  if (first === -1) first = Math.max(0, counts.length - 1);
+  return {
+    months: months.slice(first),
+    counts: counts.slice(first)
+  };
+}
 
 // ---------- Helpers ----------
 const fmtMoney = (n) => '$' + Math.round(n).toLocaleString();
@@ -703,7 +690,8 @@ function renderTeams() {
 // ---------- Community groups count ----------
 function renderCGCount() {
   const ctx = document.getElementById('cgCountChart');
-  const { months, counts } = DASHBOARD_DATA.communityGroups;
+  const raw = DASHBOARD_DATA.communityGroups;
+  const { months, counts } = trimEmptySeries(raw.months || [], raw.counts || []);
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -734,8 +722,8 @@ function renderCGCount() {
         x: { ...baseGridOpts, grid: { display: false } },
         y: {
           ...baseGridOpts,
-          min: 20, max: 50,
-          ticks: { ...baseGridOpts.ticks, stepSize: 5 }
+          beginAtZero: true,
+          ticks: { ...baseGridOpts.ticks, precision: 0 }
         }
       }
     }
@@ -745,7 +733,8 @@ function renderCGCount() {
 // ---------- Community group members ----------
 function renderCGMembers() {
   const ctx = document.getElementById('cgMembersChart');
-  const { months, counts } = DASHBOARD_DATA.communityGroupMembers;
+  const raw = DASHBOARD_DATA.communityGroupMembers;
+  const { months, counts } = trimEmptySeries(raw.months || [], raw.counts || []);
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -776,8 +765,8 @@ function renderCGMembers() {
         x: { ...baseGridOpts, grid: { display: false } },
         y: {
           ...baseGridOpts,
-          min: 250, max: 500,
-          ticks: { ...baseGridOpts.ticks, stepSize: 50 }
+          beginAtZero: true,
+          ticks: { ...baseGridOpts.ticks, precision: 0 }
         }
       }
     }
@@ -785,13 +774,17 @@ function renderCGMembers() {
 }
 
 // ---------- Boot ----------
-renderUpdated();
-renderGiving();
-renderPledge();
-renderAttendance();
-renderTeams();
-renderCGCount();
-renderCGMembers();
+loadDashboardData()
+  .then(() => {
+    renderUpdated();
+    renderGiving();
+    renderPledge();
+    renderAttendance();
+    renderTeams();
+    renderCGCount();
+    renderCGMembers();
+  })
+  .catch(showDashboardError);
 </script>
 
 </body>
