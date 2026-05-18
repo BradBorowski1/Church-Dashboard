@@ -134,11 +134,6 @@
     min-width: 0;
   }
   .chart-wrap.tall { height: 240px; }
-  canvas {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-  }
 
   /* Progress bar card */
   .progress-card .progress-header {
@@ -368,8 +363,8 @@
     <div style="display:flex; flex-direction:column; gap:24px;">
       <div class="card">
         <h2>Average Giving by Month</h2>
-        <div class="card-sub">Last 12 months · hover bars for detail</div>
-        <div class="chart-wrap"><canvas id="givingChart"></canvas></div>
+        <div class="card-sub">Full history · scroll horizontally for older months</div>
+        <div class="chart-wrap"><div class="chart-inner"><canvas id="givingChart"></canvas></div></div>
       </div>
 
       <div class="card progress-card">
@@ -394,8 +389,8 @@
     <div>
       <div class="card">
         <h2>Weekend Attendance</h2>
-        <div class="card-sub">Adults + Kids · last 12 months · hover for breakdown</div>
-        <div class="chart-wrap"><canvas id="attendanceChart"></canvas></div>
+        <div class="card-sub">Adults + Kids · full history · scroll horizontally</div>
+        <div class="chart-wrap"><div class="chart-inner"><canvas id="attendanceChart"></canvas></div></div>
         <div class="avg-row">
           <div class="avg-box">
             <div class="avg-label">3-Month Average</div>
@@ -438,13 +433,13 @@
     <div class="right-col">
       <div class="card">
         <h2>Community Groups</h2>
-        <div class="card-sub">Total groups, last 12 months</div>
-        <div class="chart-wrap tall"><canvas id="cgCountChart"></canvas></div>
+        <div class="card-sub">Total groups · full history</div>
+        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgCountChart"></canvas></div></div>
       </div>
       <div class="card">
         <h2>Community Group Members</h2>
-        <div class="card-sub">Total members in groups, last 12 months</div>
-        <div class="chart-wrap tall"><canvas id="cgMembersChart"></canvas></div>
+        <div class="card-sub">Total members in groups · full history</div>
+        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgMembersChart"></canvas></div></div>
       </div>
     </div>
   </div>
@@ -491,6 +486,35 @@ function trimEmptySeries(months, counts) {
 }
 
 
+function trimEmptySeries(months, counts) {
+  let first = counts.findIndex(v => Number(v) > 0);
+  if (first === -1) first = 0;
+  return {
+    months: months.slice(first),
+    counts: counts.slice(first)
+  };
+}
+
+function setChartWidth(canvasId, labelCount) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+
+  const inner = canvas.parentElement;
+  const wrap = inner ? inner.parentElement : null;
+  if (!inner || !wrap) return;
+
+  const available = Math.max(320, wrap.clientWidth || 320);
+  const perMonth = window.innerWidth <= 650 ? 54 : 68;
+  const width = Math.max(available, (labelCount || 1) * perMonth);
+
+  inner.style.width = width + 'px';
+
+  // Start each chart scrolled to the newest data by default.
+  requestAnimationFrame(() => {
+    wrap.scrollLeft = wrap.scrollWidth;
+  });
+}
+
 // ---------- Helpers ----------
 const fmtMoney = (n) => '$' + Math.round(n).toLocaleString();
 const fmtMoneyShort = (n) => {
@@ -532,6 +556,7 @@ function renderUpdated() {
 function renderGiving() {
   const ctx = document.getElementById('givingChart');
   const { months, amounts } = DASHBOARD_DATA.giving;
+  setChartWidth('givingChart', months.length);
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -605,6 +630,7 @@ function renderAttendance() {
   document.getElementById('avg6').textContent = fmtNum(avg(totals, 6));
 
   const ctx = document.getElementById('attendanceChart');
+  setChartWidth('attendanceChart', months.length);
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -712,6 +738,7 @@ function renderCGCount() {
   const ctx = document.getElementById('cgCountChart');
   const raw = DASHBOARD_DATA.communityGroups;
   const { months, counts } = trimEmptySeries(raw.months || [], raw.counts || []);
+  setChartWidth('cgCountChart', months.length);
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -755,6 +782,7 @@ function renderCGMembers() {
   const ctx = document.getElementById('cgMembersChart');
   const raw = DASHBOARD_DATA.communityGroupMembers;
   const { months, counts } = trimEmptySeries(raw.months || [], raw.counts || []);
+  setChartWidth('cgMembersChart', months.length);
   new Chart(ctx, {
     type: 'bar',
     data: {
