@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-18T02:45:33.190Z",
+  "lastUpdated": "2026-05-18T14:58:07.035Z",
   "giving": {
     "months": [
       "Jun ?25",
@@ -35,59 +35,90 @@
     "raised": 0
   },
   "attendance": {
-    "months": [
-      "Jun ?25",
-      "Jul ?25",
-      "Aug ?25",
-      "Sep ?25",
-      "Oct ?25",
-      "Nov ?25",
-      "Dec ?25",
-      "Jan ?26",
-      "Feb ?26",
-      "Mar ?26",
-      "Apr ?26",
-      "May ?26"
-    ],
-    "adults": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "kids": [
-      3264,
-      2614,
-      3324,
-      3114,
-      2960,
-      4204,
-      3713,
-      3355,
-      3200,
-      3840,
-      3972,
-      2325
-    ]
+    "months": [],
+    "adults": [],
+    "kids": []
   },
   "serveTeams": [
     {
-      "name": "SERVICES",
-      "current": 12262,
-      "needed": 20692
+      "name": "Stepping Stones",
+      "current": 90,
+      "needed": 150
     },
     {
-      "name": "SERVICES",
-      "current": 18,
-      "needed": 32
+      "name": "Coffee Team",
+      "current": 10,
+      "needed": 14
+    },
+    {
+      "name": "Parking",
+      "current": 10,
+      "needed": 20
+    },
+    {
+      "name": "Prayer Team",
+      "current": 15,
+      "needed": 20
+    },
+    {
+      "name": "Enrichment",
+      "current": 51,
+      "needed": 85
+    },
+    {
+      "name": "Hospitality",
+      "current": 27,
+      "needed": 31
+    },
+    {
+      "name": "Connect",
+      "current": 11,
+      "needed": 16
+    },
+    {
+      "name": "Breakfast Team",
+      "current": 23,
+      "needed": 23
+    },
+    {
+      "name": "worship, tech",
+      "current": 30,
+      "needed": 42
+    },
+    {
+      "name": "Connect",
+      "current": 12,
+      "needed": 16
+    },
+    {
+      "name": "Safety",
+      "current": 31,
+      "needed": 39
+    },
+    {
+      "name": "LS Students",
+      "current": 12,
+      "needed": 14
+    },
+    {
+      "name": "Service Captains",
+      "current": 10,
+      "needed": 10
+    },
+    {
+      "name": "Connect Desk",
+      "current": 12,
+      "needed": 16
+    },
+    {
+      "name": "First impressions",
+      "current": 25,
+      "needed": 40
+    },
+    {
+      "name": "Prayer Team",
+      "current": 15,
+      "needed": 20
     }
   ],
   "communityGroups": {
@@ -106,17 +137,17 @@
       "May ?26"
     ],
     "counts": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      22,
+      22,
+      22,
+      24,
+      26,
+      27,
+      29,
+      33,
+      34,
+      36,
+      36,
       36
     ]
   },
@@ -136,17 +167,17 @@
       "May ?26"
     ],
     "counts": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      192,
+      196,
+      202,
+      227,
+      255,
+      281,
+      296,
+      355,
+      388,
+      416,
+      440,
       450
     ]
   }
