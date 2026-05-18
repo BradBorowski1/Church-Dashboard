@@ -1,0 +1,9 @@
+{
+  "lastUpdated": "2026-05-17T00:00:00.000Z",
+  "giving": { "months": [], "amounts": [] },
+  "pledge": { "target": 8500000, "raised": 0 },
+  "attendance": { "months": [], "adults": [], "kids": [] },
+  "serveTeams": [],
+  "communityGroups": { "months": [], "counts": [] },
+  "communityGroupMembers": { "months": [], "counts": [] }
+}
