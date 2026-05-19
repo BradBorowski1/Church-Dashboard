@@ -670,6 +670,33 @@ function renderUpdated() {
   document.getElementById('updatedStamp').textContent = 'Updated ' + d.toLocaleString(undefined, opts);
 }
 
+
+function makeCurrentMonthStripePattern(baseColor) {
+  const patternCanvas = document.createElement('canvas');
+  const size = 12;
+  patternCanvas.width = size;
+  patternCanvas.height = size;
+  const pctx = patternCanvas.getContext('2d');
+
+  pctx.fillStyle = baseColor;
+  pctx.fillRect(0, 0, size, size);
+
+  pctx.strokeStyle = 'rgba(255,255,255,0.38)';
+  pctx.lineWidth = 3;
+
+  pctx.beginPath();
+  pctx.moveTo(-3, size);
+  pctx.lineTo(size, -3);
+  pctx.stroke();
+
+  pctx.beginPath();
+  pctx.moveTo(3, size + 3);
+  pctx.lineTo(size + 3, 3);
+  pctx.stroke();
+
+  return pctx.createPattern(patternCanvas, 'repeat');
+}
+
 function renderGiving() {
   const months = normalizeMonthArray(DASHBOARD_DATA.giving.months);
   const amounts = DASHBOARD_DATA.giving.amounts || [];
@@ -683,7 +710,11 @@ function renderGiving() {
       datasets: [{
         label: 'Giving',
         data: amounts,
-        backgroundColor: amounts.map((_, i) => ['#fde047','#facc15','#eab308','#fbbf24','#fcd34d','#f59e0b'][i % 6]),
+        backgroundColor: amounts.map((_, i) => {
+          const palette = ['#fde047','#facc15','#eab308','#fbbf24','#fcd34d','#f59e0b'];
+          const color = palette[i % palette.length];
+          return i === amounts.length - 1 ? makeCurrentMonthStripePattern(color) : color;
+        }),
         borderRadius: 6,
         borderSkipped: false,
         maxBarThickness: 48
@@ -769,7 +800,12 @@ function renderAttendance() {
         tooltip: {
           ...baseTooltip,
           callbacks: {
-            footer: (items) => 'Total: ' + fmtNum(items.reduce((s, it) => s + it.parsed.y, 0)),
+            footer: (items) => {
+              if (!items.length) return '';
+              const i = items[0].dataIndex;
+              const total = (Number(adults[i]) || 0) + (Number(kids[i]) || 0);
+              return 'Total: ' + fmtNum(total);
+            },
             label: (ctx) => '  ' + ctx.dataset.label + ': ' + fmtNum(ctx.parsed.y)
           },
           footerFont: { family: 'Montserrat', weight: '700', size: 12 },
