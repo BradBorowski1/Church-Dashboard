@@ -697,6 +697,40 @@ function makeCurrentMonthStripePattern(baseColor) {
   return pctx.createPattern(patternCanvas, 'repeat');
 }
 
+
+const monthlyNeedLinePlugin = {
+  id: 'monthlyNeedLinePlugin',
+  afterDatasetsDraw(chart) {
+    const { ctx, chartArea, scales } = chart;
+
+    if (!chartArea || !scales.y) return;
+
+    const yValue = 350000;
+    const y = scales.y.getPixelForValue(yValue);
+
+    ctx.save();
+
+    ctx.beginPath();
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = 'rgba(255,255,255,0.65)';
+    ctx.lineWidth = 1;
+
+    ctx.moveTo(chartArea.left, y);
+    ctx.lineTo(chartArea.right, y);
+    ctx.stroke();
+
+    ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(255,255,255,0.75)';
+    ctx.font = '500 11px Montserrat';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'bottom';
+
+    ctx.fillText('monthly need', chartArea.right - 6, y - 4);
+
+    ctx.restore();
+  }
+};
+
 function renderGiving() {
   const months = normalizeMonthArray(DASHBOARD_DATA.giving.months);
   const amounts = DASHBOARD_DATA.giving.amounts || [];
@@ -705,6 +739,7 @@ function renderGiving() {
 
   new Chart(ctx, {
     type: 'bar',
+    plugins: [monthlyNeedLinePlugin],
     data: {
       labels: months,
       datasets: [{
@@ -739,7 +774,7 @@ function renderPledge() {
   const { target, raised } = DASHBOARD_DATA.pledge;
   const safeTarget = Number(target) || 1;
   const pct = Math.min(100, (Number(raised) / safeTarget) * 100);
-  document.getElementById('raisedAmount').textContent = fmtMoneyShort(raised) + ' raised';
+  document.getElementById('raisedAmount').textContent = fmtMoneyShort(raised) + ' given to date';
   document.getElementById('targetAmount').textContent = fmtMoneyShort(target);
   document.getElementById('progressPercent').textContent = pct.toFixed(1) + '%';
   document.getElementById('remaining').textContent = fmtMoneyShort(Math.max(0, safeTarget - (Number(raised) || 0))) + ' remaining';
