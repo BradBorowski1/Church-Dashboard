@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-19T19:47:53.923Z",
+  "lastUpdated": "2026-05-19T20:45:48.558Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -814,83 +814,68 @@
   "serveTeams": [
     {
       "name": "Stepping Stones",
-      "current": 100,
-      "needed": 150
+      "current": 104,
+      "needed": 204
     },
     {
       "name": "Coffee Team",
-      "current": 10,
-      "needed": 14
+      "current": 20,
+      "needed": 30
     },
     {
       "name": "Parking",
-      "current": 10,
-      "needed": 20
+      "current": 9,
+      "needed": 19
     },
     {
       "name": "Prayer Team",
-      "current": 15,
-      "needed": 20
+      "current": 40,
+      "needed": 55
     },
     {
       "name": "Enrichment",
-      "current": 51,
-      "needed": 85
+      "current": 56,
+      "needed": 107
     },
     {
       "name": "Hospitality",
-      "current": 27,
-      "needed": 31
+      "current": 33,
+      "needed": 60
     },
     {
       "name": "Connect",
-      "current": 11,
-      "needed": 16
+      "current": 17,
+      "needed": 28
     },
     {
       "name": "Breakfast Team",
       "current": 23,
-      "needed": 23
+      "needed": 46
     },
     {
       "name": "Worship & Tech",
-      "current": 30,
-      "needed": 42
-    },
-    {
-      "name": "Connect",
-      "current": 12,
-      "needed": 16
+      "current": 49,
+      "needed": 79
     },
     {
       "name": "Safety",
-      "current": 31,
-      "needed": 39
+      "current": 45,
+      "needed": 76
     },
     {
       "name": "LS Students",
-      "current": 12,
-      "needed": 14
+      "current": 13,
+      "needed": 25
     },
     {
       "name": "Service Captains",
-      "current": 10,
-      "needed": 10
-    },
-    {
-      "name": "Connect Desk",
-      "current": 12,
-      "needed": 16
+      "current": 11,
+      "needed": 21
     },
     {
       "name": "First impressions",
-      "current": 25,
-      "needed": 40
-    },
-    {
-      "name": "Prayer Team",
-      "current": 15,
-      "needed": 20
+      "current": 28,
+      "needed": 53
     }
   ],
   "communityGroups": {
