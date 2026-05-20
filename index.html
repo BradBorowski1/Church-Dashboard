@@ -1067,8 +1067,9 @@ function renderAttendance() {
   canvas.addEventListener('click', function(e) {
     const rect = canvas.getBoundingClientRect();
     const xClick = e.clientX - rect.left;
-    // Scale from display pixels to canvas pixels
-    const scaleX = canvas.width / rect.width;
+    // chartArea coords are in Chart.js logical pixels (CSS pixels), not physical pixels.
+    // Use chart.width (logical) not canvas.width (physical) to avoid Retina dpr doubling.
+    const scaleX = attendanceChart.width / rect.width;
     const xCanvas = xClick * scaleX;
     const chartArea = attendanceChart.chartArea;
     if (!chartArea) return;
