@@ -792,7 +792,7 @@ const monthlyNeedLinePlugin = {
 
     if (!chartArea || !scales.y) return;
 
-    const yValue = 312500;
+    const yValue = 350000;
     const y = scales.y.getPixelForValue(yValue);
 
     ctx.save();
@@ -874,17 +874,23 @@ let weeklyAttendanceChart = null;
 function getAttendanceWeeklyForMonth(monthLabel) {
   const weekly = DASHBOARD_DATA.attendanceWeekly || {};
   const label = String(monthLabel || '').trim();
-  const straight = label.replace('’', "'");
-  const curly = label.replace("'", '’');
-  const keysToTry = [label, straight, curly].filter(Boolean);
 
+  // Normalize apostrophes and also try YYYY-MM key derived from "Jan '26"
+  const normalized = label.replace(/[\u2018\u2019]/g, "'");
+  let isoKey = '';
+  const mm = normalized.match(/^([A-Za-z]{3})\s+'(\d{2})$/);
+  if (mm) {
+    const mons = {jan:'01',feb:'02',mar:'03',apr:'04',may:'05',jun:'06',jul:'07',aug:'08',sep:'09',oct:'10',nov:'11',dec:'12'};
+    const mon = mons[mm[1].toLowerCase()];
+    if (mon) isoKey = '20' + mm[2] + '-' + mon;
+  }
+
+  const keysToTry = [label, normalized, isoKey].filter(Boolean);
   for (const key of keysToTry) {
     if (Array.isArray(weekly[key]) && weekly[key].length) return weekly[key];
   }
-
   return null;
 }
-
 function openAttendanceModal(monthLabel, weeklyRows) {
   if (!weeklyRows || !weeklyRows.length) return;
 
