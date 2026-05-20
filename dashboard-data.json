@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-20T19:45:56.178Z",
+  "lastUpdated": "2026-05-20T19:47:56.089Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -2976,6 +2976,16 @@
         "kids": 141
       },
       {
+        "week": "Mar 1",
+        "adults": 831,
+        "kids": 141
+      },
+      {
+        "week": "Mar 8",
+        "adults": 732,
+        "kids": 78
+      },
+      {
         "week": "Mar 8",
         "adults": 732,
         "kids": 78
@@ -2996,6 +3006,11 @@
         "kids": 146
       },
       {
+        "week": "Mar 15",
+        "adults": 772,
+        "kids": 146
+      },
+      {
         "week": "Mar 22",
         "adults": 700,
         "kids": 132
@@ -3004,6 +3019,16 @@
         "week": "Mar 22",
         "adults": 700,
         "kids": 132
+      },
+      {
+        "week": "Mar 22",
+        "adults": 700,
+        "kids": 132
+      },
+      {
+        "week": "Mar 29",
+        "adults": 805,
+        "kids": 120
       },
       {
         "week": "Mar 29",
@@ -3028,6 +3053,16 @@
         "kids": 190
       },
       {
+        "week": "Apr 5",
+        "adults": 1591,
+        "kids": 190
+      },
+      {
+        "week": "Apr 12",
+        "adults": 746,
+        "kids": 146
+      },
+      {
         "week": "Apr 12",
         "adults": 746,
         "kids": 146
@@ -3046,6 +3081,16 @@
         "week": "Apr 19",
         "adults": 877,
         "kids": 121
+      },
+      {
+        "week": "Apr 19",
+        "adults": 877,
+        "kids": 121
+      },
+      {
+        "week": "Apr 26",
+        "adults": 758,
+        "kids": 111
       },
       {
         "week": "Apr 26",
@@ -3070,6 +3115,11 @@
         "kids": 115
       },
       {
+        "week": "May 3",
+        "adults": 799,
+        "kids": 115
+      },
+      {
         "week": "May 10",
         "adults": 796,
         "kids": 135
@@ -3078,6 +3128,16 @@
         "week": "May 10",
         "adults": 796,
         "kids": 135
+      },
+      {
+        "week": "May 10",
+        "adults": 796,
+        "kids": 135
+      },
+      {
+        "week": "May 17",
+        "adults": 730,
+        "kids": 107
       },
       {
         "week": "May 17",
