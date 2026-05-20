@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-20T18:11:53.542Z",
+  "lastUpdated": "2026-05-20T18:42:56.153Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -811,7 +811,118 @@
       119
     ]
   },
-  "attendanceWeekly": {},
+  "attendanceWeekly": {
+    "Wed Aug 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+      {
+        "week": "2026-08-19T07:00:00.000Z",
+        "adults": 474,
+        "kids": 0
+      },
+      {
+        "week": "2026-08-26T07:00:00.000Z",
+        "adults": 315,
+        "kids": 0
+      }
+    ],
+    "Sat Dec 01 2018 00:00:00 GMT-0800 (Pacific Standard Time)": [
+      {
+        "week": "2026-12-02T08:00:00.000Z",
+        "adults": 206,
+        "kids": 0
+      },
+      {
+        "week": "2026-12-09T08:00:00.000Z",
+        "adults": 222,
+        "kids": 0
+      },
+      {
+        "week": "2026-12-16T08:00:00.000Z",
+        "adults": 224,
+        "kids": 0
+      },
+      {
+        "week": "2026-12-23T08:00:00.000Z",
+        "adults": 487,
+        "kids": 0
+      },
+      {
+        "week": "2026-12-30T08:00:00.000Z",
+        "adults": 242,
+        "kids": 0
+      }
+    ],
+    "Thu Nov 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+      {
+        "week": "2026-11-04T08:00:00.000Z",
+        "adults": 259,
+        "kids": 0
+      },
+      {
+        "week": "2026-11-11T08:00:00.000Z",
+        "adults": 225,
+        "kids": 0
+      },
+      {
+        "week": "2026-11-18T08:00:00.000Z",
+        "adults": 243,
+        "kids": 0
+      },
+      {
+        "week": "2026-11-25T08:00:00.000Z",
+        "adults": 264,
+        "kids": 0
+      }
+    ],
+    "Mon Oct 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+      {
+        "week": "2026-10-07T07:00:00.000Z",
+        "adults": 227,
+        "kids": 0
+      },
+      {
+        "week": "2026-10-14T07:00:00.000Z",
+        "adults": 237,
+        "kids": 0
+      },
+      {
+        "week": "2026-10-21T07:00:00.000Z",
+        "adults": 232,
+        "kids": 0
+      },
+      {
+        "week": "2026-10-28T07:00:00.000Z",
+        "adults": 187,
+        "kids": 0
+      }
+    ],
+    "Sat Sep 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+      {
+        "week": "2026-09-02T07:00:00.000Z",
+        "adults": 225,
+        "kids": 0
+      },
+      {
+        "week": "2026-09-09T07:00:00.000Z",
+        "adults": 267,
+        "kids": 0
+      },
+      {
+        "week": "2026-09-16T07:00:00.000Z",
+        "adults": 202,
+        "kids": 0
+      },
+      {
+        "week": "2026-09-23T07:00:00.000Z",
+        "adults": 208,
+        "kids": 0
+      },
+      {
+        "week": "2026-09-30T07:00:00.000Z",
+        "adults": 208,
+        "kids": 0
+      }
+    ]
+  },
   "serveTeams": [
     {
       "name": "Stepping Stones",
