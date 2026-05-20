@@ -554,8 +554,8 @@
 
     <div class="card">
       <h2>Weekend Attendance</h2>
-      <div class="card-sub">Adults + Kids · full history · scroll horizontally</div>
-      <div class="chart-wrap"><div class="chart-inner"><canvas id="attendanceChart"></canvas></div></div>
+      <div class="card-sub">Adults + Kids · full history · scroll horizontally · <span style="color:#93c5fd;cursor:pointer;">click a bar for weekly breakdown</span></div>
+      <div class="chart-wrap" style="cursor:pointer;" title="Click a bar to see weekly breakdown"><div class="chart-inner"><canvas id="attendanceChart"></canvas></div></div>
       <div class="avg-row">
         <div class="avg-box">
           <div class="avg-label">3-Month Average</div>
@@ -1041,7 +1041,8 @@ function renderAttendance() {
       onClick: (event, activeElements) => {
         if (!activeElements.length) return;
         const dataIndex = activeElements[0].index;
-        const weeklyRows = getAttendanceWeeklyForMonth(months[dataIndex]);
+        const rawKey = (DASHBOARD_DATA.attendance.months || [])[dataIndex] || '';
+        const weeklyRows = getAttendanceWeeklyForMonth(rawKey) || getAttendanceWeeklyForMonth(months[dataIndex]);
         if (weeklyRows) openAttendanceModal(months[dataIndex], weeklyRows);
       },
       plugins: {
