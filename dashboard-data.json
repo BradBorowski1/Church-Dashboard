@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-20T19:27:14.218Z",
+  "lastUpdated": "2026-05-20T19:38:29.073Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -812,2280 +812,2280 @@
     ]
   },
   "attendanceWeekly": {
-    "Wed Aug 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2018-08": [
       {
-        "week": "2026-08-19T07:00:00.000Z",
+        "week": "Aug 19",
         "adults": 474,
         "kids": 0
       },
       {
-        "week": "2026-08-26T07:00:00.000Z",
+        "week": "Aug 26",
         "adults": 315,
         "kids": 0
       }
     ],
-    "Sat Sep 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2018-09": [
       {
-        "week": "2026-09-02T07:00:00.000Z",
+        "week": "Sep 2",
         "adults": 225,
         "kids": 0
       },
       {
-        "week": "2026-09-09T07:00:00.000Z",
+        "week": "Sep 9",
         "adults": 267,
         "kids": 0
       },
       {
-        "week": "2026-09-16T07:00:00.000Z",
+        "week": "Sep 16",
         "adults": 202,
         "kids": 0
       },
       {
-        "week": "2026-09-23T07:00:00.000Z",
+        "week": "Sep 23",
         "adults": 208,
         "kids": 0
       },
       {
-        "week": "2026-09-30T07:00:00.000Z",
+        "week": "Sep 30",
         "adults": 208,
         "kids": 0
       }
     ],
-    "Mon Oct 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2018-10": [
       {
-        "week": "2026-10-07T07:00:00.000Z",
+        "week": "Oct 7",
         "adults": 227,
         "kids": 0
       },
       {
-        "week": "2026-10-14T07:00:00.000Z",
+        "week": "Oct 14",
         "adults": 237,
         "kids": 0
       },
       {
-        "week": "2026-10-21T07:00:00.000Z",
+        "week": "Oct 21",
         "adults": 232,
         "kids": 0
       },
       {
-        "week": "2026-10-28T07:00:00.000Z",
+        "week": "Oct 28",
         "adults": 187,
         "kids": 0
       }
     ],
-    "Thu Nov 01 2018 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2018-11": [
       {
-        "week": "2026-11-04T08:00:00.000Z",
+        "week": "Nov 4",
         "adults": 259,
         "kids": 0
       },
       {
-        "week": "2026-11-11T08:00:00.000Z",
+        "week": "Nov 11",
         "adults": 225,
         "kids": 0
       },
       {
-        "week": "2026-11-18T08:00:00.000Z",
+        "week": "Nov 18",
         "adults": 243,
         "kids": 0
       },
       {
-        "week": "2026-11-25T08:00:00.000Z",
+        "week": "Nov 25",
         "adults": 264,
         "kids": 0
       }
     ],
-    "Sat Dec 01 2018 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2018-12": [
       {
-        "week": "2026-12-02T08:00:00.000Z",
+        "week": "Dec 2",
         "adults": 206,
         "kids": 0
       },
       {
-        "week": "2026-12-09T08:00:00.000Z",
+        "week": "Dec 9",
         "adults": 222,
         "kids": 0
       },
       {
-        "week": "2026-12-16T08:00:00.000Z",
+        "week": "Dec 16",
         "adults": 224,
         "kids": 0
       },
       {
-        "week": "2026-12-23T08:00:00.000Z",
+        "week": "Dec 23",
         "adults": 487,
         "kids": 0
       },
       {
-        "week": "2026-12-30T08:00:00.000Z",
+        "week": "Dec 30",
         "adults": 242,
         "kids": 0
       }
     ],
-    "Tue Jan 01 2019 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2019-01": [
       {
-        "week": "2026-01-06T08:00:00.000Z",
+        "week": "Jan 6",
         "adults": 255,
         "kids": 0
       },
       {
-        "week": "2026-01-13T08:00:00.000Z",
+        "week": "Jan 13",
         "adults": 272,
         "kids": 0
       },
       {
-        "week": "2026-01-20T08:00:00.000Z",
+        "week": "Jan 20",
         "adults": 277,
         "kids": 0
       },
       {
-        "week": "2026-01-27T08:00:00.000Z",
+        "week": "Jan 27",
         "adults": 236,
         "kids": 0
       }
     ],
-    "Fri Feb 01 2019 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2019-02": [
       {
-        "week": "2026-02-03T08:00:00.000Z",
+        "week": "Feb 3",
         "adults": 223,
         "kids": 0
       },
       {
-        "week": "2026-02-10T08:00:00.000Z",
+        "week": "Feb 10",
         "adults": 192,
         "kids": 0
       },
       {
-        "week": "2026-02-17T08:00:00.000Z",
+        "week": "Feb 17",
         "adults": 239,
         "kids": 0
       },
       {
-        "week": "2026-02-24T08:00:00.000Z",
+        "week": "Feb 24",
         "adults": 247,
         "kids": 0
       }
     ],
-    "Fri Mar 01 2019 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2019-03": [
       {
-        "week": "2026-03-03T08:00:00.000Z",
+        "week": "Mar 3",
         "adults": 287,
         "kids": 0
       },
       {
-        "week": "2026-03-10T07:00:00.000Z",
+        "week": "Mar 10",
         "adults": 240,
         "kids": 0
       },
       {
-        "week": "2026-03-17T07:00:00.000Z",
+        "week": "Mar 17",
         "adults": 224,
         "kids": 0
       },
       {
-        "week": "2026-03-24T07:00:00.000Z",
+        "week": "Mar 24",
         "adults": 263,
         "kids": 0
       },
       {
-        "week": "2026-03-31T07:00:00.000Z",
+        "week": "Mar 31",
         "adults": 199,
         "kids": 0
       }
     ],
-    "Mon Apr 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-04": [
       {
-        "week": "2026-04-07T07:00:00.000Z",
+        "week": "Apr 7",
         "adults": 248,
         "kids": 0
       },
       {
-        "week": "2026-04-14T07:00:00.000Z",
+        "week": "Apr 14",
         "adults": 260,
         "kids": 0
       },
       {
-        "week": "2026-04-21T07:00:00.000Z",
+        "week": "Apr 21",
         "adults": 590,
         "kids": 0
       },
       {
-        "week": "2026-04-28T07:00:00.000Z",
+        "week": "Apr 28",
         "adults": 380,
         "kids": 0
       }
     ],
-    "Wed May 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-05": [
       {
-        "week": "2026-05-05T07:00:00.000Z",
+        "week": "May 5",
         "adults": 249,
         "kids": 0
       },
       {
-        "week": "2026-05-12T07:00:00.000Z",
+        "week": "May 12",
         "adults": 265,
         "kids": 0
       },
       {
-        "week": "2026-05-19T07:00:00.000Z",
+        "week": "May 19",
         "adults": 266,
         "kids": 0
       },
       {
-        "week": "2026-05-26T07:00:00.000Z",
+        "week": "May 26",
         "adults": 227,
         "kids": 0
       }
     ],
-    "Sat Jun 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-06": [
       {
-        "week": "2026-06-02T07:00:00.000Z",
+        "week": "Jun 2",
         "adults": 254,
         "kids": 0
       },
       {
-        "week": "2026-06-09T07:00:00.000Z",
+        "week": "Jun 9",
         "adults": 274,
         "kids": 0
       },
       {
-        "week": "2026-06-16T07:00:00.000Z",
+        "week": "Jun 16",
         "adults": 206,
         "kids": 0
       },
       {
-        "week": "2026-06-23T07:00:00.000Z",
+        "week": "Jun 23",
         "adults": 229,
         "kids": 0
       },
       {
-        "week": "2026-06-30T07:00:00.000Z",
+        "week": "Jun 30",
         "adults": 251,
         "kids": 0
       }
     ],
-    "Mon Jul 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-07": [
       {
-        "week": "2026-07-07T07:00:00.000Z",
+        "week": "Jul 7",
         "adults": 195,
         "kids": 0
       },
       {
-        "week": "2026-07-14T07:00:00.000Z",
+        "week": "Jul 14",
         "adults": 225,
         "kids": 0
       },
       {
-        "week": "2026-07-21T07:00:00.000Z",
+        "week": "Jul 21",
         "adults": 210,
         "kids": 0
       },
       {
-        "week": "2026-07-28T07:00:00.000Z",
+        "week": "Jul 28",
         "adults": 215,
         "kids": 0
       }
     ],
-    "Thu Aug 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-08": [
       {
-        "week": "2026-08-04T07:00:00.000Z",
+        "week": "Aug 4",
         "adults": 230,
         "kids": 0
       },
       {
-        "week": "2026-08-11T07:00:00.000Z",
+        "week": "Aug 11",
         "adults": 243,
         "kids": 0
       },
       {
-        "week": "2026-08-18T07:00:00.000Z",
+        "week": "Aug 18",
         "adults": 333,
         "kids": 0
       },
       {
-        "week": "2026-08-25T07:00:00.000Z",
+        "week": "Aug 25",
         "adults": 334,
         "kids": 0
       }
     ],
-    "Sun Sep 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-09": [
       {
-        "week": "2026-09-01T07:00:00.000Z",
+        "week": "Sep 1",
         "adults": 282,
         "kids": 0
       },
       {
-        "week": "2026-09-08T07:00:00.000Z",
+        "week": "Sep 8",
         "adults": 363,
         "kids": 0
       },
       {
-        "week": "2026-09-15T07:00:00.000Z",
+        "week": "Sep 15",
         "adults": 336,
         "kids": 0
       },
       {
-        "week": "2026-09-22T07:00:00.000Z",
+        "week": "Sep 22",
         "adults": 343,
         "kids": 0
       },
       {
-        "week": "2026-09-29T07:00:00.000Z",
+        "week": "Sep 29",
         "adults": 479,
         "kids": 0
       }
     ],
-    "Tue Oct 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-10": [
       {
-        "week": "2026-10-06T07:00:00.000Z",
+        "week": "Oct 6",
         "adults": 294,
         "kids": 0
       },
       {
-        "week": "2026-10-13T07:00:00.000Z",
+        "week": "Oct 13",
         "adults": 311,
         "kids": 0
       },
       {
-        "week": "2026-10-20T07:00:00.000Z",
+        "week": "Oct 20",
         "adults": 349,
         "kids": 0
       },
       {
-        "week": "2026-10-27T07:00:00.000Z",
+        "week": "Oct 27",
         "adults": 295,
         "kids": 0
       }
     ],
-    "Fri Nov 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2019-11": [
       {
-        "week": "2026-11-03T08:00:00.000Z",
+        "week": "Nov 3",
         "adults": 389,
         "kids": 0
       },
       {
-        "week": "2026-11-10T08:00:00.000Z",
+        "week": "Nov 10",
         "adults": 359,
         "kids": 0
       },
       {
-        "week": "2026-11-17T08:00:00.000Z",
+        "week": "Nov 17",
         "adults": 368,
         "kids": 0
       },
       {
-        "week": "2026-11-24T08:00:00.000Z",
+        "week": "Nov 24",
         "adults": 390,
         "kids": 0
       }
     ],
-    "Sun Dec 01 2019 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2019-12": [
       {
-        "week": "2026-12-01T08:00:00.000Z",
+        "week": "Dec 1",
         "adults": 271,
         "kids": 0
       },
       {
-        "week": "2026-12-08T08:00:00.000Z",
+        "week": "Dec 8",
         "adults": 349,
         "kids": 0
       },
       {
-        "week": "2026-12-15T08:00:00.000Z",
+        "week": "Dec 15",
         "adults": 382,
         "kids": 0
       },
       {
-        "week": "2026-12-22T08:00:00.000Z",
+        "week": "Dec 22",
         "adults": 518,
         "kids": 0
       },
       {
-        "week": "2026-12-29T08:00:00.000Z",
+        "week": "Dec 29",
         "adults": 371,
         "kids": 0
       }
     ],
-    "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2020-01": [
       {
-        "week": "2026-01-05T08:00:00.000Z",
+        "week": "Jan 5",
         "adults": 410,
         "kids": 0
       },
       {
-        "week": "2026-01-12T08:00:00.000Z",
+        "week": "Jan 12",
         "adults": 391,
         "kids": 0
       },
       {
-        "week": "2026-01-19T08:00:00.000Z",
+        "week": "Jan 19",
         "adults": 397,
         "kids": 0
       },
       {
-        "week": "2026-01-26T08:00:00.000Z",
+        "week": "Jan 26",
         "adults": 376,
         "kids": 0
       }
     ],
-    "Sat Feb 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2020-02": [
       {
-        "week": "2026-02-02T08:00:00.000Z",
+        "week": "Feb 2",
         "adults": 361,
         "kids": 0
       },
       {
-        "week": "2026-02-09T08:00:00.000Z",
+        "week": "Feb 9",
         "adults": 431,
         "kids": 0
       },
       {
-        "week": "2026-02-16T08:00:00.000Z",
+        "week": "Feb 16",
         "adults": 357,
         "kids": 0
       },
       {
-        "week": "2026-02-23T08:00:00.000Z",
+        "week": "Feb 23",
         "adults": 391,
         "kids": 0
       }
     ],
-    "Sun Mar 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2020-03": [
       {
-        "week": "2026-03-01T08:00:00.000Z",
+        "week": "Mar 1",
         "adults": 356,
         "kids": 0
       },
       {
-        "week": "2026-03-08T08:00:00.000Z",
+        "week": "Mar 8",
         "adults": 347,
         "kids": 0
       },
       {
-        "week": "2026-03-15T07:00:00.000Z",
+        "week": "Mar 15",
         "adults": 38,
         "kids": 0
       },
       {
-        "week": "2026-03-22T07:00:00.000Z",
+        "week": "Mar 22",
         "adults": 658,
         "kids": 0
       },
       {
-        "week": "2026-03-29T07:00:00.000Z",
+        "week": "Mar 29",
         "adults": 552,
         "kids": 0
       }
     ],
-    "Wed Apr 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-04": [
       {
-        "week": "2026-04-05T07:00:00.000Z",
+        "week": "Apr 5",
         "adults": 678,
         "kids": 0
       },
       {
-        "week": "2026-04-12T07:00:00.000Z",
+        "week": "Apr 12",
         "adults": 1318,
         "kids": 0
       },
       {
-        "week": "2026-04-19T07:00:00.000Z",
+        "week": "Apr 19",
         "adults": 848,
         "kids": 0
       },
       {
-        "week": "2026-04-26T07:00:00.000Z",
+        "week": "Apr 26",
         "adults": 675,
         "kids": 0
       }
     ],
-    "Fri May 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-05": [
       {
-        "week": "2026-05-03T07:00:00.000Z",
+        "week": "May 3",
         "adults": 699,
         "kids": 0
       },
       {
-        "week": "2026-05-10T07:00:00.000Z",
+        "week": "May 10",
         "adults": 569,
         "kids": 0
       },
       {
-        "week": "2026-05-17T07:00:00.000Z",
+        "week": "May 17",
         "adults": 574,
         "kids": 0
       },
       {
-        "week": "2026-05-24T07:00:00.000Z",
+        "week": "May 24",
         "adults": 684,
         "kids": 0
       },
       {
-        "week": "2026-05-31T07:00:00.000Z",
+        "week": "May 31",
         "adults": 409,
         "kids": 0
       }
     ],
-    "Mon Jun 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-06": [
       {
-        "week": "2026-06-07T07:00:00.000Z",
+        "week": "Jun 7",
         "adults": 426,
         "kids": 0
       },
       {
-        "week": "2026-06-14T07:00:00.000Z",
+        "week": "Jun 14",
         "adults": 276,
         "kids": 0
       },
       {
-        "week": "2026-06-21T07:00:00.000Z",
+        "week": "Jun 21",
         "adults": 333,
         "kids": 0
       },
       {
-        "week": "2026-06-28T07:00:00.000Z",
+        "week": "Jun 28",
         "adults": 355,
         "kids": 0
       }
     ],
-    "Wed Jul 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-07": [
       {
-        "week": "2026-07-05T07:00:00.000Z",
+        "week": "Jul 5",
         "adults": 285,
         "kids": 0
       },
       {
-        "week": "2026-07-12T07:00:00.000Z",
+        "week": "Jul 12",
         "adults": 369,
         "kids": 0
       },
       {
-        "week": "2026-07-19T07:00:00.000Z",
+        "week": "Jul 19",
         "adults": 367,
         "kids": 0
       },
       {
-        "week": "2026-07-26T07:00:00.000Z",
+        "week": "Jul 26",
         "adults": 336,
         "kids": 0
       }
     ],
-    "Sat Aug 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-08": [
       {
-        "week": "2026-08-02T07:00:00.000Z",
+        "week": "Aug 2",
         "adults": 380,
         "kids": 0
       },
       {
-        "week": "2026-08-09T07:00:00.000Z",
+        "week": "Aug 9",
         "adults": 230,
         "kids": 0
       },
       {
-        "week": "2026-08-16T07:00:00.000Z",
+        "week": "Aug 16",
         "adults": 454,
         "kids": 0
       },
       {
-        "week": "2026-08-23T07:00:00.000Z",
+        "week": "Aug 23",
         "adults": 546,
         "kids": 0
       },
       {
-        "week": "2026-08-30T07:00:00.000Z",
+        "week": "Aug 30",
         "adults": 322,
         "kids": 0
       }
     ],
-    "Tue Sep 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-09": [
       {
-        "week": "2026-09-06T07:00:00.000Z",
+        "week": "Sep 6",
         "adults": 291,
         "kids": 0
       },
       {
-        "week": "2026-09-13T07:00:00.000Z",
+        "week": "Sep 13",
         "adults": 498,
         "kids": 0
       },
       {
-        "week": "2026-09-20T07:00:00.000Z",
+        "week": "Sep 20",
         "adults": 344,
         "kids": 0
       },
       {
-        "week": "2026-09-27T07:00:00.000Z",
+        "week": "Sep 27",
         "adults": 285,
         "kids": 0
       }
     ],
-    "Thu Oct 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-10": [
       {
-        "week": "2026-10-04T07:00:00.000Z",
+        "week": "Oct 4",
         "adults": 279,
         "kids": 0
       },
       {
-        "week": "2026-10-11T07:00:00.000Z",
+        "week": "Oct 11",
         "adults": 337,
         "kids": 0
       },
       {
-        "week": "2026-10-18T07:00:00.000Z",
+        "week": "Oct 18",
         "adults": 603,
         "kids": 0
       },
       {
-        "week": "2026-10-25T07:00:00.000Z",
+        "week": "Oct 25",
         "adults": 669,
         "kids": 0
       }
     ],
-    "Sun Nov 01 2020 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2020-11": [
       {
-        "week": "2026-11-01T07:00:00.000Z",
+        "week": "Nov 1",
         "adults": 554,
         "kids": 0
       },
       {
-        "week": "2026-11-08T08:00:00.000Z",
+        "week": "Nov 8",
         "adults": 560,
         "kids": 0
       },
       {
-        "week": "2026-11-15T08:00:00.000Z",
+        "week": "Nov 15",
         "adults": 583,
         "kids": 0
       },
       {
-        "week": "2026-11-22T08:00:00.000Z",
+        "week": "Nov 22",
         "adults": 497,
         "kids": 0
       },
       {
-        "week": "2026-11-29T08:00:00.000Z",
+        "week": "Nov 29",
         "adults": 609,
         "kids": 0
       }
     ],
-    "Tue Dec 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2020-12": [
       {
-        "week": "2026-12-06T08:00:00.000Z",
+        "week": "Dec 6",
         "adults": 601,
         "kids": 0
       },
       {
-        "week": "2026-12-13T08:00:00.000Z",
+        "week": "Dec 13",
         "adults": 604,
         "kids": 0
       },
       {
-        "week": "2026-12-20T08:00:00.000Z",
+        "week": "Dec 20",
         "adults": 994,
         "kids": 0
       },
       {
-        "week": "2026-12-27T08:00:00.000Z",
+        "week": "Dec 27",
         "adults": 435,
         "kids": 0
       }
     ],
-    "Fri Jan 01 2021 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2021-01": [
       {
-        "week": "2026-01-03T08:00:00.000Z",
+        "week": "Jan 3",
         "adults": 517,
         "kids": 0
       },
       {
-        "week": "2026-01-10T08:00:00.000Z",
+        "week": "Jan 10",
         "adults": 674,
         "kids": 0
       },
       {
-        "week": "2026-01-17T08:00:00.000Z",
+        "week": "Jan 17",
         "adults": 569,
         "kids": 0
       },
       {
-        "week": "2026-01-24T08:00:00.000Z",
+        "week": "Jan 24",
         "adults": 586,
         "kids": 0
       },
       {
-        "week": "2026-01-31T08:00:00.000Z",
+        "week": "Jan 31",
         "adults": 646,
         "kids": 0
       }
     ],
-    "Mon Feb 01 2021 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2021-02": [
       {
-        "week": "2026-02-07T08:00:00.000Z",
+        "week": "Feb 7",
         "adults": 518,
         "kids": 0
       },
       {
-        "week": "2026-02-14T08:00:00.000Z",
+        "week": "Feb 14",
         "adults": 496,
         "kids": 0
       },
       {
-        "week": "2026-02-21T08:00:00.000Z",
+        "week": "Feb 21",
         "adults": 520,
         "kids": 0
       },
       {
-        "week": "2026-02-28T08:00:00.000Z",
+        "week": "Feb 28",
         "adults": 513,
         "kids": 0
       }
     ],
-    "Mon Mar 01 2021 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2021-03": [
       {
-        "week": "2026-03-07T08:00:00.000Z",
+        "week": "Mar 7",
         "adults": 541,
         "kids": 0
       },
       {
-        "week": "2026-03-14T07:00:00.000Z",
+        "week": "Mar 14",
         "adults": 463,
         "kids": 0
       },
       {
-        "week": "2026-03-21T07:00:00.000Z",
+        "week": "Mar 21",
         "adults": 518,
         "kids": 0
       },
       {
-        "week": "2026-03-28T07:00:00.000Z",
+        "week": "Mar 28",
         "adults": 746,
         "kids": 0
       }
     ],
-    "Thu Apr 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-04": [
       {
-        "week": "2026-04-04T07:00:00.000Z",
+        "week": "Apr 4",
         "adults": 831,
         "kids": 0
       },
       {
-        "week": "2026-04-11T07:00:00.000Z",
+        "week": "Apr 11",
         "adults": 708,
         "kids": 0
       },
       {
-        "week": "2026-04-18T07:00:00.000Z",
+        "week": "Apr 18",
         "adults": 581,
         "kids": 0
       },
       {
-        "week": "2026-04-25T07:00:00.000Z",
+        "week": "Apr 25",
         "adults": 640,
         "kids": 0
       }
     ],
-    "Sat May 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-05": [
       {
-        "week": "2026-05-02T07:00:00.000Z",
+        "week": "May 2",
         "adults": 569,
         "kids": 0
       },
       {
-        "week": "2026-05-09T07:00:00.000Z",
+        "week": "May 9",
         "adults": 534,
         "kids": 0
       },
       {
-        "week": "2026-05-16T07:00:00.000Z",
+        "week": "May 16",
         "adults": 574,
         "kids": 0
       },
       {
-        "week": "2026-05-23T07:00:00.000Z",
+        "week": "May 23",
         "adults": 589,
         "kids": 0
       },
       {
-        "week": "2026-05-30T07:00:00.000Z",
+        "week": "May 30",
         "adults": 478,
         "kids": 0
       }
     ],
-    "Tue Jun 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-06": [
       {
-        "week": "2026-06-06T07:00:00.000Z",
+        "week": "Jun 6",
         "adults": 400,
         "kids": 0
       },
       {
-        "week": "2026-06-13T07:00:00.000Z",
+        "week": "Jun 13",
         "adults": 379,
         "kids": 0
       },
       {
-        "week": "2026-06-20T07:00:00.000Z",
+        "week": "Jun 20",
         "adults": 305,
         "kids": 0
       },
       {
-        "week": "2026-06-27T07:00:00.000Z",
+        "week": "Jun 27",
         "adults": 372,
         "kids": 0
       }
     ],
-    "Thu Jul 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-07": [
       {
-        "week": "2026-07-04T07:00:00.000Z",
+        "week": "Jul 4",
         "adults": 213,
         "kids": 0
       },
       {
-        "week": "2026-07-11T07:00:00.000Z",
+        "week": "Jul 11",
         "adults": 400,
         "kids": 0
       },
       {
-        "week": "2026-07-18T07:00:00.000Z",
+        "week": "Jul 18",
         "adults": 364,
         "kids": 0
       },
       {
-        "week": "2026-07-25T07:00:00.000Z",
+        "week": "Jul 25",
         "adults": 339,
         "kids": 0
       }
     ],
-    "Sun Aug 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-08": [
       {
-        "week": "2026-08-01T07:00:00.000Z",
+        "week": "Aug 1",
         "adults": 314,
         "kids": 0
       },
       {
-        "week": "2026-08-08T07:00:00.000Z",
+        "week": "Aug 8",
         "adults": 397,
         "kids": 0
       },
       {
-        "week": "2026-08-15T07:00:00.000Z",
+        "week": "Aug 15",
         "adults": 365,
         "kids": 0
       },
       {
-        "week": "2026-08-22T07:00:00.000Z",
+        "week": "Aug 22",
         "adults": 407,
         "kids": 0
       },
       {
-        "week": "2026-08-29T07:00:00.000Z",
+        "week": "Aug 29",
         "adults": 322,
         "kids": 0
       }
     ],
-    "Wed Sep 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-09": [
       {
-        "week": "2026-09-05T07:00:00.000Z",
+        "week": "Sep 5",
         "adults": 258,
         "kids": 0
       },
       {
-        "week": "2026-09-12T07:00:00.000Z",
+        "week": "Sep 12",
         "adults": 299,
         "kids": 0
       },
       {
-        "week": "2026-09-19T07:00:00.000Z",
+        "week": "Sep 19",
         "adults": 352,
         "kids": 0
       },
       {
-        "week": "2026-09-26T07:00:00.000Z",
+        "week": "Sep 26",
         "adults": 297,
         "kids": 0
       }
     ],
-    "Fri Oct 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-10": [
       {
-        "week": "2026-10-03T07:00:00.000Z",
+        "week": "Oct 3",
         "adults": 338,
         "kids": 0
       },
       {
-        "week": "2026-10-10T07:00:00.000Z",
+        "week": "Oct 10",
         "adults": 365,
         "kids": 0
       },
       {
-        "week": "2026-10-17T07:00:00.000Z",
+        "week": "Oct 17",
         "adults": 359,
         "kids": 0
       },
       {
-        "week": "2026-10-24T07:00:00.000Z",
+        "week": "Oct 24",
         "adults": 373,
         "kids": 0
       },
       {
-        "week": "2026-10-31T07:00:00.000Z",
+        "week": "Oct 31",
         "adults": 463,
         "kids": 0
       }
     ],
-    "Mon Nov 01 2021 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2021-11": [
       {
-        "week": "2026-11-07T08:00:00.000Z",
+        "week": "Nov 7",
         "adults": 408,
         "kids": 0
       },
       {
-        "week": "2026-11-14T08:00:00.000Z",
+        "week": "Nov 14",
         "adults": 442,
         "kids": 0
       },
       {
-        "week": "2026-11-21T08:00:00.000Z",
+        "week": "Nov 21",
         "adults": 464,
         "kids": 0
       },
       {
-        "week": "2026-11-28T08:00:00.000Z",
+        "week": "Nov 28",
         "adults": 418,
         "kids": 0
       }
     ],
-    "Wed Dec 01 2021 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2021-12": [
       {
-        "week": "2026-12-05T08:00:00.000Z",
+        "week": "Dec 5",
         "adults": 383,
         "kids": 0
       },
       {
-        "week": "2026-12-12T08:00:00.000Z",
+        "week": "Dec 12",
         "adults": 462,
         "kids": 0
       },
       {
-        "week": "2026-12-19T08:00:00.000Z",
+        "week": "Dec 19",
         "adults": 460,
         "kids": 0
       },
       {
-        "week": "2026-12-26T08:00:00.000Z",
+        "week": "Dec 26",
         "adults": 906,
         "kids": 0
       }
     ],
-    "Sat Jan 01 2022 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2022-01": [
       {
-        "week": "2026-01-02T08:00:00.000Z",
+        "week": "Jan 2",
         "adults": 453,
         "kids": 0
       },
       {
-        "week": "2026-01-09T08:00:00.000Z",
+        "week": "Jan 9",
         "adults": 450,
         "kids": 0
       },
       {
-        "week": "2026-01-16T08:00:00.000Z",
+        "week": "Jan 16",
         "adults": 394,
         "kids": 0
       },
       {
-        "week": "2026-01-23T08:00:00.000Z",
+        "week": "Jan 23",
         "adults": 483,
         "kids": 0
       },
       {
-        "week": "2026-01-30T08:00:00.000Z",
+        "week": "Jan 30",
         "adults": 507,
         "kids": 0
       }
     ],
-    "Tue Feb 01 2022 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2022-02": [
       {
-        "week": "2026-02-06T08:00:00.000Z",
+        "week": "Feb 6",
         "adults": 484,
         "kids": 0
       },
       {
-        "week": "2026-02-13T08:00:00.000Z",
+        "week": "Feb 13",
         "adults": 403,
         "kids": 0
       },
       {
-        "week": "2026-02-20T08:00:00.000Z",
+        "week": "Feb 20",
         "adults": 504,
         "kids": 0
       },
       {
-        "week": "2026-02-27T08:00:00.000Z",
+        "week": "Feb 27",
         "adults": 549,
         "kids": 0
       }
     ],
-    "Tue Mar 01 2022 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2022-03": [
       {
-        "week": "2026-03-06T08:00:00.000Z",
+        "week": "Mar 6",
         "adults": 524,
         "kids": 0
       },
       {
-        "week": "2026-03-13T07:00:00.000Z",
+        "week": "Mar 13",
         "adults": 450,
         "kids": 0
       },
       {
-        "week": "2026-03-20T07:00:00.000Z",
+        "week": "Mar 20",
         "adults": 442,
         "kids": 0
       },
       {
-        "week": "2026-03-27T07:00:00.000Z",
+        "week": "Mar 27",
         "adults": 546,
         "kids": 0
       }
     ],
-    "Fri Apr 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-04": [
       {
-        "week": "2026-04-03T07:00:00.000Z",
+        "week": "Apr 3",
         "adults": 559,
         "kids": 0
       },
       {
-        "week": "2026-04-10T07:00:00.000Z",
+        "week": "Apr 10",
         "adults": 460,
         "kids": 0
       },
       {
-        "week": "2026-04-17T07:00:00.000Z",
+        "week": "Apr 17",
         "adults": 985,
         "kids": 0
       },
       {
-        "week": "2026-04-24T07:00:00.000Z",
+        "week": "Apr 24",
         "adults": 536,
         "kids": 0
       }
     ],
-    "Sun May 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-05": [
       {
-        "week": "2026-05-01T07:00:00.000Z",
+        "week": "May 1",
         "adults": 579,
         "kids": 0
       },
       {
-        "week": "2026-05-08T07:00:00.000Z",
+        "week": "May 8",
         "adults": 493,
         "kids": 0
       },
       {
-        "week": "2026-05-15T07:00:00.000Z",
+        "week": "May 15",
         "adults": 536,
         "kids": 0
       },
       {
-        "week": "2026-05-22T07:00:00.000Z",
+        "week": "May 22",
         "adults": 558,
         "kids": 0
       },
       {
-        "week": "2026-05-29T07:00:00.000Z",
+        "week": "May 29",
         "adults": 466,
         "kids": 0
       }
     ],
-    "Wed Jun 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-06": [
       {
-        "week": "2026-06-05T07:00:00.000Z",
+        "week": "Jun 5",
         "adults": 459,
         "kids": 0
       },
       {
-        "week": "2026-06-12T07:00:00.000Z",
+        "week": "Jun 12",
         "adults": 455,
         "kids": 0
       },
       {
-        "week": "2026-06-19T07:00:00.000Z",
+        "week": "Jun 19",
         "adults": 481,
         "kids": 0
       },
       {
-        "week": "2026-06-26T07:00:00.000Z",
+        "week": "Jun 26",
         "adults": 403,
         "kids": 0
       }
     ],
-    "Fri Jul 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-07": [
       {
-        "week": "2026-07-03T07:00:00.000Z",
+        "week": "Jul 3",
         "adults": 269,
         "kids": 0
       },
       {
-        "week": "2026-07-10T07:00:00.000Z",
+        "week": "Jul 10",
         "adults": 508,
         "kids": 0
       },
       {
-        "week": "2026-07-17T07:00:00.000Z",
+        "week": "Jul 17",
         "adults": 514,
         "kids": 0
       },
       {
-        "week": "2026-07-24T07:00:00.000Z",
+        "week": "Jul 24",
         "adults": 416,
         "kids": 0
       },
       {
-        "week": "2026-07-31T07:00:00.000Z",
+        "week": "Jul 31",
         "adults": 478,
         "kids": 0
       }
     ],
-    "Mon Aug 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-08": [
       {
-        "week": "2026-08-07T07:00:00.000Z",
+        "week": "Aug 7",
         "adults": 464,
         "kids": 0
       },
       {
-        "week": "2026-08-14T07:00:00.000Z",
+        "week": "Aug 14",
         "adults": 526,
         "kids": 0
       },
       {
-        "week": "2026-08-21T07:00:00.000Z",
+        "week": "Aug 21",
         "adults": 486,
         "kids": 0
       },
       {
-        "week": "2026-08-28T07:00:00.000Z",
+        "week": "Aug 28",
         "adults": 507,
         "kids": 0
       }
     ],
-    "Thu Sep 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-09": [
       {
-        "week": "2026-09-04T07:00:00.000Z",
+        "week": "Sep 4",
         "adults": 292,
         "kids": 0
       },
       {
-        "week": "2026-09-11T07:00:00.000Z",
+        "week": "Sep 11",
         "adults": 570,
         "kids": 0
       },
       {
-        "week": "2026-09-18T07:00:00.000Z",
+        "week": "Sep 18",
         "adults": 567,
         "kids": 0
       },
       {
-        "week": "2026-09-25T07:00:00.000Z",
+        "week": "Sep 25",
         "adults": 514,
         "kids": 0
       }
     ],
-    "Sat Oct 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-10": [
       {
-        "week": "2026-10-02T07:00:00.000Z",
+        "week": "Oct 2",
         "adults": 533,
         "kids": 0
       },
       {
-        "week": "2026-10-09T07:00:00.000Z",
+        "week": "Oct 9",
         "adults": 499,
         "kids": 0
       },
       {
-        "week": "2026-10-16T07:00:00.000Z",
+        "week": "Oct 16",
         "adults": 558,
         "kids": 0
       },
       {
-        "week": "2026-10-23T07:00:00.000Z",
+        "week": "Oct 23",
         "adults": 618,
         "kids": 0
       },
       {
-        "week": "2026-10-30T07:00:00.000Z",
+        "week": "Oct 30",
         "adults": 578,
         "kids": 0
       }
     ],
-    "Tue Nov 01 2022 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2022-11": [
       {
-        "week": "2026-11-06T08:00:00.000Z",
+        "week": "Nov 6",
         "adults": 513,
         "kids": 0
       },
       {
-        "week": "2026-11-13T08:00:00.000Z",
+        "week": "Nov 13",
         "adults": 539,
         "kids": 0
       },
       {
-        "week": "2026-11-20T08:00:00.000Z",
+        "week": "Nov 20",
         "adults": 620,
         "kids": 0
       },
       {
-        "week": "2026-11-27T08:00:00.000Z",
+        "week": "Nov 27",
         "adults": 613,
         "kids": 0
       }
     ],
-    "Thu Dec 01 2022 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2022-12": [
       {
-        "week": "2026-12-04T08:00:00.000Z",
+        "week": "Dec 4",
         "adults": 598,
         "kids": 0
       },
       {
-        "week": "2026-12-11T08:00:00.000Z",
+        "week": "Dec 11",
         "adults": 410,
         "kids": 0
       },
       {
-        "week": "2026-12-18T08:00:00.000Z",
+        "week": "Dec 18",
         "adults": 549,
         "kids": 0
       },
       {
-        "week": "2026-12-25T08:00:00.000Z",
+        "week": "Dec 25",
         "adults": 1092,
         "kids": 0
       }
     ],
-    "Sun Jan 01 2023 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2023-01": [
       {
-        "week": "2026-01-08T08:00:00.000Z",
+        "week": "Jan 8",
         "adults": 633,
         "kids": 0
       },
       {
-        "week": "2026-01-15T08:00:00.000Z",
+        "week": "Jan 15",
         "adults": 592,
         "kids": 0
       },
       {
-        "week": "2026-01-22T08:00:00.000Z",
+        "week": "Jan 22",
         "adults": 649,
         "kids": 0
       },
       {
-        "week": "2026-01-29T08:00:00.000Z",
+        "week": "Jan 29",
         "adults": 531,
         "kids": 0
       }
     ],
-    "Wed Feb 01 2023 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2023-02": [
       {
-        "week": "2026-02-05T08:00:00.000Z",
+        "week": "Feb 5",
         "adults": 659,
         "kids": 0
       },
       {
-        "week": "2026-02-12T08:00:00.000Z",
+        "week": "Feb 12",
         "adults": 654,
         "kids": 0
       },
       {
-        "week": "2026-02-19T08:00:00.000Z",
+        "week": "Feb 19",
         "adults": 595,
         "kids": 0
       },
       {
-        "week": "2026-02-26T08:00:00.000Z",
+        "week": "Feb 26",
         "adults": 656,
         "kids": 0
       }
     ],
-    "Wed Mar 01 2023 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2023-03": [
       {
-        "week": "2026-03-05T08:00:00.000Z",
+        "week": "Mar 5",
         "adults": 538,
         "kids": 0
       },
       {
-        "week": "2026-03-12T07:00:00.000Z",
+        "week": "Mar 12",
         "adults": 658,
         "kids": 0
       },
       {
-        "week": "2026-03-19T07:00:00.000Z",
+        "week": "Mar 19",
         "adults": 581,
         "kids": 0
       },
       {
-        "week": "2026-03-26T07:00:00.000Z",
+        "week": "Mar 26",
         "adults": 418,
         "kids": 0
       }
     ],
-    "Sat Apr 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-04": [
       {
-        "week": "2026-04-02T07:00:00.000Z",
+        "week": "Apr 2",
         "adults": 685,
         "kids": 0
       },
       {
-        "week": "2026-04-09T07:00:00.000Z",
+        "week": "Apr 9",
         "adults": 1212,
         "kids": 0
       },
       {
-        "week": "2026-04-16T07:00:00.000Z",
+        "week": "Apr 16",
         "adults": 609,
         "kids": 0
       },
       {
-        "week": "2026-04-23T07:00:00.000Z",
+        "week": "Apr 23",
         "adults": 568,
         "kids": 0
       },
       {
-        "week": "2026-04-30T07:00:00.000Z",
+        "week": "Apr 30",
         "adults": 660,
         "kids": 0
       }
     ],
-    "Mon May 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-05": [
       {
-        "week": "2026-05-07T07:00:00.000Z",
+        "week": "May 7",
         "adults": 679,
         "kids": 0
       },
       {
-        "week": "2026-05-14T07:00:00.000Z",
+        "week": "May 14",
         "adults": 667,
         "kids": 0
       },
       {
-        "week": "2026-05-21T07:00:00.000Z",
+        "week": "May 21",
         "adults": 628,
         "kids": 0
       },
       {
-        "week": "2026-05-28T07:00:00.000Z",
+        "week": "May 28",
         "adults": 451,
         "kids": 0
       }
     ],
-    "Thu Jun 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-06": [
       {
-        "week": "2026-06-04T07:00:00.000Z",
+        "week": "Jun 4",
         "adults": 678,
         "kids": 0
       },
       {
-        "week": "2026-06-11T07:00:00.000Z",
+        "week": "Jun 11",
         "adults": 625,
         "kids": 0
       },
       {
-        "week": "2026-06-18T07:00:00.000Z",
+        "week": "Jun 18",
         "adults": 515,
         "kids": 0
       },
       {
-        "week": "2026-06-25T07:00:00.000Z",
+        "week": "Jun 25",
         "adults": 617,
         "kids": 0
       }
     ],
-    "Sat Jul 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-07": [
       {
-        "week": "2026-07-02T07:00:00.000Z",
+        "week": "Jul 2",
         "adults": 202,
         "kids": 0
       },
       {
-        "week": "2026-07-09T07:00:00.000Z",
+        "week": "Jul 9",
         "adults": 545,
         "kids": 0
       },
       {
-        "week": "2026-07-16T07:00:00.000Z",
+        "week": "Jul 16",
         "adults": 549,
         "kids": 0
       },
       {
-        "week": "2026-07-23T07:00:00.000Z",
+        "week": "Jul 23",
         "adults": 559,
         "kids": 0
       },
       {
-        "week": "2026-07-30T07:00:00.000Z",
+        "week": "Jul 30",
         "adults": 534,
         "kids": 0
       }
     ],
-    "Tue Aug 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-08": [
       {
-        "week": "2026-08-06T07:00:00.000Z",
+        "week": "Aug 6",
         "adults": 531,
         "kids": 0
       },
       {
-        "week": "2026-08-13T07:00:00.000Z",
+        "week": "Aug 13",
         "adults": 520,
         "kids": 0
       },
       {
-        "week": "2026-08-20T07:00:00.000Z",
+        "week": "Aug 20",
         "adults": 540,
         "kids": 0
       },
       {
-        "week": "2026-08-27T07:00:00.000Z",
+        "week": "Aug 27",
         "adults": 573,
         "kids": 0
       }
     ],
-    "Fri Sep 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-09": [
       {
-        "week": "2026-09-03T07:00:00.000Z",
+        "week": "Sep 3",
         "adults": 624,
         "kids": 0
       },
       {
-        "week": "2026-09-10T07:00:00.000Z",
+        "week": "Sep 10",
         "adults": 568,
         "kids": 0
       },
       {
-        "week": "2026-09-17T07:00:00.000Z",
+        "week": "Sep 17",
         "adults": 596,
         "kids": 0
       },
       {
-        "week": "2026-09-24T07:00:00.000Z",
+        "week": "Sep 24",
         "adults": 649,
         "kids": 0
       }
     ],
-    "Sun Oct 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-10": [
       {
-        "week": "2026-10-01T07:00:00.000Z",
+        "week": "Oct 1",
         "adults": 505,
         "kids": 0
       },
       {
-        "week": "2026-10-08T07:00:00.000Z",
+        "week": "Oct 8",
         "adults": 500,
         "kids": 0
       },
       {
-        "week": "2026-10-15T07:00:00.000Z",
+        "week": "Oct 15",
         "adults": 639,
         "kids": 0
       },
       {
-        "week": "2026-10-22T07:00:00.000Z",
+        "week": "Oct 22",
         "adults": 530,
         "kids": 0
       },
       {
-        "week": "2026-10-29T07:00:00.000Z",
+        "week": "Oct 29",
         "adults": 599,
         "kids": 0
       }
     ],
-    "Wed Nov 01 2023 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2023-11": [
       {
-        "week": "2026-11-05T08:00:00.000Z",
+        "week": "Nov 5",
         "adults": 490,
         "kids": 0
       },
       {
-        "week": "2026-11-12T08:00:00.000Z",
+        "week": "Nov 12",
         "adults": 612,
         "kids": 0
       },
       {
-        "week": "2026-11-19T08:00:00.000Z",
+        "week": "Nov 19",
         "adults": 631,
         "kids": 0
       },
       {
-        "week": "2026-11-26T08:00:00.000Z",
+        "week": "Nov 26",
         "adults": 563,
         "kids": 0
       }
     ],
-    "Fri Dec 01 2023 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2023-12": [
       {
-        "week": "2026-12-03T08:00:00.000Z",
+        "week": "Dec 3",
         "adults": 631,
         "kids": 0
       },
       {
-        "week": "2026-12-10T08:00:00.000Z",
+        "week": "Dec 10",
         "adults": 708,
         "kids": 0
       },
       {
-        "week": "2026-12-17T08:00:00.000Z",
+        "week": "Dec 17",
         "adults": 650,
         "kids": 0
       },
       {
-        "week": "2026-12-24T08:00:00.000Z",
+        "week": "Dec 24",
         "adults": 1064,
         "kids": 0
       }
     ],
-    "Mon Jan 01 2024 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2024-01": [
       {
-        "week": "2026-01-07T08:00:00.000Z",
+        "week": "Jan 7",
         "adults": 563,
         "kids": 0
       },
       {
-        "week": "2026-01-14T08:00:00.000Z",
+        "week": "Jan 14",
         "adults": 651,
         "kids": 0
       },
       {
-        "week": "2026-01-21T08:00:00.000Z",
+        "week": "Jan 21",
         "adults": 768,
         "kids": 0
       },
       {
-        "week": "2026-01-28T08:00:00.000Z",
+        "week": "Jan 28",
         "adults": 776,
         "kids": 0
       }
     ],
-    "Thu Feb 01 2024 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2024-02": [
       {
-        "week": "2026-02-04T08:00:00.000Z",
+        "week": "Feb 4",
         "adults": 468,
         "kids": 0
       },
       {
-        "week": "2026-02-11T08:00:00.000Z",
+        "week": "Feb 11",
         "adults": 622,
         "kids": 0
       },
       {
-        "week": "2026-02-18T08:00:00.000Z",
+        "week": "Feb 18",
         "adults": 693,
         "kids": 0
       },
       {
-        "week": "2026-02-25T08:00:00.000Z",
+        "week": "Feb 25",
         "adults": 692,
         "kids": 0
       }
     ],
-    "Fri Mar 01 2024 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2024-03": [
       {
-        "week": "2026-03-03T08:00:00.000Z",
+        "week": "Mar 3",
         "adults": 365,
         "kids": 0
       },
       {
-        "week": "2026-03-10T07:00:00.000Z",
+        "week": "Mar 10",
         "adults": 566,
         "kids": 0
       },
       {
-        "week": "2026-03-17T07:00:00.000Z",
+        "week": "Mar 17",
         "adults": 686,
         "kids": 0
       },
       {
-        "week": "2026-03-24T07:00:00.000Z",
+        "week": "Mar 24",
         "adults": 696,
         "kids": 0
       },
       {
-        "week": "2026-03-31T07:00:00.000Z",
+        "week": "Mar 31",
         "adults": 1128,
         "kids": 0
       }
     ],
-    "Mon Apr 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-04": [
       {
-        "week": "2026-04-07T07:00:00.000Z",
+        "week": "Apr 7",
         "adults": 660,
         "kids": 0
       },
       {
-        "week": "2026-04-14T07:00:00.000Z",
+        "week": "Apr 14",
         "adults": 661,
         "kids": 0
       },
       {
-        "week": "2026-04-21T07:00:00.000Z",
+        "week": "Apr 21",
         "adults": 661,
         "kids": 0
       },
       {
-        "week": "2026-04-28T07:00:00.000Z",
+        "week": "Apr 28",
         "adults": 648,
         "kids": 0
       }
     ],
-    "Wed May 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-05": [
       {
-        "week": "2026-05-05T07:00:00.000Z",
+        "week": "May 5",
         "adults": 687,
         "kids": 0
       },
       {
-        "week": "2026-05-12T07:00:00.000Z",
+        "week": "May 12",
         "adults": 683,
         "kids": 0
       },
       {
-        "week": "2026-05-19T07:00:00.000Z",
+        "week": "May 19",
         "adults": 535,
         "kids": 0
       },
       {
-        "week": "2026-05-26T07:00:00.000Z",
+        "week": "May 26",
         "adults": 529,
         "kids": 0
       }
     ],
-    "Sat Jun 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-06": [
       {
-        "week": "2026-06-02T07:00:00.000Z",
+        "week": "Jun 2",
         "adults": 418,
         "kids": 0
       },
       {
-        "week": "2026-06-09T07:00:00.000Z",
+        "week": "Jun 9",
         "adults": 542,
         "kids": 0
       },
       {
-        "week": "2026-06-16T07:00:00.000Z",
+        "week": "Jun 16",
         "adults": 519,
         "kids": 0
       },
       {
-        "week": "2026-06-23T07:00:00.000Z",
+        "week": "Jun 23",
         "adults": 435,
         "kids": 0
       },
       {
-        "week": "2026-06-30T07:00:00.000Z",
+        "week": "Jun 30",
         "adults": 504,
         "kids": 0
       }
     ],
-    "Mon Jul 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-07": [
       {
-        "week": "2026-07-07T07:00:00.000Z",
+        "week": "Jul 7",
         "adults": 304,
         "kids": 0
       },
       {
-        "week": "2026-07-14T07:00:00.000Z",
+        "week": "Jul 14",
         "adults": 597,
         "kids": 0
       },
       {
-        "week": "2026-07-21T07:00:00.000Z",
+        "week": "Jul 21",
         "adults": 521,
         "kids": 4
       },
       {
-        "week": "2026-07-28T07:00:00.000Z",
+        "week": "Jul 28",
         "adults": 498,
         "kids": 56
       }
     ],
-    "Thu Aug 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-08": [
       {
-        "week": "2026-08-04T07:00:00.000Z",
+        "week": "Aug 4",
         "adults": 470,
         "kids": 71
       },
       {
-        "week": "2026-08-11T07:00:00.000Z",
+        "week": "Aug 11",
         "adults": 445,
         "kids": 73
       },
       {
-        "week": "2026-08-18T07:00:00.000Z",
+        "week": "Aug 18",
         "adults": 467,
         "kids": 93
       },
       {
-        "week": "2026-08-25T07:00:00.000Z",
+        "week": "Aug 25",
         "adults": 464,
         "kids": 69
       }
     ],
-    "Sun Sep 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-09": [
       {
-        "week": "2026-09-01T07:00:00.000Z",
+        "week": "Sep 1",
         "adults": 451,
         "kids": 57
       },
       {
-        "week": "2026-09-08T07:00:00.000Z",
+        "week": "Sep 8",
         "adults": 455,
         "kids": 58
       },
       {
-        "week": "2026-09-15T07:00:00.000Z",
+        "week": "Sep 15",
         "adults": 540,
         "kids": 91
       },
       {
-        "week": "2026-09-22T07:00:00.000Z",
+        "week": "Sep 22",
         "adults": 592,
         "kids": 91
       },
       {
-        "week": "2026-09-29T07:00:00.000Z",
+        "week": "Sep 29",
         "adults": 566,
         "kids": 90
       }
     ],
-    "Tue Oct 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-10": [
       {
-        "week": "2026-10-06T07:00:00.000Z",
+        "week": "Oct 6",
         "adults": 539,
         "kids": 73
       },
       {
-        "week": "2026-10-13T07:00:00.000Z",
+        "week": "Oct 13",
         "adults": 567,
         "kids": 84
       },
       {
-        "week": "2026-10-20T07:00:00.000Z",
+        "week": "Oct 20",
         "adults": 550,
         "kids": 99
       },
       {
-        "week": "2026-10-27T07:00:00.000Z",
+        "week": "Oct 27",
         "adults": 625,
         "kids": 89
       }
     ],
-    "Fri Nov 01 2024 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2024-11": [
       {
-        "week": "2026-11-03T08:00:00.000Z",
+        "week": "Nov 3",
         "adults": 670,
         "kids": 118
       },
       {
-        "week": "2026-11-10T08:00:00.000Z",
+        "week": "Nov 10",
         "adults": 621,
         "kids": 93
       },
       {
-        "week": "2026-11-17T08:00:00.000Z",
+        "week": "Nov 17",
         "adults": 579,
         "kids": 93
       },
       {
-        "week": "2026-11-24T08:00:00.000Z",
+        "week": "Nov 24",
         "adults": 647,
         "kids": 87
       }
     ],
-    "Sun Dec 01 2024 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2024-12": [
       {
-        "week": "2026-12-01T08:00:00.000Z",
+        "week": "Dec 1",
         "adults": 659,
         "kids": 123
       },
       {
-        "week": "2026-12-08T08:00:00.000Z",
+        "week": "Dec 8",
         "adults": 593,
         "kids": 88
       },
       {
-        "week": "2026-12-15T08:00:00.000Z",
+        "week": "Dec 15",
         "adults": 621,
         "kids": 88
       },
       {
-        "week": "2026-12-21T08:00:00.000Z",
+        "week": "Dec 21",
         "adults": 392,
         "kids": 0
       },
       {
-        "week": "2026-12-22T08:00:00.000Z",
+        "week": "Dec 22",
         "adults": 761,
         "kids": 89
       },
       {
-        "week": "2026-12-29T08:00:00.000Z",
+        "week": "Dec 29",
         "adults": 592,
         "kids": 69
       }
     ],
-    "Wed Jan 01 2025 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2025-01": [
       {
-        "week": "2026-01-05T08:00:00.000Z",
+        "week": "Jan 5",
         "adults": 726,
         "kids": 102
       },
       {
-        "week": "2026-01-12T08:00:00.000Z",
+        "week": "Jan 12",
         "adults": 670,
         "kids": 102
       },
       {
-        "week": "2026-01-18T08:00:00.000Z",
+        "week": "Jan 18",
         "adults": 0,
         "kids": 1
       },
       {
-        "week": "2026-01-19T08:00:00.000Z",
+        "week": "Jan 19",
         "adults": 672,
         "kids": 97
       },
       {
-        "week": "2026-01-26T08:00:00.000Z",
+        "week": "Jan 26",
         "adults": 501,
         "kids": 71
       }
     ],
-    "Sat Feb 01 2025 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2025-02": [
       {
-        "week": "2026-02-02T08:00:00.000Z",
+        "week": "Feb 2",
         "adults": 611,
         "kids": 98
       },
       {
-        "week": "2026-02-09T08:00:00.000Z",
+        "week": "Feb 9",
         "adults": 648,
         "kids": 101
       },
       {
-        "week": "2026-02-16T08:00:00.000Z",
+        "week": "Feb 16",
         "adults": 675,
         "kids": 88
       },
       {
-        "week": "2026-02-23T08:00:00.000Z",
+        "week": "Feb 23",
         "adults": 668,
         "kids": 79
       }
     ],
-    "Sat Mar 01 2025 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2025-03": [
       {
-        "week": "2026-03-02T08:00:00.000Z",
+        "week": "Mar 2",
         "adults": 714,
         "kids": 87
       },
       {
-        "week": "2026-03-09T07:00:00.000Z",
+        "week": "Mar 9",
         "adults": 567,
         "kids": 82
       },
       {
-        "week": "2026-03-16T07:00:00.000Z",
+        "week": "Mar 16",
         "adults": 681,
         "kids": 115
       },
       {
-        "week": "2026-03-23T07:00:00.000Z",
+        "week": "Mar 23",
         "adults": 575,
         "kids": 71
       },
       {
-        "week": "2026-03-30T07:00:00.000Z",
+        "week": "Mar 30",
         "adults": 586,
         "kids": 96
       }
     ],
-    "Tue Apr 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-04": [
       {
-        "week": "2026-04-06T07:00:00.000Z",
+        "week": "Apr 6",
         "adults": 607,
         "kids": 99
       },
       {
-        "week": "2026-04-13T07:00:00.000Z",
+        "week": "Apr 13",
         "adults": 609,
         "kids": 103
       },
       {
-        "week": "2026-04-20T07:00:00.000Z",
+        "week": "Apr 20",
         "adults": 1148,
         "kids": 146
       },
       {
-        "week": "2026-04-27T07:00:00.000Z",
+        "week": "Apr 27",
         "adults": 659,
         "kids": 118
       }
     ],
-    "Thu May 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-05": [
       {
-        "week": "2026-05-04T07:00:00.000Z",
+        "week": "May 4",
         "adults": 676,
         "kids": 115
       },
       {
-        "week": "2026-05-11T07:00:00.000Z",
+        "week": "May 11",
         "adults": 715,
         "kids": 122
       },
       {
-        "week": "2026-05-18T07:00:00.000Z",
+        "week": "May 18",
         "adults": 670,
         "kids": 102
       },
       {
-        "week": "2026-05-25T07:00:00.000Z",
+        "week": "May 25",
         "adults": 575,
         "kids": 100
       }
     ],
-    "Sun Jun 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-06": [
       {
-        "week": "2026-06-01T07:00:00.000Z",
+        "week": "Jun 1",
         "adults": 716,
         "kids": 56
       },
       {
-        "week": "2026-06-08T07:00:00.000Z",
+        "week": "Jun 8",
         "adults": 640,
         "kids": 103
       },
       {
-        "week": "2026-06-15T07:00:00.000Z",
+        "week": "Jun 15",
         "adults": 635,
         "kids": 98
       },
       {
-        "week": "2026-06-22T07:00:00.000Z",
+        "week": "Jun 22",
         "adults": 608,
         "kids": 83
       },
       {
-        "week": "2026-06-29T07:00:00.000Z",
+        "week": "Jun 29",
         "adults": 665,
         "kids": 75
       }
     ],
-    "Tue Jul 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-07": [
       {
-        "week": "2026-07-06T07:00:00.000Z",
+        "week": "Jul 6",
         "adults": 493,
         "kids": 67
       },
       {
-        "week": "2026-07-13T07:00:00.000Z",
+        "week": "Jul 13",
         "adults": 726,
         "kids": 98
       },
       {
-        "week": "2026-07-20T07:00:00.000Z",
+        "week": "Jul 20",
         "adults": 793,
         "kids": 20
       },
       {
-        "week": "2026-07-27T07:00:00.000Z",
+        "week": "Jul 27",
         "adults": 602,
         "kids": 92
       }
     ],
-    "Fri Aug 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-08": [
       {
-        "week": "2026-08-03T07:00:00.000Z",
+        "week": "Aug 3",
         "adults": 670,
         "kids": 99
       },
       {
-        "week": "2026-08-10T07:00:00.000Z",
+        "week": "Aug 10",
         "adults": 680,
         "kids": 105
       },
       {
-        "week": "2026-08-17T07:00:00.000Z",
+        "week": "Aug 17",
         "adults": 736,
         "kids": 113
       },
       {
-        "week": "2026-08-24T07:00:00.000Z",
+        "week": "Aug 24",
         "adults": 670,
         "kids": 92
       },
       {
-        "week": "2026-08-31T07:00:00.000Z",
+        "week": "Aug 31",
         "adults": 568,
         "kids": 86
       }
     ],
-    "Mon Sep 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-09": [
       {
-        "week": "2026-09-07T07:00:00.000Z",
+        "week": "Sep 7",
         "adults": 654,
         "kids": 107
       },
       {
-        "week": "2026-09-14T07:00:00.000Z",
+        "week": "Sep 14",
         "adults": 842,
         "kids": 134
       },
       {
-        "week": "2026-09-21T07:00:00.000Z",
+        "week": "Sep 21",
         "adults": 851,
         "kids": 164
       },
       {
-        "week": "2026-09-28T07:00:00.000Z",
+        "week": "Sep 28",
         "adults": 767,
         "kids": 149
       }
     ],
-    "Wed Oct 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-10": [
       {
-        "week": "2026-10-05T07:00:00.000Z",
+        "week": "Oct 5",
         "adults": 802,
         "kids": 108
       },
       {
-        "week": "2026-10-12T07:00:00.000Z",
+        "week": "Oct 12",
         "adults": 695,
         "kids": 129
       },
       {
-        "week": "2026-10-19T07:00:00.000Z",
+        "week": "Oct 19",
         "adults": 726,
         "kids": 106
       },
       {
-        "week": "2026-10-26T07:00:00.000Z",
+        "week": "Oct 26",
         "adults": 737,
         "kids": 146
       }
     ],
-    "Sat Nov 01 2025 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2025-11": [
       {
-        "week": "2026-11-02T08:00:00.000Z",
+        "week": "Nov 2",
         "adults": 825,
         "kids": 137
       },
       {
-        "week": "2026-11-09T08:00:00.000Z",
+        "week": "Nov 9",
         "adults": 816,
         "kids": 125
       },
       {
-        "week": "2026-11-16T08:00:00.000Z",
+        "week": "Nov 16",
         "adults": 914,
         "kids": 131
       },
       {
-        "week": "2026-11-23T08:00:00.000Z",
+        "week": "Nov 23",
         "adults": 823,
         "kids": 143
       },
       {
-        "week": "2026-11-30T08:00:00.000Z",
+        "week": "Nov 30",
         "adults": 826,
         "kids": 123
       }
     ],
-    "Mon Dec 01 2025 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2025-12": [
       {
-        "week": "2026-12-07T08:00:00.000Z",
+        "week": "Dec 7",
         "adults": 852,
         "kids": 159
       },
       {
-        "week": "2026-12-14T08:00:00.000Z",
+        "week": "Dec 14",
         "adults": 833,
         "kids": 137
       },
       {
-        "week": "2026-12-20T08:00:00.000Z",
+        "week": "Dec 20",
         "adults": 404,
         "kids": 14
       },
       {
-        "week": "2026-12-21T08:00:00.000Z",
+        "week": "Dec 21",
         "adults": 909,
         "kids": 96
       },
       {
-        "week": "2026-12-28T08:00:00.000Z",
+        "week": "Dec 28",
         "adults": 715,
         "kids": 98
       }
     ],
-    "Thu Jan 01 2026 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2026-01": [
       {
-        "week": "2026-01-04T08:00:00.000Z",
+        "week": "Jan 4",
         "adults": 863,
         "kids": 79
       },
       {
-        "week": "2026-01-11T08:00:00.000Z",
+        "week": "Jan 11",
         "adults": 852,
         "kids": 129
       },
       {
-        "week": "2026-01-18T08:00:00.000Z",
+        "week": "Jan 18",
         "adults": 792,
         "kids": 137
       },
       {
-        "week": "2026-01-25T08:00:00.000Z",
+        "week": "Jan 25",
         "adults": 848,
         "kids": 126
       }
     ],
-    "Sun Feb 01 2026 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2026-02": [
       {
-        "week": "2026-02-01T08:00:00.000Z",
+        "week": "Feb 1",
         "adults": 815,
         "kids": 144
       },
       {
-        "week": "2026-02-08T08:00:00.000Z",
+        "week": "Feb 8",
         "adults": 769,
         "kids": 109
       },
       {
-        "week": "2026-02-15T08:00:00.000Z",
+        "week": "Feb 15",
         "adults": 829,
         "kids": 125
       },
       {
-        "week": "2026-02-22T08:00:00.000Z",
+        "week": "Feb 22",
         "adults": 787,
         "kids": 124
       }
     ],
-    "Sun Mar 01 2026 00:00:00 GMT-0800 (Pacific Standard Time)": [
+    "2026-03": [
       {
-        "week": "2026-03-01T08:00:00.000Z",
+        "week": "Mar 1",
         "adults": 831,
         "kids": 141
       },
       {
-        "week": "2026-03-01T08:00:00.000Z",
+        "week": "Mar 1",
         "adults": 831,
         "kids": 141
       },
       {
-        "week": "2026-03-08T08:00:00.000Z",
+        "week": "Mar 8",
         "adults": 732,
         "kids": 78
       },
       {
-        "week": "2026-03-08T08:00:00.000Z",
+        "week": "Mar 8",
         "adults": 732,
         "kids": 78
       },
       {
-        "week": "2026-03-15T07:00:00.000Z",
+        "week": "Mar 15",
         "adults": 772,
         "kids": 146
       },
       {
-        "week": "2026-03-15T07:00:00.000Z",
+        "week": "Mar 15",
         "adults": 772,
         "kids": 146
       },
       {
-        "week": "2026-03-22T07:00:00.000Z",
+        "week": "Mar 22",
         "adults": 700,
         "kids": 132
       },
       {
-        "week": "2026-03-22T07:00:00.000Z",
+        "week": "Mar 22",
         "adults": 700,
         "kids": 132
       },
       {
-        "week": "2026-03-29T07:00:00.000Z",
+        "week": "Mar 29",
         "adults": 805,
         "kids": 120
       },
       {
-        "week": "2026-03-29T07:00:00.000Z",
+        "week": "Mar 29",
         "adults": 805,
         "kids": 120
       }
     ],
-    "Wed Apr 01 2026 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2026-04": [
       {
-        "week": "2026-04-05T07:00:00.000Z",
+        "week": "Apr 5",
         "adults": 1591,
         "kids": 190
       },
       {
-        "week": "2026-04-05T07:00:00.000Z",
+        "week": "Apr 5",
         "adults": 1591,
         "kids": 190
       },
       {
-        "week": "2026-04-12T07:00:00.000Z",
+        "week": "Apr 12",
         "adults": 746,
         "kids": 146
       },
       {
-        "week": "2026-04-12T07:00:00.000Z",
+        "week": "Apr 12",
         "adults": 746,
         "kids": 146
       },
       {
-        "week": "2026-04-19T07:00:00.000Z",
+        "week": "Apr 19",
         "adults": 877,
         "kids": 121
       },
       {
-        "week": "2026-04-19T07:00:00.000Z",
+        "week": "Apr 19",
         "adults": 877,
         "kids": 121
       },
       {
-        "week": "2026-04-26T07:00:00.000Z",
+        "week": "Apr 26",
         "adults": 758,
         "kids": 111
       },
       {
-        "week": "2026-04-26T07:00:00.000Z",
+        "week": "Apr 26",
         "adults": 758,
         "kids": 111
       }
     ],
-    "Fri May 01 2026 00:00:00 GMT-0700 (Pacific Daylight Time)": [
+    "2026-05": [
       {
-        "week": "2026-05-03T07:00:00.000Z",
+        "week": "May 3",
         "adults": 799,
         "kids": 115
       },
       {
-        "week": "2026-05-03T07:00:00.000Z",
+        "week": "May 3",
         "adults": 799,
         "kids": 115
       },
       {
-        "week": "2026-05-10T07:00:00.000Z",
+        "week": "May 10",
         "adults": 796,
         "kids": 135
       },
       {
-        "week": "2026-05-10T07:00:00.000Z",
+        "week": "May 10",
         "adults": 796,
         "kids": 135
       },
       {
-        "week": "2026-05-17T07:00:00.000Z",
+        "week": "May 17",
         "adults": 730,
         "kids": 107
       },
       {
-        "week": "2026-05-17T07:00:00.000Z",
+        "week": "May 17",
         "adults": 730,
         "kids": 107
       }
