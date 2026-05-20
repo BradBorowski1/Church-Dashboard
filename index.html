@@ -987,7 +987,8 @@ function initAttendanceModalEvents() {
 }
 
 function renderAttendance() {
-  const months = normalizeMonthArray(DASHBOARD_DATA.attendance.months);
+  const rawMonths = DASHBOARD_DATA.attendance.months || [];
+  const months = normalizeMonthArray(rawMonths);
   const adults = DASHBOARD_DATA.attendance.adults || [];
   const kids = DASHBOARD_DATA.attendance.kids || [];
   prepScrollableChart('attendanceChart', months.length);
@@ -1002,8 +1003,8 @@ function renderAttendance() {
   document.getElementById('avg3').textContent = fmtNum(avg(totals, 3));
   document.getElementById('avg6').textContent = fmtNum(avg(totals, 6));
 
-  const ctx = document.getElementById('attendanceChart');
-  new Chart(ctx, {
+  const canvas = document.getElementById('attendanceChart');
+  const attendanceChart = new Chart(canvas, {
     type: 'bar',
     data: {
       labels: months,
@@ -1031,20 +1032,6 @@ function renderAttendance() {
     options: {
       responsive: false,
       maintainAspectRatio: false,
-      onHover: (event, activeElements) => {
-        const target = event.native ? event.native.target : null;
-        if (!target) return;
-        const dataIndex = activeElements.length ? activeElements[0].index : null;
-        const weeklyRows = dataIndex !== null ? getAttendanceWeeklyForMonth(months[dataIndex]) : null;
-        target.style.cursor = weeklyRows ? 'pointer' : 'default';
-      },
-      onClick: (event, activeElements) => {
-        if (!activeElements.length) return;
-        const dataIndex = activeElements[0].index;
-        const rawKey = (DASHBOARD_DATA.attendance.months || [])[dataIndex] || '';
-        const weeklyRows = getAttendanceWeeklyForMonth(rawKey) || getAttendanceWeeklyForMonth(months[dataIndex]);
-        if (weeklyRows) openAttendanceModal(months[dataIndex], weeklyRows);
-      },
       plugins: {
         legend: {
           position: 'top',
@@ -1058,12 +1045,12 @@ function renderAttendance() {
               if (!items.length) return '';
               const i = items[0].dataIndex;
               const total = (Number(adults[i]) || 0) + (Number(kids[i]) || 0);
-              return 'Total: ' + fmtNum(total);
+              return 'Total: ' + fmtNum(total) + '  ⮜ click for weekly';
             },
             label: (ctx) => '  ' + ctx.dataset.label + ': ' + fmtNum(ctx.parsed.y)
           },
           footerFont: { family: 'Montserrat', weight: '700', size: 12 },
-          footerColor: '#ffffff',
+          footerColor: '#93c5fd',
           footerMarginTop: 6
         }
       },
@@ -1072,6 +1059,23 @@ function renderAttendance() {
         y: { ...baseGridOpts, stacked: true, beginAtZero: true, ticks: { ...baseGridOpts.ticks, callback: (v) => fmtNum(v) } }
       }
     }
+  });
+
+  // Use native click on the canvas — Chart.js onClick breaks with manually-sized
+  // canvases inside scrollable wrappers because it miscalculates coordinates.
+  canvas.style.cursor = 'pointer';
+  canvas.addEventListener('click', function(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const points = attendanceChart.getElementsAtEventForMode(
+      e, 'index', { intersect: false }, false
+    );
+    if (!points.length) return;
+    const dataIndex = points[0].index;
+    const rawKey = rawMonths[dataIndex] || '';
+    const weeklyRows = getAttendanceWeeklyForMonth(rawKey) || getAttendanceWeeklyForMonth(months[dataIndex]);
+    if (weeklyRows) openAttendanceModal(months[dataIndex], weeklyRows);
   });
 }
 
