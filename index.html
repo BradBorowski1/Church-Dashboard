@@ -1045,7 +1045,7 @@ function renderAttendance() {
               if (!items.length) return '';
               const i = items[0].dataIndex;
               const total = (Number(adults[i]) || 0) + (Number(kids[i]) || 0);
-              return 'Total: ' + fmtNum(total) + '  ⮜ click for weekly';
+              return 'Total: ' + fmtNum(total);
             },
             label: (ctx) => '  ' + ctx.dataset.label + ': ' + fmtNum(ctx.parsed.y)
           },
@@ -1061,21 +1061,26 @@ function renderAttendance() {
     }
   });
 
-  // Use native click on the canvas — Chart.js onClick breaks with manually-sized
-  // canvases inside scrollable wrappers because it miscalculates coordinates.
+  // Native click: use canvas x offset to determine which bar was clicked.
+  // Chart.js built-in onClick misfires on manually-sized canvases in scroll containers.
   canvas.style.cursor = 'pointer';
   canvas.addEventListener('click', function(e) {
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const points = attendanceChart.getElementsAtEventForMode(
-      e, 'index', { intersect: false }, false
-    );
-    if (!points.length) return;
-    const dataIndex = points[0].index;
-    const rawKey = rawMonths[dataIndex] || '';
-    const weeklyRows = getAttendanceWeeklyForMonth(rawKey) || getAttendanceWeeklyForMonth(months[dataIndex]);
-    if (weeklyRows) openAttendanceModal(months[dataIndex], weeklyRows);
+    const xClick = e.clientX - rect.left;
+    // Scale from display pixels to canvas pixels
+    const scaleX = canvas.width / rect.width;
+    const xCanvas = xClick * scaleX;
+    const chartArea = attendanceChart.chartArea;
+    if (!chartArea) return;
+    const plotWidth = chartArea.right - chartArea.left;
+    const n = months.length;
+    if (!n) return;
+    const slotWidth = plotWidth / n;
+    const slotIndex = Math.floor((xCanvas - chartArea.left) / slotWidth);
+    if (slotIndex < 0 || slotIndex >= n) return;
+    const rawKey = rawMonths[slotIndex] || '';
+    const weeklyRows = getAttendanceWeeklyForMonth(rawKey) || getAttendanceWeeklyForMonth(months[slotIndex]);
+    if (weeklyRows) openAttendanceModal(months[slotIndex], weeklyRows);
   });
 }
 
