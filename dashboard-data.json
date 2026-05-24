@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-24T14:46:42.736Z",
+  "lastUpdated": "2026-05-24T14:48:46.435Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -3028,6 +3028,11 @@
         "week": "May 17",
         "adults": 730,
         "kids": 107
+      },
+      {
+        "week": "May 24",
+        "adults": 0,
+        "kids": 5
       }
     ]
   },
