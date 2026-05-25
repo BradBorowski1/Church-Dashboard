@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25T18:27:57.896Z",
+  "lastUpdated": "2026-05-25T18:29:56.488Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -3287,10 +3287,2522 @@
       "suc": "Im the team overseer and have built up 6 leaders and have added another who confirmed on Sunday. Tim Martin wants to be a leader."
     }
   ],
-  "teamsVolunteers": [],
-  "teamsPlans": [],
+  "teamsVolunteers": [
+    {
+      "n": "Aaron Carl",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Aaron Marinucci",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Aaron Owens",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Abby Wampler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Adam Carp",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Addi Bowman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Adelyn Gibson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Alan Charles",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Alex Buckwalter",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Alex Mari",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Alexander Franklin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Alexis Durham",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 14,
+      "r": 0
+    },
+    {
+      "n": "Aliyah Ramirez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Alla Schock",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Allison Wallace",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Amanda Hess",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Amber Brown",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Amy Mclennan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Ana Loftin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Analisa Wulfsberg",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Andrew Hess",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Angela Prindle",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Anita Bigger",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Anita Irwin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Anna Faker",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Anna Ferguson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Anna Moore",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Anna Sawyer",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Annalissa Sanchez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Annette Breach",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Ariel Buckwalter",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Ashleigh Cummings",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Ashley Murad",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Ashley Peregrin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Autumn Blattman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Ava Palmer",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Bailey Holcomb",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Barbara Drake",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Bart Wallace",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Becky Hunt",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Bill Caraway",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Bill Salcido",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Bill Wallace",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Bob Needham",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Bob Watson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Bradford Skinner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Bradley Borowski",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Brandon Perlich",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Brandon Thompson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Brenda Milligan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Bret Coggiola",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Brianna Sanchez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Brittany Yan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Bruce Rector",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Byron Corletto",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Caitlyn Jenkins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Caleb Bridges",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Candy Bennett",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Carlos Flores",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Carlos Perez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Casey Shull",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Cathy Cappini",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Charlene Carp",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Chelsea Borowski",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Cheryl O'Gorman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Christa Bowman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Christian Olson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Christopher Oliphant",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Chuck Grimm",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Cindy Lefler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Clare Lattin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Clayton Sheldon",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Cody Wright",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Corinne Baker",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Cory Hunt",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Damian Smith",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Danny Rotter",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Dante Sellman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Darren Wilford",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 18,
+      "r": 0
+    },
+    {
+      "n": "David Castro",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "David Peissner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "David Wandishin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "David Yost",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Dean Allman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Deana Griffin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 21,
+      "r": 0
+    },
+    {
+      "n": "Deborah Vydra",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Dena Steuer",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Dena Wiggins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Dennis Brinson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Diane Dale",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Don Lattin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Doretta Brown",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Douglas Drake",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Ed Griggs",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Elizabeth Wolfgang",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Ellie Walker",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Ellie Wampler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Elmer Alegre",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Elyse Bozsik",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Emery Fava",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Emily LeBlanc",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Emily Smith",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Emma Baskharoon",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Emory Breach",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Eric Sikora",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Erich Brenner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Estefania (Steph) Febo",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Evven Gardner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Fiona Delforge",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Fredy Bridges",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Garrett Kooyers",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Gavin Au",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Geoffrey Caliger",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 38,
+      "r": 0
+    },
+    {
+      "n": "Gina Rankin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Ginger King",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Gloria Worthington",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Gordon Fava",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 26,
+      "r": 0
+    },
+    {
+      "n": "Grace Peissner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Halee Frink",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Hannah Christopher",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Heather Niel",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Heidi Flores",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Henry Hagstrand",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Heston Sabala",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Holly Graham",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Holly O Connor",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Iain Dykins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Isaac Griffin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Isabella Peissner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Isabella Sanchez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Isla Skinner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Jack Jauron",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Jackie Lewis",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Jackie Smith",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Jaeley-Grace Ferguson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Jaime Tibaduiza",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Jaimie Sullivan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Jamie Winter",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Jane Brinson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Janet Colonna",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 14,
+      "r": 0
+    },
+    {
+      "n": "Janet Frederick",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Jase Tompkins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Jeana Rehberger",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Jeannette Rumsey",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Jed Ingalls",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Jeff Bridges",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 15,
+      "r": 0
+    },
+    {
+      "n": "Jeff Conrad",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Jeffrey Janakus",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Jenn Ferguson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Jenn Meredith",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Jennie Roccuzzo",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Jennifer Janakus",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Jennifer Jauron",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Jennifer Van Gelder",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Jeremy Low",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Jessica Adrian",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Jim Kellames",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Jimmy Pierce",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Jo Belmont",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "John Schillo",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "John Turcich",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 18,
+      "r": 0
+    },
+    {
+      "n": "Jon Harrison",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Jorie Hetland",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Josie Nerska",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Joyce Eli",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Judy McCarthy",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Julia Perlingos-Jackson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Julie Serpa",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Kadyn Skolnick",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Kallie Holcomb",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Kara Schelin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Karis Sellman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Kathy Frank",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Kathy Herndon",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Kathy McAlpine",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Katie Thompson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Kayleen Hagstrand",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Keith Primus",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Kellan Coan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Kelly Coan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Kelly Farson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Kenzie Tompkins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Kevin Moore",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Kim Conrad",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Kristie Marchese",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Kyle Perlich",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Lance Jauron",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Larry Sheats",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Laura Dykins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Lauren Johnson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Lauren Rotter",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Lauren Smith",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Layne Christopher",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Lily Perry",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Linda Poleselli",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Lindsey Low",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Lisa Castaneda",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Lisa Morris",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Loren Wooldridge",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Lorie Roberts",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Lydia Perlich",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Macarena Ables",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Manuel Sanchez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Marcy Goddard",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Mark Buckwalter",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Mark Meich",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Matt Bowman",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Matt Gardner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 11,
+      "r": 0
+    },
+    {
+      "n": "Matt Sweitzer",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "McKayla Leggett",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Megan Wampler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Melinda Harrison",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Melissa Ayrault",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Melissa Peterson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Melissa Thomas",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Michael Fitzsimmons",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Michael France",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Michael Marchese",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Michael Poleselli",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Michael Rehberger",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Michelle DePaoli",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Miguel Macias",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Mikayla Sanchez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Mike McCarthy",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Mila Hagstrand",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Molly Bell",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Morna Edmunds",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Natalie Aiazzi",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Natalie Christopher",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Natalie Shishido",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Nathan Meredith",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Nathen Ross",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Neil Strocchio",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Niah Morris",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Nick Colonna",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 12,
+      "r": 0
+    },
+    {
+      "n": "Nick Steuer",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Nicky Kammeta",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Nicole Leach",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Pat Peregrin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Patricia Thomas",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Paulette Thompson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Peggy Hart",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Rachel Primus",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Ray Brown",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Rebecca McKnight",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Renee Peregrin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Reuben Lefler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Rich Brown",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Richard Price",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Richard Wiggins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Ronald Crook",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Ruth Skinner",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Ryan Aiazzi",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Ryan Baskharoon",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Sam England",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Sam Griffin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Sandra Pazen",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Sandy Norton",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Sarah Jones",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Sarah Perlich",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Sarah Rawlins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Savannah Caliger",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 13,
+      "r": 0
+    },
+    {
+      "n": "Savannah Wilson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Scarlett Fava",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Scott Hammond",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Sean Lefler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Shalini Beulah",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Shannon Coan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Shawn Stoddard",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Shenoah Johnson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Shiona Dykins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Simon Lefler",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Simone Roccuzzo",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Stacey Corletto",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 6,
+      "r": 0
+    },
+    {
+      "n": "Stefanie Martinez",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 8,
+      "r": 0
+    },
+    {
+      "n": "Stephanie Fava",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Stephanie Kellames",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Stephanie Tompkins",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Taryn Carl",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Teodoro Kijah Banda",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 9,
+      "r": 0
+    },
+    {
+      "n": "Teylor Baskharoon",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 20,
+      "r": 0
+    },
+    {
+      "n": "Thomas Lloyd",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Thomas Peregrin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Tiffany Jackson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 10,
+      "r": 0
+    },
+    {
+      "n": "Tim Martin",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 28,
+      "r": 0
+    },
+    {
+      "n": "Timothy Frederick",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 15,
+      "r": 0
+    },
+    {
+      "n": "Timothy Milligan",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 4,
+      "r": 0
+    },
+    {
+      "n": "Tina Faker",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 16,
+      "r": 0
+    },
+    {
+      "n": "Tina Watson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 3,
+      "r": 0
+    },
+    {
+      "n": "Tom McDonald",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 7,
+      "r": 0
+    },
+    {
+      "n": "Tonshai Hatcher",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Tony Farson",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Tristan Martinez Valcher",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Tristan McKnight",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 1,
+      "r": 0
+    },
+    {
+      "n": "Valerie Ridgers",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 2,
+      "r": 0
+    },
+    {
+      "n": "Valerie Seno",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Wende Schwake",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 5,
+      "r": 0
+    },
+    {
+      "n": "Whitney Maidens",
+      "t": "—",
+      "c": 0,
+      "d": 0,
+      "p": 15,
+      "r": 0
+    }
+  ],
+  "teamsPlans": [
+    {
+      "date": "2026-05-24T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 134,
+      "c": 0,
+      "d": 0,
+      "p": 134
+    },
+    {
+      "date": "2026-05-17T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 148,
+      "c": 0,
+      "d": 0,
+      "p": 148
+    },
+    {
+      "date": "2026-05-10T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 135,
+      "c": 0,
+      "d": 0,
+      "p": 135
+    },
+    {
+      "date": "2026-05-03T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 141,
+      "c": 0,
+      "d": 0,
+      "p": 141
+    },
+    {
+      "date": "2026-04-26T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 150,
+      "c": 0,
+      "d": 0,
+      "p": 150
+    },
+    {
+      "date": "2026-04-19T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 133,
+      "c": 0,
+      "d": 0,
+      "p": 133
+    },
+    {
+      "date": "2026-04-12T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 134,
+      "c": 0,
+      "d": 0,
+      "p": 134
+    },
+    {
+      "date": "2026-04-05T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 158,
+      "c": 0,
+      "d": 0,
+      "p": 158
+    },
+    {
+      "date": "2026-04-03T18:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 35,
+      "c": 0,
+      "d": 0,
+      "p": 35
+    },
+    {
+      "date": "2026-03-29T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 152,
+      "c": 0,
+      "d": 0,
+      "p": 152
+    },
+    {
+      "date": "2026-03-22T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 149,
+      "c": 0,
+      "d": 0,
+      "p": 149
+    },
+    {
+      "date": "2026-03-15T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 141,
+      "c": 0,
+      "d": 0,
+      "p": 141
+    },
+    {
+      "date": "2026-03-08T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 143,
+      "c": 0,
+      "d": 0,
+      "p": 143
+    },
+    {
+      "date": "2026-03-01T08:00:00Z",
+      "ds": "Invalid Date",
+      "ty": "SERVICES",
+      "s": 114,
+      "c": 0,
+      "d": 0,
+      "p": 114
+    }
+  ],
   "teamsMeta": {
-    "refreshed": "May 25, 2026, 11:27 AM",
+    "refreshed": "May 25, 2026, 11:29 AM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
