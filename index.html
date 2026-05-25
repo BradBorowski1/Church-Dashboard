@@ -510,6 +510,284 @@
     height: 100% !important;
   }
 
+  /* ============================================================
+     TEAMS FULL-SCREEN MODAL
+     ============================================================ */
+  .tmod-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .tmod-overlay.open { display: flex; }
+
+  .tmod-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 32px;
+    border-bottom: 1px solid var(--card-border);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+  .tmod-back {
+    appearance: none;
+    background: #1c1c1c;
+    border: 1px solid #3a3a3a;
+    color: var(--text-muted);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .tmod-back:hover { background: #2a2a2a; color: var(--text); }
+
+  .tmod-titles { flex: 1; min-width: 0; }
+  .tmod-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .tmod-sub { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-top: 3px; letter-spacing: 0.05em; }
+
+  .tmod-meta { text-align: right; font-size: 12px; color: var(--text-dim); }
+  .tmod-meta b { color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 600; }
+
+  .tmod-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px 48px;
+  }
+  .tmod-body::-webkit-scrollbar { width: 8px; }
+  .tmod-body::-webkit-scrollbar-track { background: var(--bg); }
+  .tmod-body::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+
+  .tmod-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .tmod-metric {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .tmod-mlabel { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 600; }
+  .tmod-mval { font-size: 28px; font-weight: 300; line-height: 1; letter-spacing: -0.5px; }
+  .tmod-msub { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .tmod-vr { color: var(--red); }
+  .tmod-vg { color: var(--green); }
+  .tmod-va { color: var(--yellow-2); }
+
+  .tmod-tabs {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--card-border);
+    flex-wrap: wrap;
+  }
+  .tmod-tab {
+    appearance: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-dim);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: -1px;
+  }
+  .tmod-tab:hover { color: var(--text-muted); }
+  .tmod-tab.on { color: var(--yellow-2); border-bottom-color: var(--yellow-2); }
+
+  .tmod-tp { display: none; }
+  .tmod-tp.on { display: block; }
+
+  .tmod-ctrls { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .tmod-ctrls input, .tmod-ctrls select {
+    background: var(--card-bg);
+    border: 1px solid #3a3a3a;
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .tmod-ctrls input { flex: 1; min-width: 180px; }
+  .tmod-ctrls input:focus, .tmod-ctrls select:focus { border-color: var(--yellow-2); }
+
+  .tmod-tgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .tmod-tcard {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tmod-tcard:hover { border-color: #4a4a4a; background: #282828; }
+  .tmod-tcard.on { border-color: var(--yellow-2); }
+
+  .tmod-ttop { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .tmod-tname { font-size: 16px; font-weight: 600; line-height: 1.3; }
+  .tmod-tleader { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+  .tmod-tleader.tbd { color: var(--red); font-style: italic; }
+
+  .tmod-sring {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 500; flex-shrink: 0; border: 1px solid;
+  }
+  .tmod-sg { color: var(--green); border-color: rgba(34,197,94,.4); background: rgba(34,197,94,.1); }
+  .tmod-sa { color: var(--yellow-2); border-color: rgba(250,204,21,.4); background: rgba(250,204,21,.08); }
+  .tmod-sr { color: var(--red); border-color: rgba(239,68,68,.4); background: rgba(239,68,68,.1); }
+  .tmod-sn { color: var(--text-dim); border-color: #3a3a3a; }
+
+  .tmod-tstats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+  .tmod-tstat { background: #1a1a1a; border-radius: 6px; padding: 8px 6px; text-align: center; }
+  .tmod-tsval { font-size: 18px; font-weight: 400; line-height: 1; }
+  .tmod-tslabel { font-size: 11px; color: var(--text-dim); margin-top: 4px; font-weight: 500; }
+
+  .tmod-frow { margin-bottom: 8px; }
+  .tmod-flabels { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-bottom: 3px; }
+  .tmod-ftrack { height: 4px; background: #1a1a1a; border-radius: 2px; overflow: hidden; }
+  .tmod-ffill { height: 100%; border-radius: 2px; transition: width 0.4s; }
+  .tmod-flags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tmod-flag { font-size: 11px; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--card-border); color: var(--text-dim); font-weight: 500; }
+  .tmod-fr { border-color: rgba(239,68,68,.35); color: var(--red); background: rgba(239,68,68,.08); }
+  .tmod-fa { border-color: rgba(250,204,21,.35); color: var(--yellow-2); background: rgba(250,204,21,.06); }
+  .tmod-fg { border-color: rgba(34,197,94,.35); color: var(--green); background: rgba(34,197,94,.08); }
+
+  .tmod-drawer {
+    background: #242424;
+    border: 1px solid var(--yellow-2);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    display: none;
+    animation: tmod-fi 0.18s ease;
+  }
+  .tmod-drawer.on { display: block; }
+  @keyframes tmod-fi { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+  .tmod-dtop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+  .tmod-dtitle { font-size: 20px; font-weight: 600; letter-spacing: -0.2px; }
+  .tmod-dsub { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+
+  .tmod-dmetrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .tmod-dm { background: #1a1a1a; border-radius: 6px; padding: 10px 12px; }
+  .tmod-dml { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .tmod-dmv { font-size: 22px; font-weight: 300; margin-top: 3px; }
+
+  .tmod-dsec { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin: 12px 0 5px; font-weight: 600; }
+  .tmod-dblock { font-size: 14px; color: var(--text); line-height: 1.7; background: #1a1a1a; border-radius: 6px; padding: 12px 14px; white-space: pre-wrap; }
+  .tmod-dnote { font-size: 12px; color: var(--text-dim); font-style: italic; margin-top: 8px; }
+
+  .tmod-dbtns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tmod-dbtn {
+    appearance: none;
+    background: none;
+    border: 1px solid #3a3a3a;
+    color: var(--text-muted);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .tmod-dbtn:hover, .tmod-dbtn.hi { border-color: var(--yellow-2); color: var(--yellow-2); }
+
+  .tmod-table-wrap { overflow-x: auto; }
+  .tmod-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .tmod-table thead th {
+    text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-dim); padding: 9px 12px; border-bottom: 1px solid var(--card-border);
+    font-weight: 600; white-space: nowrap;
+  }
+  .tmod-table tbody tr { border-bottom: 1px solid var(--card-border); transition: background 0.1s; }
+  .tmod-table tbody tr:hover { background: #242424; }
+  .tmod-table tbody tr:last-child { border-bottom: none; }
+  .tmod-table tbody td { padding: 10px 12px; color: var(--text-muted); vertical-align: middle; }
+  .tmod-table tbody td:first-child { color: var(--text); font-weight: 500; }
+
+  .tmod-rbar { display: flex; align-items: center; gap: 8px; }
+  .tmod-rtrack { width: 54px; height: 4px; background: #1a1a1a; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+  .tmod-rfill { height: 100%; border-radius: 2px; }
+
+  .tmod-tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--card-border); color: var(--text-dim); font-weight: 500; }
+  .tmod-tg { border-color: rgba(34,197,94,.4); color: var(--green); background: rgba(34,197,94,.08); }
+  .tmod-ta { border-color: rgba(250,204,21,.4); color: var(--yellow-2); background: rgba(250,204,21,.06); }
+  .tmod-tr { border-color: rgba(239,68,68,.4); color: var(--red); background: rgba(239,68,68,.08); }
+
+  .tmod-pager { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-top: 10px; font-size: 12px; color: var(--text-dim); }
+  .tmod-pager button {
+    appearance: none; background: none; border: 1px solid #3a3a3a; color: var(--text-muted);
+    font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 500;
+    padding: 5px 12px; border-radius: 5px; cursor: pointer; transition: all 0.15s;
+  }
+  .tmod-pager button:hover:not(:disabled) { border-color: var(--yellow-2); color: var(--yellow-2); }
+  .tmod-pager button:disabled { opacity: 0.25; cursor: default; }
+
+  .tmod-psum { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
+
+  .tmod-lockcard { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 2.5rem 2rem; text-align: center; max-width: 420px; margin: 2.5rem auto; }
+  .tmod-lockicon { font-size: 32px; margin-bottom: 12px; }
+  .tmod-lockttl { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .tmod-lockmsg { font-size: 14px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.7; }
+  #tmodPwInput { width: 100%; background: #1a1a1a; border: 1px solid #3a3a3a; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 15px; padding: 10px 12px; border-radius: 7px; outline: none; margin-bottom: 10px; }
+  #tmodPwInput:focus { border-color: var(--yellow-2); }
+  .tmod-lockerr { color: var(--red); font-size: 13px; margin-top: 10px; display: none; }
+
+  .tmod-adminbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; padding: 10px 14px; background: var(--card-bg); border: 1px solid var(--yellow-2); border-radius: 8px; }
+  .tmod-adminbar span { color: var(--yellow-2); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
+
+  .tmod-adminteam { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 18px 20px; margin-bottom: 10px; }
+  .tmod-adminteam:hover { border-color: #4a4a4a; }
+
+  .tmod-slabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--card-border); font-weight: 600; }
+
+  .tmod-pi { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--card-border); }
+  .tmod-pi:last-child { border-bottom: none; }
+  .tmod-pdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+  .tmod-dr-dot { background: var(--red); box-shadow: 0 0 6px var(--red); }
+  .tmod-da-dot { background: var(--yellow-2); box-shadow: 0 0 6px var(--yellow-2); }
+  .tmod-db-dot { background: var(--blue-adults); box-shadow: 0 0 6px var(--blue-adults); }
+  .tmod-pt { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  .tmod-pt strong { color: var(--text); font-weight: 600; }
+
+  .tmod-toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: #242424; border: 1px solid var(--yellow-2); border-radius: 9px; padding: 12px 18px; font-size: 13px; color: var(--text-muted); display: none; z-index: 2100; }
+  .tmod-toast.on { display: block; animation: tmod-fi 0.2s ease; }
+  .tmod-toast strong { color: var(--yellow-2); font-weight: 600; }
+
+  .tmod-state { padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 14px; }
+
+  @media (max-width: 768px) {
+    .tmod-header { padding: 14px 16px; gap: 10px; }
+    .tmod-body { padding: 16px 16px 36px; }
+    .tmod-tgrid { grid-template-columns: 1fr; }
+    .tmod-meta { display: none; }
+  }
+  @media (max-width: 480px) {
+    .tmod-ctrls select { min-width: 0; flex: 1; }
+  }
+
 </style>
 </head>
 <body>
@@ -570,9 +848,12 @@
   </div>
 
   <div class="grid" style="margin-top:24px;">
-    <div class="card teams-card">
-      <h2>Serve Teams · Volunteer Gaps</h2>
-      <div class="card-sub">Auto-sorted by greatest need · live counts</div>
+    <div class="card teams-card" id="teamsCard" onclick="openTeamsModal()" style="cursor:pointer;" title="Click for full team detail">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
+        <h2 style="margin:0;">Serve Teams · Volunteer Gaps</h2>
+        <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">Full detail →</span>
+      </div>
+      <div class="card-sub">Auto-sorted by greatest need · click for volunteers, services &amp; admin</div>
       <div class="teams-summary">
         <div class="stat">
           <div class="stat-label">Volunteers</div>
@@ -622,6 +903,119 @@
   </div>
 </div>
 
+<!-- Teams Full-Screen Modal -->
+<div class="tmod-overlay" id="teamsModal" aria-hidden="true">
+  <div class="tmod-header">
+    <button class="tmod-back" onclick="closeTeamsModal()">&#8592; Dashboard</button>
+    <div class="tmod-titles">
+      <div class="tmod-title">Team Health</div>
+      <div class="tmod-sub">LIVING STONES CHURCH &nbsp;&middot;&nbsp; VOLUNTEER OPERATIONS</div>
+    </div>
+    <div class="tmod-meta" id="tmodMeta"><b>Loading&hellip;</b></div>
+  </div>
+  <div class="tmod-body">
+    <div class="tmod-metrics" id="tmodMetrics"></div>
+    <div class="tmod-tabs">
+      <button class="tmod-tab on" onclick="tmTab('teams',this)">Teams</button>
+      <button class="tmod-tab" onclick="tmTab('vols',this)">Volunteers</button>
+      <button class="tmod-tab" onclick="tmTab('svcs',this)">Services</button>
+      <button class="tmod-tab" id="tmAdminBtn" onclick="tmTab('admin',this)">&#128274; Admin</button>
+    </div>
+
+    <!-- Teams tab -->
+    <div class="tmod-tp on" id="tmod-tab-teams">
+      <div class="tmod-ctrls">
+        <input type="text" id="tmts" placeholder="Search team or leader&hellip;" oninput="tmRT()">
+        <select id="tmtso" onchange="tmRT()">
+          <option value="gd">Sort: biggest gap first</option>
+          <option value="ga">Sort: fully staffed first</option>
+          <option value="az">Sort: name A&ndash;Z</option>
+        </select>
+      </div>
+      <div class="tmod-tgrid" id="tmTG"></div>
+      <div class="tmod-drawer" id="tmDR"></div>
+    </div>
+
+    <!-- Volunteers tab -->
+    <div class="tmod-tp" id="tmod-tab-vols">
+      <div class="tmod-ctrls">
+        <input type="text" id="tmvs" placeholder="Search name or team&hellip;" oninput="tmVP=0;tmRV()">
+        <select id="tmvf" onchange="tmVP=0;tmRV()">
+          <option value="all">All volunteers</option>
+          <option value="concern">Concern (many declines)</option>
+          <option value="unresp">Unresponsive (many pending)</option>
+          <option value="rel">Reliable</option>
+          <option value="inactive">Inactive</option>
+        </select>
+        <select id="tmvs2" onchange="tmVP=0;tmRV()">
+          <option value="az">Sort: name A&ndash;Z</option>
+          <option value="cd">Sort: most confirmed</option>
+          <option value="dd">Sort: most declined</option>
+          <option value="pd">Sort: most pending</option>
+          <option value="ra">Sort: lowest reliability</option>
+          <option value="rd">Sort: highest reliability</option>
+        </select>
+      </div>
+      <div class="tmod-table-wrap">
+        <table class="tmod-table">
+          <thead><tr><th>Name</th><th>Team</th><th>Confirmed</th><th>Declined</th><th>Pending</th><th>Reliability</th><th>Status</th></tr></thead>
+          <tbody id="tmVB"></tbody>
+        </table>
+      </div>
+      <div class="tmod-pager">
+        <span id="tmVI"></span>
+        <button id="tmVPb" onclick="tmVP--;tmRV()">&lsaquo; Prev</button>
+        <button id="tmVNb" onclick="tmVP++;tmRV()">Next &rsaquo;</button>
+      </div>
+    </div>
+
+    <!-- Services tab -->
+    <div class="tmod-tp" id="tmod-tab-svcs">
+      <div class="tmod-psum" id="tmPS"></div>
+      <div class="tmod-slabel">Service history &mdash; most recent first</div>
+      <div class="tmod-table-wrap">
+        <table class="tmod-table">
+          <thead><tr><th>Date</th><th>Service Type</th><th>Scheduled</th><th>Confirmed</th><th>Declined</th><th>Pending</th><th>Fill rate</th></tr></thead>
+          <tbody id="tmPB"></tbody>
+        </table>
+      </div>
+      <div class="tmod-pager">
+        <span id="tmPI"></span>
+        <button id="tmPPb" onclick="tmPP--;tmRPlist()">&lsaquo; Prev</button>
+        <button id="tmPNb" onclick="tmPP++;tmRPlist()">Next &rsaquo;</button>
+      </div>
+    </div>
+
+    <!-- Admin tab -->
+    <div class="tmod-tp" id="tmod-tab-admin">
+      <div id="tmAdminLocked">
+        <div class="tmod-lockcard">
+          <div class="tmod-lockicon">&#128274;</div>
+          <div class="tmod-lockttl">Admin section</div>
+          <div class="tmod-lockmsg">This area contains sensitive leader feedback, succession notes, and personnel context. Enter the password to view.</div>
+          <input type="password" id="tmodPwInput" placeholder="Password" autocomplete="off" onkeydown="if(event.key==='Enter')tmDoUnlock()">
+          <button class="tmod-dbtn hi" style="width:100%;padding:11px;margin-top:4px" onclick="tmDoUnlock()">Unlock</button>
+          <div id="tmLockErr" class="tmod-lockerr">Incorrect password.</div>
+        </div>
+      </div>
+      <div id="tmAdminContent" style="display:none">
+        <div class="tmod-adminbar">
+          <span>&#128275; Admin view &mdash; sensitive content visible</span>
+          <button class="tmod-dbtn" onclick="tmDoLock()">Lock again</button>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <div class="tmod-slabel">Priority actions &mdash; auto-flagged from latest forms</div>
+          <div id="tmAdminPL"></div>
+        </div>
+        <div class="tmod-slabel">Full leader feedback &mdash; by team</div>
+        <div id="tmAdminTeams"></div>
+      </div>
+    </div>
+
+  </div><!-- /tmod-body -->
+</div><!-- /tmod-overlay -->
+<div class="tmod-toast" id="tmToast"></div>
+
 <script>
 let DASHBOARD_DATA = null;
 const DATA_URL = './dashboard-data.json';
@@ -640,6 +1034,10 @@ function normalizeDashboardData() {
   DASHBOARD_DATA.attendance = DASHBOARD_DATA.attendance || { months: [], adults: [], kids: [] };
   DASHBOARD_DATA.attendanceWeekly = DASHBOARD_DATA.attendanceWeekly || {};
   DASHBOARD_DATA.serveTeams = DASHBOARD_DATA.serveTeams || [];
+  DASHBOARD_DATA.teamsLeaderForms = DASHBOARD_DATA.teamsLeaderForms || [];
+  DASHBOARD_DATA.teamsVolunteers  = DASHBOARD_DATA.teamsVolunteers  || [];
+  DASHBOARD_DATA.teamsPlans       = DASHBOARD_DATA.teamsPlans       || [];
+  DASHBOARD_DATA.teamsMeta        = DASHBOARD_DATA.teamsMeta        || {};
   DASHBOARD_DATA.communityGroups = DASHBOARD_DATA.communityGroups || { months: [], counts: [] };
   DASHBOARD_DATA.communityGroupMembers = DASHBOARD_DATA.communityGroupMembers || { months: [], counts: [] };
 }
@@ -982,7 +1380,10 @@ function initAttendanceModalEvents() {
     });
   }
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeAttendanceModal();
+    if (e.key === 'Escape') {
+      closeAttendanceModal();
+      closeTeamsModal();
+    }
   });
 }
 
@@ -1221,6 +1622,402 @@ loadDashboardData()
     renderCGMembers();
   })
   .catch(showDashboardError);
+
+/* ============================================================
+   TEAMS FULL-SCREEN MODAL
+   Admin password: same hash as the standalone teams dashboard.
+   To change: open dev tools and run:
+     (async()=>{const h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('YOUR_PW'));
+     console.log([...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join(''))})()
+   ============================================================ */
+const TM_ADMIN_HASH = 'b89b95790b740ffc4317734a8c456eb680d6a19dea09131b0b513943794e9fa6';
+const TM_VP_PAGE = 25; // volunteers per page
+const TM_PP_PAGE = 40; // plans per page
+
+let tmAT = null;       // active team in drawer
+let tmVP = 0;          // volunteers page index
+let tmPP = 0;          // plans page index
+let tmAdminUnlocked = false;
+
+/* ---- open / close ---- */
+function openTeamsModal() {
+  if (!DASHBOARD_DATA) return;
+  const modal = document.getElementById('teamsModal');
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  try { if (sessionStorage.getItem('tm_admin') === '1') tmAdminUnlocked = true; } catch(e) {}
+  tmRenderAll();
+}
+
+function closeTeamsModal() {
+  const modal = document.getElementById('teamsModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  tmAT = null;
+}
+
+/* ---- render everything ---- */
+function tmRenderAll() {
+  tmRenderMeta();
+  tmMetrics();
+  tmRT();
+  tmRV();
+  tmRSP();
+  if (tmAdminUnlocked) {
+    document.getElementById('tmAdminBtn').innerHTML = '&#128275; Admin';
+    document.getElementById('tmAdminLocked').style.display = 'none';
+    document.getElementById('tmAdminContent').style.display = 'block';
+    tmRenderAdminContent();
+  }
+}
+
+function tmRenderMeta() {
+  const meta = DASHBOARD_DATA.teamsMeta || {};
+  const pulled = new Date().toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+  const refreshed = meta.refreshed ||
+    (DASHBOARD_DATA.lastUpdated ? new Date(DASHBOARD_DATA.lastUpdated).toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' }) : 'unknown');
+  document.getElementById('tmodMeta').innerHTML =
+    '<b>Refreshed: ' + escapeHtml(refreshed) + '</b>' +
+    'Pulled ' + escapeHtml(pulled) +
+    (meta.lookback ? '<br>' + escapeHtml(meta.lookback) + ' window' : '');
+}
+
+/* ---- helper color functions ---- */
+function tmFc(need) { return need === 0 ? 'var(--green)' : need <= 5 ? 'var(--yellow-2)' : 'var(--red)'; }
+function tmRc(r)    { return r >= 70 ? 'var(--green)' : r >= 40 ? 'var(--yellow-2)' : 'var(--red)'; }
+function tmVStatus(v) {
+  if (v.c === 0 && v.d === 0 && v.p === 0) return { cls: 'tmod-tag', txt: 'inactive' };
+  if (v.d >= 8) return { cls: 'tmod-tr', txt: 'concern' };
+  if (v.p >= 6) return { cls: 'tmod-ta', txt: 'unresponsive' };
+  return { cls: 'tmod-tg', txt: 'reliable' };
+}
+
+/* ---- summary metrics bar ---- */
+function tmMetrics() {
+  const TEAMS = DASHBOARD_DATA.teamsLeaderForms || [];
+  const VOLS  = DASHBOARD_DATA.teamsVolunteers  || [];
+  const PLANS = DASHBOARD_DATA.teamsPlans       || [];
+
+  const gap = TEAMS.reduce((a, t) => a + (t.need || 0), 0);
+  const recent = PLANS.filter(p => p.s > 0).slice(0, 6);
+  const fill = recent.length ? Math.round(recent.reduce((a, p) => a + (p.s ? p.c / p.s : 0), 0) / recent.length * 100) : 0;
+  const rel  = VOLS.length  ? Math.round(VOLS.reduce((a, v) => a + v.r, 0) / VOLS.length) : 0;
+  const concern = VOLS.filter(v => tmVStatus(v).txt === 'concern').length;
+
+  document.getElementById('tmodMetrics').innerHTML =
+    tm_metric(TEAMS.length, 'Teams reporting',         'leader forms on file') +
+    tm_metric(VOLS.length,  'Total volunteers',         'in Planning Center') +
+    tm_metric(gap,          'Staffing gap',             'more people requested', 'tmod-vr') +
+    tm_metric(fill + '%',   'Recent fill rate',         'last 6 services',       fill >= 75 ? 'tmod-vg' : fill >= 60 ? 'tmod-va' : 'tmod-vr') +
+    tm_metric(rel  + '%',   'Avg reliability',          'all volunteers',         rel  >= 75 ? 'tmod-vg' : rel  >= 50 ? 'tmod-va' : 'tmod-vr') +
+    tm_metric(concern,      'Volunteers of concern',    'many declines',          concern === 0 ? 'tmod-vg' : 'tmod-vr');
+}
+function tm_metric(val, label, sub, cls) {
+  return '<div class="tmod-metric"><div class="tmod-mlabel">' + label + '</div>' +
+    '<div class="tmod-mval ' + (cls || '') + '">' + val + '</div>' +
+    '<div class="tmod-msub">' + sub + '</div></div>';
+}
+
+/* ---- Teams tab ---- */
+function tmRT() {
+  const TEAMS = DASHBOARD_DATA.teamsLeaderForms || [];
+  const q  = (document.getElementById('tmts').value   || '').toLowerCase();
+  const so = (document.getElementById('tmtso').value  || 'gd');
+
+  let list = TEAMS.filter(t => t.n.toLowerCase().includes(q) || (t.l || '').toLowerCase().includes(q));
+  list.sort((a, b) => {
+    if (so === 'gd') return (b.need || 0) - (a.need || 0);
+    if (so === 'ga') return (a.need || 0) - (b.need || 0);
+    return a.n.localeCompare(b.n);
+  });
+
+  if (!list.length) {
+    document.getElementById('tmTG').innerHTML = '<div class="tmod-state">No teams match.</div>';
+    return;
+  }
+
+  document.getElementById('tmTG').innerHTML = list.map(t => {
+    const have = t.mem || 0, need = t.need || 0;
+    const fp = (have + need) > 0 ? Math.round(have / (have + need) * 100) : 100;
+    const sc = t.sc;
+    const scoreCls = sc == null ? 'tmod-sn' : sc >= 8 ? 'tmod-sg' : sc >= 6 ? 'tmod-sa' : 'tmod-sr';
+    const flagCls  = need >= 30 ? 'tmod-fr' : need > 5 ? 'tmod-fa' : 'tmod-fg';
+    const flagTxt  = need === 0 ? 'fully staffed' : 'gap: ' + need;
+    return '<div class="tmod-tcard' + (tmAT === t.n ? ' on' : '') + '" onclick="tmTD(this.dataset.n)" data-n="' + escapeHtml(t.n) + '">' +
+      '<div class="tmod-ttop">' +
+        '<div><div class="tmod-tname">' + escapeHtml(t.n) + '</div>' +
+        '<div class="tmod-tleader' + (!t.l || t.l === '—' ? ' tbd' : '') + '">' + escapeHtml(t.l || 'No leader on file') + '</div></div>' +
+        '<div class="tmod-sring ' + scoreCls + '">' + (sc == null ? '–' : sc) + '</div>' +
+      '</div>' +
+      '<div class="tmod-tstats">' +
+        '<div class="tmod-tstat"><div class="tmod-tsval">' + have + '</div><div class="tmod-tslabel">members</div></div>' +
+        '<div class="tmod-tstat"><div class="tmod-tsval" style="color:' + tmFc(need) + '">' + need + '</div><div class="tmod-tslabel">still needed</div></div>' +
+        '<div class="tmod-tstat"><div class="tmod-tsval" style="font-size:12px;padding-top:4px">' + escapeHtml(t.subC || '—') + '</div><div class="tmod-tslabel">updated</div></div>' +
+      '</div>' +
+      '<div class="tmod-frow">' +
+        '<div class="tmod-flabels"><span>Staffing ' + have + '/' + (have + need) + '</span><span>' + fp + '%</span></div>' +
+        '<div class="tmod-ftrack"><div class="tmod-ffill" style="width:' + fp + '%;background:' + tmFc(need) + '"></div></div>' +
+      '</div>' +
+      '<div class="tmod-flags"><span class="tmod-flag ' + flagCls + '">' + flagTxt + '</span></div>' +
+    '</div>';
+  }).join('');
+}
+
+function tmTD(name) {
+  if (tmAT === name) { tmCloseDR(); return; }
+  tmAT = name;
+  const TEAMS = DASHBOARD_DATA.teamsLeaderForms || [];
+  const t = TEAMS.find(x => x.n === name);
+  if (!t) return;
+
+  const have = t.mem || 0, need = t.need || 0;
+  const fp = (have + need) > 0 ? Math.round(have / (have + need) * 100) : 100;
+  const DR = document.getElementById('tmDR');
+
+  DR.innerHTML =
+    '<div class="tmod-dtop">' +
+      '<div><div class="tmod-dtitle">' + escapeHtml(t.n) + '</div>' +
+      '<div class="tmod-dsub">Leader: ' + escapeHtml(t.l || '—') + ' &middot; Reported: ' + escapeHtml(t.subStr || '—') + '</div></div>' +
+      '<div class="tmod-dbtns"><button class="tmod-dbtn" onclick="tmCloseDR()">&#10005; Close</button></div>' +
+    '</div>' +
+    '<div class="tmod-dmetrics">' +
+      '<div class="tmod-dm"><div class="tmod-dml">Members</div><div class="tmod-dmv">' + have + '</div></div>' +
+      '<div class="tmod-dm"><div class="tmod-dml">Still needed</div><div class="tmod-dmv" style="color:' + tmFc(need) + '">' + need + '</div></div>' +
+      '<div class="tmod-dm"><div class="tmod-dml">Staffed</div><div class="tmod-dmv">' + fp + '%</div></div>' +
+      (t.sc != null ? '<div class="tmod-dm"><div class="tmod-dml">Health score</div><div class="tmod-dmv">' + t.sc + '/10</div></div>' : '') +
+    '</div>' +
+    '<div class="tmod-dnote">Detailed leader feedback, succession notes, and resources are in the Admin section (unlock to view).</div>';
+
+  DR.classList.add('on');
+  DR.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  tmRT();
+}
+
+function tmCloseDR() {
+  tmAT = null;
+  document.getElementById('tmDR').classList.remove('on');
+  tmRT();
+}
+
+/* ---- Volunteers tab ---- */
+function tmRV() {
+  const VOLS = DASHBOARD_DATA.teamsVolunteers || [];
+  const q = (document.getElementById('tmvs').value  || '').toLowerCase();
+  const f = (document.getElementById('tmvf').value  || 'all');
+  const s = (document.getElementById('tmvs2').value || 'az');
+
+  let list = VOLS.filter(v => {
+    const m = v.n.toLowerCase().includes(q) || v.t.toLowerCase().includes(q);
+    if (!m) return false;
+    const st = tmVStatus(v).txt;
+    if (f === 'concern') return st === 'concern';
+    if (f === 'unresp')  return st === 'unresponsive';
+    if (f === 'rel')     return st === 'reliable';
+    if (f === 'inactive')return st === 'inactive';
+    return true;
+  });
+
+  list.sort((a, b) => {
+    if (s === 'cd') return b.c - a.c;
+    if (s === 'dd') return b.d - a.d;
+    if (s === 'pd') return b.p - a.p;
+    if (s === 'ra') return a.r - b.r;
+    if (s === 'rd') return b.r - a.r;
+    return a.n.localeCompare(b.n);
+  });
+
+  const tot = list.length;
+  const pages = Math.max(1, Math.ceil(tot / TM_VP_PAGE));
+  if (tmVP >= pages) tmVP = pages - 1;
+  if (tmVP < 0) tmVP = 0;
+  const sl = list.slice(tmVP * TM_VP_PAGE, (tmVP + 1) * TM_VP_PAGE);
+
+  document.getElementById('tmVB').innerHTML = sl.length ? sl.map(v => {
+    const st = tmVStatus(v);
+    return '<tr>' +
+      '<td>' + escapeHtml(v.n) + '</td>' +
+      '<td style="color:var(--text-dim)">' + escapeHtml(v.t) + '</td>' +
+      '<td style="color:var(--green);font-weight:500">' + v.c + '</td>' +
+      '<td style="color:' + (v.d > 0 ? 'var(--red)'    : 'var(--text-dim)') + '">' + (v.d || '—') + '</td>' +
+      '<td style="color:' + (v.p > 0 ? 'var(--yellow-2)': 'var(--text-dim)') + '">' + (v.p || '—') + '</td>' +
+      '<td><div class="tmod-rbar"><div class="tmod-rtrack"><div class="tmod-rfill" style="width:' + Math.min(100, v.r) + '%;background:' + tmRc(v.r) + '"></div></div><span style="color:var(--text-muted);min-width:38px">' + v.r + '%</span></div></td>' +
+      '<td><span class="tmod-tag ' + st.cls + '">' + st.txt + '</span></td>' +
+    '</tr>';
+  }).join('') : '<tr><td colspan="7" style="text-align:center;padding:1.5rem;color:var(--text-dim)">' +
+    (VOLS.length === 0 ? 'Volunteer data will appear here after the next hourly PCO sync.' : 'No volunteers match.') + '</td></tr>';
+
+  document.getElementById('tmVI').textContent = tot ? (tmVP * TM_VP_PAGE + 1) + '–' + Math.min((tmVP + 1) * TM_VP_PAGE, tot) + ' of ' + tot : '0';
+  document.getElementById('tmVPb').disabled = tmVP === 0;
+  document.getElementById('tmVNb').disabled = tmVP >= pages - 1;
+}
+
+/* ---- Services tab ---- */
+function tmRSP() {
+  const PLANS = DASHBOARD_DATA.teamsPlans || [];
+  const recent = PLANS.filter(p => p.s > 0).slice(0, 6);
+  const af = recent.length ? Math.round(recent.reduce((a, p) => a + (p.s ? p.c / p.s : 0), 0) / recent.length * 100) : 0;
+  const ad = recent.length ? Math.round(recent.reduce((a, p) => a + p.d, 0) / recent.length) : 0;
+  const ts = recent.reduce((a, p) => a + p.s, 0);
+
+  document.getElementById('tmPS').innerHTML =
+    tm_metric(af + '%', 'Recent fill rate', 'last 6 services', af >= 75 ? 'tmod-vg' : af >= 60 ? 'tmod-va' : 'tmod-vr') +
+    tm_metric(ad,       'Avg declines',     'per recent service', 'tmod-va') +
+    tm_metric(ts,       'Scheduled',        'last 6 services') +
+    tm_metric(PLANS.length, 'Services tracked', 'full history');
+
+  tmPP = 0;
+  tmRPlist();
+}
+
+function tmRPlist() {
+  const PLANS = DASHBOARD_DATA.teamsPlans || [];
+  const tot = PLANS.length;
+  const pages = Math.max(1, Math.ceil(tot / TM_PP_PAGE));
+  if (tmPP >= pages) tmPP = pages - 1;
+  if (tmPP < 0) tmPP = 0;
+  const sl = PLANS.slice(tmPP * TM_PP_PAGE, (tmPP + 1) * TM_PP_PAGE);
+
+  document.getElementById('tmPB').innerHTML = sl.length ? sl.map(p => {
+    const f = p.s > 0 ? Math.round(p.c / p.s * 100) : 0;
+    const frc = f >= 75 ? 'var(--green)' : f >= 60 ? 'var(--yellow-2)' : 'var(--red)';
+    return '<tr>' +
+      '<td>' + escapeHtml(p.ds) + '</td>' +
+      '<td style="color:var(--text-dim)">' + escapeHtml(p.ty) + '</td>' +
+      '<td>' + p.s + '</td>' +
+      '<td style="color:var(--green)">' + p.c + '</td>' +
+      '<td style="color:' + (p.d > 0 ? 'var(--red)' : 'var(--text-dim)') + '">' + (p.d || '—') + '</td>' +
+      '<td style="color:' + (p.p > 0 ? 'var(--yellow-2)' : 'var(--text-dim)') + '">' + (p.p || '—') + '</td>' +
+      '<td><div class="tmod-rbar"><div class="tmod-rtrack" style="width:70px"><div class="tmod-rfill" style="width:' + f + '%;background:' + frc + '"></div></div><span style="color:' + frc + '">' + (p.s > 0 ? f + '%' : '—') + '</span></div></td>' +
+    '</tr>';
+  }).join('') : '<tr><td colspan="7" style="text-align:center;padding:1.5rem;color:var(--text-dim)">' +
+    (PLANS.length === 0 ? 'Service data will appear here after the next hourly PCO sync.' : 'No services available.') + '</td></tr>';
+
+  document.getElementById('tmPI').textContent = tot ? (tmPP * TM_PP_PAGE + 1) + '–' + Math.min((tmPP + 1) * TM_PP_PAGE, tot) + ' of ' + tot : '0';
+  document.getElementById('tmPPb').disabled = tmPP === 0;
+  document.getElementById('tmPNb').disabled = tmPP >= pages - 1;
+}
+
+/* ---- Admin tab ---- */
+async function tmDoUnlock() {
+  const pw = document.getElementById('tmodPwInput').value;
+  if (!pw) return;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+  const hash = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  if (hash === TM_ADMIN_HASH) {
+    tmAdminUnlocked = true;
+    try { sessionStorage.setItem('tm_admin', '1'); } catch(e) {}
+    document.getElementById('tmodPwInput').value = '';
+    document.getElementById('tmLockErr').style.display = 'none';
+    document.getElementById('tmAdminBtn').innerHTML = '&#128275; Admin';
+    document.getElementById('tmAdminLocked').style.display = 'none';
+    document.getElementById('tmAdminContent').style.display = 'block';
+    tmRenderAdminContent();
+  } else {
+    document.getElementById('tmLockErr').style.display = 'block';
+  }
+}
+
+function tmDoLock() {
+  tmAdminUnlocked = false;
+  try { sessionStorage.removeItem('tm_admin'); } catch(e) {}
+  document.getElementById('tmAdminBtn').innerHTML = '&#128274; Admin';
+  document.getElementById('tmAdminLocked').style.display = 'block';
+  document.getElementById('tmAdminContent').style.display = 'none';
+}
+
+function tmRenderAdminContent() {
+  const TEAMS = DASHBOARD_DATA.teamsLeaderForms || [];
+
+  /* Priority actions — auto-flagged teams */
+  const ranked = TEAMS.map(t => {
+    let lvl = 0;
+    if ((t.sc != null && t.sc < 6) || t.need >= 30) lvl = 2;
+    else if ((t.sc != null && t.sc < 8) || t.need > 5 || t.sc == null) lvl = 1;
+    return { t, lvl };
+  }).filter(x => x.lvl > 0)
+    .sort((a, b) => b.lvl - a.lvl || (a.t.sc == null ? 99 : a.t.sc) - (b.t.sc == null ? 99 : b.t.sc) || b.t.need - a.t.need)
+    .slice(0, 10);
+
+  const PL = document.getElementById('tmAdminPL');
+  if (!ranked.length) {
+    PL.innerHTML = '<div class="tmod-pi"><div class="tmod-pdot tmod-db-dot"></div><div class="tmod-pt">No teams currently flagged — every reporting team looks healthy.</div></div>';
+  } else {
+    PL.innerHTML = ranked.map(({ t, lvl }) => {
+      const cls = lvl === 2 ? 'tmod-dr-dot' : 'tmod-da-dot';
+      const bits = [t.sc != null ? 'Score ' + t.sc + '/10' : 'No score reported'];
+      if (t.need > 0) bits.push('needs ' + t.need + ' more');
+      let snip = (t.iss || '').replace(/\s+/g, ' ').trim();
+      if (snip.length > 200) snip = snip.slice(0, 197) + '…';
+      return '<div class="tmod-pi"><div class="tmod-pdot ' + cls + '"></div>' +
+        '<div class="tmod-pt"><strong>' + escapeHtml(t.n) + '</strong> — ' +
+        escapeHtml(bits.join(' · ')) + (snip ? '. ' + escapeHtml(snip) : '') + '</div></div>';
+    }).join('');
+  }
+
+  /* Full per-team feedback sorted worst-first */
+  const sorted = TEAMS.slice().sort((a, b) => {
+    const sa = a.sc == null ? 99 : a.sc, sb = b.sc == null ? 99 : b.sc;
+    if (sa !== sb) return sa - sb;
+    return (b.need || 0) - (a.need || 0);
+  });
+
+  document.getElementById('tmAdminTeams').innerHTML = sorted.length ? sorted.map(t => {
+    const have = t.mem || 0, need = t.need || 0;
+    const fp = (have + need) > 0 ? Math.round(have / (have + need) * 100) : 100;
+    const ap = 'Give me a specific 3-step action plan for the ' + t.n + ' team at Living Stones Church. Issues: ' + (t.iss || 'none reported');
+    const cp = 'Draft a check-in message from Brad to ' + (t.l && t.l !== '—' ? t.l : 'the leader') + ' about the ' + t.n + ' team at Living Stones Church. Their reported issues: ' + (t.iss || 'none reported');
+    return '<div class="tmod-adminteam">' +
+      '<div class="tmod-dtop">' +
+        '<div><div class="tmod-dtitle">' + escapeHtml(t.n) + '</div>' +
+        '<div class="tmod-dsub">Leader: ' + escapeHtml(t.l || '—') + ' · Score: ' + (t.sc == null ? 'N/A' : t.sc + '/10') + ' · Reported: ' + escapeHtml(t.subStr || '—') + '</div></div>' +
+        '<div class="tmod-dbtns">' +
+          '<button class="tmod-dbtn hi" data-p="' + escapeHtml(ap) + '" onclick="tmCP(this.dataset.p)">Copy action plan ↗</button>' +
+          '<button class="tmod-dbtn" data-p="' + escapeHtml(cp) + '" onclick="tmCP(this.dataset.p)">Copy check-in ↗</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="tmod-dmetrics">' +
+        '<div class="tmod-dm"><div class="tmod-dml">Members</div><div class="tmod-dmv">' + have + '</div></div>' +
+        '<div class="tmod-dm"><div class="tmod-dml">Still needed</div><div class="tmod-dmv" style="color:' + tmFc(need) + '">' + need + '</div></div>' +
+        '<div class="tmod-dm"><div class="tmod-dml">Staffed</div><div class="tmod-dmv">' + fp + '%</div></div>' +
+        '<div class="tmod-dm"><div class="tmod-dml">Leader score</div><div class="tmod-dmv">' + (t.sc == null ? '—' : t.sc + '/10') + '</div></div>' +
+      '</div>' +
+      (t.iss  ? '<div class="tmod-dsec">Issues &amp; context</div><div class="tmod-dblock">'  + escapeHtml(t.iss)  + '</div>' : '') +
+      (t.more ? '<div class="tmod-dsec">Additional notes</div><div class="tmod-dblock">'        + escapeHtml(t.more) + '</div>' : '') +
+      (t.res  ? '<div class="tmod-dsec">Resources requested</div><div class="tmod-dblock">'    + escapeHtml(t.res)  + '</div>' : '') +
+      (t.suc  ? '<div class="tmod-dsec">Succession</div><div class="tmod-dblock">'             + escapeHtml(t.suc)  + '</div>' : '') +
+    '</div>';
+  }).join('') : '<div class="tmod-state">No leader forms on file yet.</div>';
+}
+
+/* ---- tab switching ---- */
+function tmTab(name, btn) {
+  document.querySelectorAll('.tmod-tp').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.tmod-tab').forEach(b => b.classList.remove('on'));
+  document.getElementById('tmod-tab-' + name).classList.add('on');
+  btn.classList.add('on');
+  if (name === 'admin' && !tmAdminUnlocked) {
+    setTimeout(() => { const i = document.getElementById('tmodPwInput'); if (i) i.focus(); }, 50);
+  }
+}
+
+/* ---- clipboard copy ---- */
+function tmCP(txt) {
+  navigator.clipboard.writeText(txt)
+    .then(() => tmToastFn('<strong>Copied.</strong> Paste into Claude.'))
+    .catch(() => tmToastFn('Copy failed — select the text manually.'));
+}
+
+function tmToastFn(msg) {
+  const t = document.getElementById('tmToast');
+  t.innerHTML = msg;
+  t.classList.add('on');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.classList.remove('on'), 3000);
+}
 </script>
 
 </body>
