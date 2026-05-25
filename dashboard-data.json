@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25T18:46:54.890Z",
+  "lastUpdated": "2026-05-25T18:51:40.510Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5675,8 +5675,8 @@
   ],
   "teamsPlans": [
     {
-      "date": "2026-05-24T08:00:00Z",
-      "ds": "Sun May 24 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-05-24",
+      "ds": "May 24, 2026",
       "ty": "SERVICES",
       "s": 134,
       "c": 92,
@@ -5684,8 +5684,8 @@
       "p": 15
     },
     {
-      "date": "2026-05-17T08:00:00Z",
-      "ds": "Sun May 17 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-05-17",
+      "ds": "May 17, 2026",
       "ty": "SERVICES",
       "s": 148,
       "c": 103,
@@ -5693,8 +5693,8 @@
       "p": 16
     },
     {
-      "date": "2026-05-10T08:00:00Z",
-      "ds": "Sun May 10 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-05-10",
+      "ds": "May 10, 2026",
       "ty": "SERVICES",
       "s": 135,
       "c": 106,
@@ -5702,8 +5702,8 @@
       "p": 14
     },
     {
-      "date": "2026-05-03T08:00:00Z",
-      "ds": "Sun May 03 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-05-03",
+      "ds": "May 3, 2026",
       "ty": "SERVICES",
       "s": 141,
       "c": 107,
@@ -5711,8 +5711,8 @@
       "p": 10
     },
     {
-      "date": "2026-04-26T08:00:00Z",
-      "ds": "Sun Apr 26 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-04-26",
+      "ds": "Apr 26, 2026",
       "ty": "SERVICES",
       "s": 150,
       "c": 108,
@@ -5720,8 +5720,8 @@
       "p": 15
     },
     {
-      "date": "2026-04-19T08:00:00Z",
-      "ds": "Sun Apr 19 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-04-19",
+      "ds": "Apr 19, 2026",
       "ty": "SERVICES",
       "s": 133,
       "c": 96,
@@ -5729,8 +5729,8 @@
       "p": 13
     },
     {
-      "date": "2026-04-12T08:00:00Z",
-      "ds": "Sun Apr 12 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-04-12",
+      "ds": "Apr 12, 2026",
       "ty": "SERVICES",
       "s": 134,
       "c": 99,
@@ -5738,8 +5738,8 @@
       "p": 17
     },
     {
-      "date": "2026-04-05T08:00:00Z",
-      "ds": "Sun Apr 05 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-04-05",
+      "ds": "Apr 5, 2026",
       "ty": "SERVICES",
       "s": 158,
       "c": 107,
@@ -5747,8 +5747,8 @@
       "p": 25
     },
     {
-      "date": "2026-04-03T18:00:00Z",
-      "ds": "Fri Apr 03 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-04-03",
+      "ds": "Apr 3, 2026",
       "ty": "SERVICES",
       "s": 35,
       "c": 20,
@@ -5756,8 +5756,8 @@
       "p": 4
     },
     {
-      "date": "2026-03-29T08:00:00Z",
-      "ds": "Sun Mar 29 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-03-29",
+      "ds": "Mar 29, 2026",
       "ty": "SERVICES",
       "s": 152,
       "c": 102,
@@ -5765,8 +5765,8 @@
       "p": 16
     },
     {
-      "date": "2026-03-22T08:00:00Z",
-      "ds": "Sun Mar 22 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-03-22",
+      "ds": "Mar 22, 2026",
       "ty": "SERVICES",
       "s": 149,
       "c": 98,
@@ -5774,8 +5774,8 @@
       "p": 12
     },
     {
-      "date": "2026-03-15T08:00:00Z",
-      "ds": "Sun Mar 15 2026 00:00:00 GMT-0700 (Pacific Daylight Time)",
+      "date": "2026-03-15",
+      "ds": "Mar 15, 2026",
       "ty": "SERVICES",
       "s": 141,
       "c": 100,
@@ -5783,8 +5783,8 @@
       "p": 15
     },
     {
-      "date": "2026-03-08T08:00:00Z",
-      "ds": "Sun Mar 08 2026 00:00:00 GMT-0800 (Pacific Standard Time)",
+      "date": "2026-03-08",
+      "ds": "Mar 8, 2026",
       "ty": "SERVICES",
       "s": 143,
       "c": 102,
@@ -5792,8 +5792,8 @@
       "p": 14
     },
     {
-      "date": "2026-03-01T08:00:00Z",
-      "ds": "Sun Mar 01 2026 00:00:00 GMT-0800 (Pacific Standard Time)",
+      "date": "2026-03-01",
+      "ds": "Mar 1, 2026",
       "ty": "SERVICES",
       "s": 114,
       "c": 89,
@@ -5802,7 +5802,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 25, 2026, 11:46 AM",
+    "refreshed": "May 25, 2026, 11:51 AM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
