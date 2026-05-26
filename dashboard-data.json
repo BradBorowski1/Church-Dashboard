@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-26T17:50:07.412Z",
+  "lastUpdated": "2026-05-26T18:46:10.116Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5802,7 +5802,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 26, 2026, 10:50 AM",
+    "refreshed": "May 26, 2026, 11:46 AM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -6601,9 +6601,9 @@
       296,
       355,
       388,
-      409,
-      432,
-      447
+      408,
+      431,
+      446
     ]
   }
 }
