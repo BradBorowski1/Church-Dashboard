@@ -1722,6 +1722,19 @@ function tm_metric(val, label, sub, cls) {
     '<div class="tmod-msub">' + sub + '</div></div>';
 }
 
+/* ---- Calculated health score (60% staffing fill + 40% leader self-assessment) ---- */
+function tmScore(t) {
+  const have  = t.mem  || 0;
+  const gap   = t.need || 0;
+  const total = have + gap;
+  // Staffing component: 0–6 pts (a gap always drags the score down)
+  const fillRate  = total > 0 ? have / total : 1.0;
+  // Self-assessment component: 0–4 pts (neutral 5/10 if no form submitted)
+  const selfScore = t.sc != null ? t.sc / 10 : 0.5;
+  const raw = fillRate * 6 + selfScore * 4;
+  return Math.min(10, Math.max(1, Math.round(raw)));
+}
+
 /* ---- Teams tab ---- */
 function tmRT() {
   const TEAMS = DASHBOARD_DATA.teamsLeaderForms || [];
@@ -1743,15 +1756,15 @@ function tmRT() {
   document.getElementById('tmTG').innerHTML = list.map(t => {
     const have = t.mem || 0, need = t.need || 0;
     const fp = (have + need) > 0 ? Math.round(have / (have + need) * 100) : 100;
-    const sc = t.sc;
-    const scoreCls = sc == null ? 'tmod-sn' : sc >= 8 ? 'tmod-sg' : sc >= 6 ? 'tmod-sa' : 'tmod-sr';
+    const hs = tmScore(t);   // calculated health score
+    const scoreCls = hs >= 8 ? 'tmod-sg' : hs >= 6 ? 'tmod-sa' : 'tmod-sr';
     const flagCls  = need >= 30 ? 'tmod-fr' : need > 5 ? 'tmod-fa' : 'tmod-fg';
     const flagTxt  = need === 0 ? 'fully staffed' : 'gap: ' + need;
     return '<div class="tmod-tcard' + (tmAT === t.n ? ' on' : '') + '" onclick="tmTD(this.dataset.n)" data-n="' + escapeHtml(t.n) + '">' +
       '<div class="tmod-ttop">' +
         '<div><div class="tmod-tname">' + escapeHtml(t.n) + '</div>' +
         '<div class="tmod-tleader' + (!t.l || t.l === '—' ? ' tbd' : '') + '">' + escapeHtml(t.l || 'No leader on file') + '</div></div>' +
-        '<div class="tmod-sring ' + scoreCls + '">' + (sc == null ? '–' : sc) + '</div>' +
+        '<div class="tmod-sring ' + scoreCls + '" title="Health score: staffing (60%) + leader self-assessment (40%)">' + hs + '</div>' +
       '</div>' +
       '<div class="tmod-tstats">' +
         '<div class="tmod-tstat"><div class="tmod-tsval">' + have + '</div><div class="tmod-tslabel">members</div></div>' +
@@ -1788,9 +1801,10 @@ function tmTD(name) {
       '<div class="tmod-dm"><div class="tmod-dml">Members</div><div class="tmod-dmv">' + have + '</div></div>' +
       '<div class="tmod-dm"><div class="tmod-dml">Still needed</div><div class="tmod-dmv" style="color:' + tmFc(need) + '">' + need + '</div></div>' +
       '<div class="tmod-dm"><div class="tmod-dml">Staffed</div><div class="tmod-dmv">' + fp + '%</div></div>' +
-      (t.sc != null ? '<div class="tmod-dm"><div class="tmod-dml">Health score</div><div class="tmod-dmv">' + t.sc + '/10</div></div>' : '') +
+      '<div class="tmod-dm"><div class="tmod-dml">Health score</div><div class="tmod-dmv">' + tmScore(t) + '/10</div></div>' +
+      (t.sc != null ? '<div class="tmod-dm"><div class="tmod-dml">Leader self-report</div><div class="tmod-dmv" style="font-size:12px;color:var(--text-dim)">' + t.sc + '/10</div></div>' : '') +
     '</div>' +
-    '<div class="tmod-dnote">Detailed leader feedback, succession notes, and resources are in the Admin section (unlock to view).</div>';
+    '<div class="tmod-dnote">Health score = staffing fill rate (60%) + leader self-assessment (40%). Detailed feedback is in the Admin section.</div>';
 
   DR.classList.add('on');
   DR.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1932,14 +1946,15 @@ function tmDoLock() {
 function tmRenderAdminContent() {
   const TEAMS = DASHBOARD_DATA.teamsLeaderForms || [];
 
-  /* Priority actions — auto-flagged teams */
+  /* Priority actions — flagged using calculated health score */
   const ranked = TEAMS.map(t => {
+    const hs = tmScore(t);
     let lvl = 0;
-    if ((t.sc != null && t.sc < 6) || t.need >= 30) lvl = 2;
-    else if ((t.sc != null && t.sc < 8) || t.need > 5 || t.sc == null) lvl = 1;
-    return { t, lvl };
+    if (hs < 6 || t.need >= 30) lvl = 2;        // red: low score or big gap
+    else if (hs < 8 || t.need > 5)  lvl = 1;    // amber: mid score or any gap
+    return { t, lvl, hs };
   }).filter(x => x.lvl > 0)
-    .sort((a, b) => b.lvl - a.lvl || (a.t.sc == null ? 99 : a.t.sc) - (b.t.sc == null ? 99 : b.t.sc) || b.t.need - a.t.need)
+    .sort((a, b) => b.lvl - a.lvl || a.hs - b.hs || b.t.need - a.t.need)
     .slice(0, 10);
 
   const PL = document.getElementById('tmAdminPL');
@@ -1948,7 +1963,7 @@ function tmRenderAdminContent() {
   } else {
     PL.innerHTML = ranked.map(({ t, lvl }) => {
       const cls = lvl === 2 ? 'tmod-dr-dot' : 'tmod-da-dot';
-      const bits = [t.sc != null ? 'Score ' + t.sc + '/10' : 'No score reported'];
+      const bits = ['Health ' + hs + '/10' + (t.sc != null ? ' (self: ' + t.sc + ')' : ' (no form)')];
       if (t.need > 0) bits.push('needs ' + t.need + ' more');
       let snip = (t.iss || '').replace(/\s+/g, ' ').trim();
       if (snip.length > 200) snip = snip.slice(0, 197) + '…';
@@ -1958,10 +1973,10 @@ function tmRenderAdminContent() {
     }).join('');
   }
 
-  /* Full per-team feedback sorted worst-first */
+  /* Full per-team feedback sorted worst-first by calculated health score */
   const sorted = TEAMS.slice().sort((a, b) => {
-    const sa = a.sc == null ? 99 : a.sc, sb = b.sc == null ? 99 : b.sc;
-    if (sa !== sb) return sa - sb;
+    const ha = tmScore(a), hb = tmScore(b);
+    if (ha !== hb) return ha - hb;
     return (b.need || 0) - (a.need || 0);
   });
 
@@ -1973,7 +1988,7 @@ function tmRenderAdminContent() {
     return '<div class="tmod-adminteam">' +
       '<div class="tmod-dtop">' +
         '<div><div class="tmod-dtitle">' + escapeHtml(t.n) + '</div>' +
-        '<div class="tmod-dsub">Leader: ' + escapeHtml(t.l || '—') + ' · Score: ' + (t.sc == null ? 'N/A' : t.sc + '/10') + ' · Reported: ' + escapeHtml(t.subStr || '—') + '</div></div>' +
+        '<div class="tmod-dsub">Leader: ' + escapeHtml(t.l || '—') + ' · Health: ' + tmScore(t) + '/10 · Reported: ' + escapeHtml(t.subStr || '—') + '</div></div>' +
         '<div class="tmod-dbtns">' +
           '<button class="tmod-dbtn hi" data-p="' + escapeHtml(ap) + '" onclick="tmCP(this.dataset.p)">Copy action plan ↗</button>' +
           '<button class="tmod-dbtn" data-p="' + escapeHtml(cp) + '" onclick="tmCP(this.dataset.p)">Copy check-in ↗</button>' +
@@ -1983,7 +1998,8 @@ function tmRenderAdminContent() {
         '<div class="tmod-dm"><div class="tmod-dml">Members</div><div class="tmod-dmv">' + have + '</div></div>' +
         '<div class="tmod-dm"><div class="tmod-dml">Still needed</div><div class="tmod-dmv" style="color:' + tmFc(need) + '">' + need + '</div></div>' +
         '<div class="tmod-dm"><div class="tmod-dml">Staffed</div><div class="tmod-dmv">' + fp + '%</div></div>' +
-        '<div class="tmod-dm"><div class="tmod-dml">Leader score</div><div class="tmod-dmv">' + (t.sc == null ? '—' : t.sc + '/10') + '</div></div>' +
+        '<div class="tmod-dm"><div class="tmod-dml">Health score</div><div class="tmod-dmv">' + tmScore(t) + '/10</div></div>' +
+        '<div class="tmod-dm"><div class="tmod-dml">Self-report</div><div class="tmod-dmv" style="font-size:12px;color:var(--text-dim)">' + (t.sc == null ? '—' : t.sc + '/10') + '</div></div>' +
       '</div>' +
       (t.iss  ? '<div class="tmod-dsec">Issues &amp; context</div><div class="tmod-dblock">'  + escapeHtml(t.iss)  + '</div>' : '') +
       (t.more ? '<div class="tmod-dsec">Additional notes</div><div class="tmod-dblock">'        + escapeHtml(t.more) + '</div>' : '') +
