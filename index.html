@@ -797,68 +797,41 @@
   .members-btn:hover { border-color: var(--yellow-2); color: var(--yellow-2); }
   .members-btn.unlocked { border-color: var(--green); color: var(--green); }
 
-  /* ---- Members modal overlay ---- */
-  #membersModal {
+  /* ---- Members password prompt (small centred modal) ---- */
+  #mmPrompt {
     display: none; position: fixed; inset: 0; z-index: 1800;
-    background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
-    flex-direction: column;
+    background: rgba(0,0,0,0.65); backdrop-filter: blur(3px);
+    align-items: center; justify-content: center;
   }
-  #membersModal.on { display: flex; }
-  .mm-wrap {
-    background: var(--bg); width: 100%; max-width: 900px;
-    margin: auto; border-radius: 16px; border: 1px solid var(--card-border);
-    display: flex; flex-direction: column; max-height: 90vh; overflow: hidden;
+  #mmPrompt.on { display: flex; }
+  .mm-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 2rem 2rem 1.75rem; width: 340px; text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   }
-  .mm-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 28px; border-bottom: 1px solid var(--card-border); flex-shrink: 0;
+  .mm-icon  { font-size: 30px; margin-bottom: 10px; }
+  .mm-ttl   { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+  .mm-msg   { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.6; }
+  #mmPwInput {
+    width: 100%; background: #1a1a1a; border: 1px solid #3a3a3a; color: var(--text);
+    font-family: 'Montserrat', sans-serif; font-size: 15px; padding: 10px 12px;
+    border-radius: 7px; outline: none; margin-bottom: 10px; box-sizing: border-box;
   }
-  .mm-title { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
-  .mm-sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
-  .mm-close {
-    appearance: none; background: none; border: 1px solid #3a3a3a;
-    color: var(--text-muted); font-size: 18px; width: 34px; height: 34px;
-    border-radius: 50%; cursor: pointer; line-height: 1;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .mm-close:hover { border-color: #666; color: var(--text); }
-  .mm-body { overflow-y: auto; padding: 28px 28px 40px; flex: 1; }
-  .mm-body::-webkit-scrollbar { width: 8px; }
-  .mm-body::-webkit-scrollbar-track { background: var(--bg); }
-  .mm-body::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
-
-  /* Members lock card */
-  .mm-lockcard { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 2.5rem 2rem; text-align: center; max-width: 380px; margin: 2rem auto; }
-  .mm-lockicon { font-size: 34px; margin-bottom: 12px; }
-  .mm-lockttl { font-size: 19px; font-weight: 600; margin-bottom: 8px; }
-  .mm-lockmsg { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
-  #mmPwInput { width: 100%; background: #1a1a1a; border: 1px solid #3a3a3a; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 15px; padding: 10px 12px; border-radius: 7px; outline: none; margin-bottom: 10px; box-sizing: border-box; }
   #mmPwInput:focus { border-color: var(--yellow-2); }
-  .mm-lockerr { color: var(--red); font-size: 13px; margin-top: 8px; display: none; }
-  .mm-lockbtn { background: var(--yellow-3); color: #000; border: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; padding: 10px 28px; border-radius: 8px; cursor: pointer; width: 100%; }
-  .mm-lockbtn:hover { background: var(--yellow-2); }
+  .mm-btn {
+    background: var(--yellow-3); color: #000; border: none;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px;
+    padding: 10px; border-radius: 8px; cursor: pointer; width: 100%;
+  }
+  .mm-btn:hover { background: var(--yellow-2); }
+  .mm-err { color: var(--red); font-size: 12px; margin-top: 8px; display: none; }
+  .mm-cancel { appearance: none; background: none; border: none; color: var(--text-dim); font-size: 12px; font-family: 'Montserrat', sans-serif; cursor: pointer; margin-top: 10px; }
+  .mm-cancel:hover { color: var(--text-muted); }
 
-  /* Members content sections */
-  .mm-section { margin-bottom: 28px; }
-  .mm-section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--card-border); }
-  .mm-giving-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
-  .mm-giving-cell { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 14px 16px; }
-  .mm-giving-cell.current { border-color: var(--yellow-3); }
-  .mm-giving-month { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 600; }
-  .mm-giving-amt { font-size: 22px; font-weight: 300; letter-spacing: -0.5px; }
-  .mm-pledge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .mm-pledge-stat { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 14px 16px; }
-  .mm-pledge-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 600; }
-  .mm-pledge-val { font-size: 24px; font-weight: 300; letter-spacing: -0.5px; }
-  .mm-pledge-val.green { color: var(--green); }
-  .mm-progress-track { height: 12px; background: #2a2a2a; border-radius: 6px; overflow: hidden; margin-bottom: 6px; }
-  .mm-progress-fill { height: 100%; border-radius: 6px; transition: width 0.6s ease; }
-  .mm-progress-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); }
-  .mm-coming { background: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 10px; padding: 2rem; text-align: center; color: var(--text-dim); font-size: 13px; }
-  .mm-coming strong { display: block; font-size: 15px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
-  .mm-unlock-bar { display: flex; justify-content: flex-end; margin-bottom: 4px; }
-  .mm-relock { appearance: none; background: none; border: 1px solid #3a3a3a; color: var(--text-dim); font-size: 11px; font-family: 'Montserrat', sans-serif; padding: 4px 10px; border-radius: 12px; cursor: pointer; }
-  .mm-relock:hover { border-color: var(--red); color: var(--red); }
+  /* Members-only elements: hidden until unlocked */
+  .members-only { display: none; }
+  .members-unlocked .members-only { display: block; }
+  .members-unlocked .members-hide { display: none; }
 
   .tmod-state { padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 14px; }
 
@@ -883,7 +856,7 @@
       <div class="subtitle">Living Stones Church, South Reno</div>
     </div>
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end;">
-      <button class="members-btn" id="membersBtnHeader" onclick="openMembersModal()">🔐 Members</button>
+      <button class="members-btn" id="membersBtnHeader" onclick="mmClick()">🔐 Members</button>
       <div class="updated">
         <div><span class="pulse"></span><span class="stamp" id="updatedStamp">Loading…</span></div>
         <div style="margin-top:4px;">Refreshes hourly</div>
@@ -905,11 +878,16 @@
 
         <div class="pledge-row">
           <div class="pledge-row-label">Progress to goal</div>
-          <div class="pledge-row-pct green" id="progressPercent">0%</div>
+          <div style="display:flex;align-items:baseline;gap:10px;">
+            <div class="pledge-row-pct green" id="progressPercent">0%</div>
+            <!-- Members-only dollar detail -->
+            <div class="members-only" id="pledgeRaisedDetail" style="font-size:13px;color:var(--text-muted);"></div>
+          </div>
         </div>
         <div class="progress-track" style="margin-bottom:0">
           <div class="progress-fill" id="progressFill" style="width:0%"></div>
         </div>
+        <div class="members-only" id="pledgeRemainingDetail" style="font-size:12px;color:var(--text-dim);margin-top:5px;text-align:right;"></div>
 
         <div class="pledge-row pledge-spacer">
           <div class="pledge-row-label">Campaign timeline</div>
@@ -984,19 +962,17 @@
   <div class="footer">Auto-refreshes hourly · Living Stones Church, South Reno</div>
 </div>
 
-<!-- ======== MEMBERS MODAL ======== -->
-<div id="membersModal" role="dialog" aria-modal="true">
-  <div class="mm-wrap">
-    <div class="mm-header">
-      <div>
-        <div class="mm-title" id="mmTitle">🔐 Members Area</div>
-        <div class="mm-sub" id="mmSub">Members-only financial detail</div>
-      </div>
-      <button class="mm-close" onclick="closeMembersModal()">&#10005;</button>
-    </div>
-    <div class="mm-body" id="mmBody">
-      <!-- filled by JS -->
-    </div>
+<!-- ======== MEMBERS PASSWORD PROMPT ======== -->
+<div id="mmPrompt" role="dialog" aria-modal="true">
+  <div class="mm-card">
+    <div class="mm-icon">🔐</div>
+    <div class="mm-ttl">Members Area</div>
+    <div class="mm-msg">Enter the members password to see full financial details on the dashboard.</div>
+    <input id="mmPwInput" type="password" placeholder="Members password" autocomplete="off"
+           onkeydown="if(event.key==='Enter')mmDoUnlock()" />
+    <button class="mm-btn" onclick="mmDoUnlock()">Unlock →</button>
+    <div class="mm-err" id="mmErr">Incorrect password — try again.</div>
+    <div><button class="mm-cancel" onclick="mmClosePrompt()">Cancel</button></div>
   </div>
 </div>
 
@@ -1357,8 +1333,10 @@ function renderGiving() {
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        // Tooltip hidden publicly — full amounts visible in Members area
-        tooltip: { enabled: false }
+        // Tooltip shows dollar amounts when Members is unlocked, hidden publicly
+        tooltip: mmIsUnlocked()
+          ? { ...baseTooltip, callbacks: { label: (ctx) => '  ' + fmtMoney(ctx.parsed.y) } }
+          : { enabled: false }
       },
       scales: {
         x: { ...baseGridOpts, grid: { display: false }, ticks: { ...baseGridOpts.ticks, autoSkip: false, maxRotation: 45, minRotation: 45 } },
@@ -1738,8 +1716,9 @@ loadDashboardData()
   .then(() => {
     initAttendanceModalEvents();
     renderUpdated();
-    renderGiving();
+    mmApplyState();   // restore unlock state before rendering giving chart
     renderPledge();
+    mmUpdatePledgeDetails();
     renderAttendance();
     renderTeams();
     renderCGCount();
@@ -2160,7 +2139,7 @@ function tmToastFn(msg) {
 }
 
 /* ================================================================
-   MEMBERS MODAL
+   MEMBERS UNLOCK — in-place: charts update on the main page
    Password: "allin"  SHA-256: 6af0a3ade0674b88783a81714b6a8ba00da0573dc7479b2a63972ec835a1728a
    ================================================================ */
 const MM_HASH = '6af0a3ade0674b88783a81714b6a8ba00da0573dc7479b2a63972ec835a1728a';
@@ -2168,50 +2147,31 @@ const MM_SESSION_KEY = 'mm_unlocked';
 
 function mmIsUnlocked() { return sessionStorage.getItem(MM_SESSION_KEY) === '1'; }
 
-function openMembersModal() {
-  document.getElementById('membersModal').classList.add('on');
-  document.body.style.overflow = 'hidden';
-  mmRender();
-}
-
-function closeMembersModal() {
-  document.getElementById('membersModal').classList.remove('on');
-  document.body.style.overflow = '';
-}
-
-// Close on backdrop click
-document.getElementById('membersModal').addEventListener('click', function(e) {
-  if (e.target === this) closeMembersModal();
-});
-
-// Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    if (document.getElementById('membersModal').classList.contains('on')) closeMembersModal();
-  }
-});
-
-function mmRender() {
-  const btn = document.getElementById('membersBtnHeader');
+/* Called when the Members button in the header is clicked */
+function mmClick() {
   if (mmIsUnlocked()) {
-    document.getElementById('mmTitle').textContent = '🔓 Members Area';
-    if (btn) { btn.textContent = '🔓 Members'; btn.classList.add('unlocked'); }
-    mmRenderContent();
+    // Already unlocked — click again to lock
+    mmLock();
   } else {
-    document.getElementById('mmTitle').textContent = '🔐 Members Area';
-    if (btn) { btn.textContent = '🔐 Members'; btn.classList.remove('unlocked'); }
-    document.getElementById('mmBody').innerHTML =
-      '<div class="mm-lockcard">' +
-        '<div class="mm-lockicon">🔐</div>' +
-        '<div class="mm-lockttl">Members Area</div>' +
-        '<div class="mm-lockmsg">This section contains detailed financial data for church members and leadership.<br>Enter the members password to continue.</div>' +
-        '<input id="mmPwInput" type="password" placeholder="Enter members password" onkeydown="if(event.key===\'Enter\')mmDoUnlock()" autocomplete="off" />' +
-        '<button class="mm-lockbtn" onclick="mmDoUnlock()">Unlock →</button>' +
-        '<div class="mm-lockerr" id="mmErr">Incorrect password — try again.</div>' +
-      '</div>';
-    setTimeout(() => { const i = document.getElementById('mmPwInput'); if (i) i.focus(); }, 50);
+    // Show the password prompt
+    document.getElementById('mmPrompt').classList.add('on');
+    setTimeout(() => { const i = document.getElementById('mmPwInput'); if (i) { i.value = ''; i.focus(); } }, 50);
   }
 }
+
+function mmClosePrompt() {
+  document.getElementById('mmPrompt').classList.remove('on');
+}
+
+// Close prompt on backdrop click
+document.getElementById('mmPrompt').addEventListener('click', function(e) {
+  if (e.target === this) mmClosePrompt();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('mmPrompt').classList.contains('on')) mmClosePrompt();
+  // Also close teams modal on Escape (already handled elsewhere but keep consistent)
+});
 
 async function mmDoUnlock() {
   const val = (document.getElementById('mmPwInput').value || '').trim();
@@ -2219,74 +2179,57 @@ async function mmDoUnlock() {
   const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
   if (hash === MM_HASH) {
     sessionStorage.setItem(MM_SESSION_KEY, '1');
-    mmRender();
+    mmClosePrompt();
+    mmApplyState();
   } else {
     const err = document.getElementById('mmErr');
     if (err) { err.style.display = 'block'; setTimeout(() => err.style.display = 'none', 3000); }
   }
 }
 
-function mmDoLock() {
+function mmLock() {
   sessionStorage.removeItem(MM_SESSION_KEY);
-  mmRender();
+  mmApplyState();
 }
 
-function mmRenderContent() {
-  const giving  = DASHBOARD_DATA.giving  || { months: [], amounts: [] };
-  const pledge  = DASHBOARD_DATA.pledge  || { target: 8500000, raised: 0 };
-  const months  = normalizeMonthArray(giving.months);
-  const amounts = giving.amounts || [];
+/* Apply/remove the unlocked state to the main page */
+function mmApplyState() {
+  const unlocked = mmIsUnlocked();
+  const btn = document.getElementById('membersBtnHeader');
 
-  // Pledge calcs
+  // Toggle CSS class on the dashboard so .members-only / .members-hide work
+  const dash = document.querySelector('.dashboard');
+  if (unlocked) {
+    dash.classList.add('members-unlocked');
+    btn.textContent = '🔓 Members';
+    btn.classList.add('unlocked');
+    btn.title = 'Click to lock';
+  } else {
+    dash.classList.remove('members-unlocked');
+    btn.textContent = '🔐 Members';
+    btn.classList.remove('unlocked');
+    btn.title = 'Members area';
+  }
+
+  // Re-render giving chart (tooltip on/off) and pledge details
+  const givingCanvas = document.getElementById('givingChart');
+  const existingChart = givingCanvas && Chart.getChart(givingCanvas);
+  if (existingChart) existingChart.destroy();
+  renderGiving();
+  mmUpdatePledgeDetails();
+}
+
+/* Show/hide the dollar detail lines inside the pledge card */
+function mmUpdatePledgeDetails() {
+  const pledge = DASHBOARD_DATA.pledge || { target: 8500000, raised: 0 };
   const safeTarget = Number(pledge.target) || 1;
   const raised     = Number(pledge.raised)  || 0;
   const remaining  = Math.max(0, safeTarget - raised);
-  const pct        = Math.min(100, (raised / safeTarget) * 100);
-  const campaignStart = new Date('2025-05-01T00:00:00');
-  const campaignEnd   = new Date('2027-05-01T00:00:00');
-  const elapsed    = Math.max(0, new Date() - campaignStart);
-  const timePct    = Math.min(100, (elapsed / (campaignEnd - campaignStart)) * 100);
 
-  // Giving rows (most recent last → reverse for display most recent first)
-  const givingCells = months.map((m, i) => ({m, a: amounts[i] || 0})).reverse().slice(0, 24);
-  const givingHTML = givingCells.map((g, i) =>
-    '<div class="mm-giving-cell' + (i === 0 ? ' current' : '') + '">' +
-      '<div class="mm-giving-month">' + escapeHtml(g.m) + '</div>' +
-      '<div class="mm-giving-amt">' + fmtMoney(g.a) + '</div>' +
-    '</div>'
-  ).join('');
-
-  document.getElementById('mmBody').innerHTML =
-    '<div class="mm-unlock-bar"><button class="mm-relock" onclick="mmDoLock()">🔒 Lock</button></div>' +
-
-    // ---- Giving section ----
-    '<div class="mm-section">' +
-      '<div class="mm-section-title">Monthly Giving</div>' +
-      '<div class="mm-giving-grid">' + givingHTML + '</div>' +
-    '</div>' +
-
-    // ---- Pledge section ----
-    '<div class="mm-section">' +
-      '<div class="mm-section-title">ALL-IN Pledge — Full Detail</div>' +
-      '<div class="mm-pledge-grid">' +
-        '<div class="mm-pledge-stat"><div class="mm-pledge-label">Given to date</div><div class="mm-pledge-val green">' + fmtMoney(raised) + '</div></div>' +
-        '<div class="mm-pledge-stat"><div class="mm-pledge-label">Campaign goal</div><div class="mm-pledge-val">' + fmtMoney(safeTarget) + '</div></div>' +
-        '<div class="mm-pledge-stat"><div class="mm-pledge-label">Remaining</div><div class="mm-pledge-val">' + fmtMoney(remaining) + '</div></div>' +
-        '<div class="mm-pledge-stat"><div class="mm-pledge-label">% to goal</div><div class="mm-pledge-val green">' + pct.toFixed(1) + '%</div></div>' +
-      '</div>' +
-      '<div style="margin-bottom:6px;font-size:12px;color:var(--text-muted)">Progress to $' + fmtMoneyShort(safeTarget) + ' goal</div>' +
-      '<div class="mm-progress-track"><div class="mm-progress-fill" style="width:' + pct + '%;background:var(--green)"></div></div>' +
-      '<div class="mm-progress-meta"><span>' + pct.toFixed(1) + '% of goal</span><span>' + fmtMoney(remaining) + ' remaining</span></div>' +
-      '<div style="margin:14px 0 6px;font-size:12px;color:var(--text-muted)">Campaign timeline · May 2025 – May 2027</div>' +
-      '<div class="mm-progress-track"><div class="mm-progress-fill" style="width:' + timePct + '%;background:var(--blue-adults)"></div></div>' +
-      '<div class="mm-progress-meta"><span>' + timePct.toFixed(1) + '% through campaign</span><span>May 2027 goal</span></div>' +
-    '</div>' +
-
-    // ---- Coming soon placeholder ----
-    '<div class="mm-section">' +
-      '<div class="mm-section-title">More Coming Soon</div>' +
-      '<div class="mm-coming"><strong>Additional Member Content</strong>More sections will be added here. Let Brad know what you\'d like to see.</div>' +
-    '</div>';
+  const raisedEl    = document.getElementById('pledgeRaisedDetail');
+  const remainingEl = document.getElementById('pledgeRemainingDetail');
+  if (raisedEl)    raisedEl.textContent    = fmtMoney(raised) + ' raised of ' + fmtMoney(safeTarget);
+  if (remainingEl) remainingEl.textContent = fmtMoney(remaining) + ' remaining';
 }
 </script>
 
