@@ -755,6 +755,46 @@
   #tmodPwInput:focus { border-color: var(--yellow-2); }
   .tmod-lockerr { color: var(--red); font-size: 13px; margin-top: 10px; display: none; }
 
+  #cgPwInput { width: 100%; background: #1a1a1a; border: 1px solid #3a3a3a; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 15px; padding: 10px 12px; border-radius: 7px; outline: none; margin-bottom: 10px; box-sizing: border-box; }
+  #cgPwInput:focus { border-color: #a78bfa; }
+
+  /* CG modal inner layout */
+  .cg-kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  @media (max-width: 640px) { .cg-kpi-row { grid-template-columns: repeat(2, 1fr); } }
+  .cg-kpi-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 16px; text-align: center; }
+  .cg-kpi-label { font-size: 11px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .cg-kpi-value { font-size: 28px; font-weight: 700; color: #a78bfa; line-height: 1; }
+  .cg-kpi-goal { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+
+  .cg-section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 12px; }
+  .cg-goals { margin-bottom: 24px; }
+  .cg-goal-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .cg-goal-name { font-size: 13px; font-weight: 500; width: 180px; flex-shrink: 0; }
+  .cg-goal-track { flex: 1; height: 8px; background: #2a2a2a; border-radius: 4px; overflow: hidden; }
+  .cg-goal-fill { height: 100%; background: #a78bfa; border-radius: 4px; }
+  .cg-goal-fill.at-goal { background: #4ade80; }
+  .cg-goal-val { font-size: 12px; color: var(--text-muted); white-space: nowrap; min-width: 80px; text-align: right; }
+
+  .cg-charts-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  @media (max-width: 768px) { .cg-charts-2col { grid-template-columns: 1fr; } }
+
+  .cg-table-ctrls { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .cg-table-ctrls input, .cg-table-ctrls select { background: #1c1c1c; border: 1px solid #3a3a3a; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 13px; padding: 7px 10px; border-radius: 7px; flex: 1; min-width: 120px; outline: none; }
+  .cg-table-ctrls input:focus, .cg-table-ctrls select:focus { border-color: #a78bfa; }
+
+  .cg-rate-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+  .cg-rate-high { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .cg-rate-mid  { background: rgba(251,191,36,0.15);  color: #fbbf24; }
+  .cg-rate-low  { background: rgba(248,113,113,0.15); color: #f87171; }
+
+  .cg-pipeline-phase { margin-bottom: 18px; }
+  .cg-pipeline-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .cg-phase-badge { background: rgba(167,139,250,0.15); color: #a78bfa; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+  .cg-phase-label { font-size: 13px; font-weight: 600; }
+  .cg-phase-count { font-size: 12px; color: var(--text-muted); margin-left: auto; }
+  .cg-pipeline-names { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cg-name-tag { background: #1c1c1c; border: 1px solid #333; border-radius: 14px; padding: 4px 10px; font-size: 12px; }
+
   .tmod-adminbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; padding: 10px 14px; background: var(--card-bg); border: 1px solid var(--yellow-2); border-radius: 8px; }
   .tmod-adminbar span { color: var(--yellow-2); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
 
@@ -946,14 +986,20 @@
     </div>
 
     <div class="right-col">
-      <div class="card">
-        <h2>Community Groups</h2>
-        <div class="card-sub">Total groups · full history</div>
+      <div class="card" style="cursor:pointer;" onclick="openCGModal()" title="Click for full community group detail">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
+          <h2 style="margin:0;">Community Groups</h2>
+          <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Discipleship →</span>
+        </div>
+        <div class="card-sub">Total groups · click for full CG detail</div>
         <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgCountChart"></canvas></div></div>
       </div>
-      <div class="card">
-        <h2>Community Group Members</h2>
-        <div class="card-sub">Total members in groups · full history</div>
+      <div class="card" style="cursor:pointer;" onclick="openCGModal()" title="Click for full community group detail">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
+          <h2 style="margin:0;">Community Group Members</h2>
+          <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Discipleship →</span>
+        </div>
+        <div class="card-sub">Total members · click for full CG detail</div>
         <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgMembersChart"></canvas></div></div>
       </div>
     </div>
@@ -1116,6 +1162,98 @@
 </div><!-- /tmod-overlay -->
 <div class="tmod-toast" id="tmToast"></div>
 
+<!-- Community Groups Full-Screen Modal -->
+<div class="tmod-overlay" id="cgModal" aria-hidden="true">
+  <div class="tmod-header">
+    <button class="tmod-back" onclick="closeCGModal()">&#8592; Dashboard</button>
+    <div class="tmod-titles">
+      <div class="tmod-title">Community Groups</div>
+      <div class="tmod-sub">LIVING STONES CHURCH &nbsp;&middot;&nbsp; DISCIPLESHIP</div>
+    </div>
+    <div class="tmod-meta" id="cgModMeta"></div>
+  </div>
+
+  <!-- Locked state -->
+  <div id="cgModLocked" class="tmod-body" style="display:flex;align-items:center;justify-content:center;">
+    <div class="tmod-lockcard">
+      <div class="tmod-lockicon">&#128274;</div>
+      <div class="tmod-lockttl">Discipleship Area</div>
+      <div class="tmod-lockmsg">This area contains detailed community group metrics, leader pipeline, and attendance health. Enter the password to view.</div>
+      <input type="password" id="cgPwInput" placeholder="Password" autocomplete="off" onkeydown="if(event.key==='Enter')cgDoUnlock()">
+      <button class="tmod-dbtn hi" style="width:100%;padding:11px;margin-top:4px" onclick="cgDoUnlock()">Unlock</button>
+      <div id="cgLockErr" class="tmod-lockerr">Incorrect password.</div>
+    </div>
+  </div>
+
+  <!-- Unlocked content -->
+  <div id="cgModContent" class="tmod-body" style="display:none">
+
+    <!-- KPI cards -->
+    <div class="cg-kpi-row" id="cgKPIs"></div>
+
+    <!-- 2026 Goals -->
+    <div class="cg-section-label">2026 Goals</div>
+    <div class="cg-goals" id="cgGoals"></div>
+
+    <!-- Multi-year trends -->
+    <div class="cg-charts-2col">
+      <div class="card">
+        <h2>Active Groups by Year</h2>
+        <div class="card-sub">Monthly group count &middot; multi-year comparison</div>
+        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgModCountChart"></canvas></div></div>
+      </div>
+      <div class="card">
+        <h2>People in Groups by Year</h2>
+        <div class="card-sub">Monthly member count &middot; multi-year comparison</div>
+        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgModMembersChart"></canvas></div></div>
+      </div>
+    </div>
+
+    <!-- Connection funnel + Outsiders -->
+    <div class="cg-charts-2col">
+      <div class="card">
+        <h2>Connection Funnel</h2>
+        <div class="card-sub">Applied to join vs. actually joined</div>
+        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgJoinChart"></canvas></div></div>
+      </div>
+      <div class="card">
+        <h2>Outsiders Becoming Insiders</h2>
+        <div class="card-sub">Non-members joining groups each month</div>
+        <div class="chart-wrap"><div class="chart-inner"><canvas id="cgOutsidersChart"></canvas></div></div>
+      </div>
+    </div>
+
+    <!-- Leader Pipeline + Attendance table -->
+    <div class="cg-charts-2col">
+      <div class="card">
+        <h2>Leader Pipeline</h2>
+        <div class="card-sub" id="cgPipelineSub">Leaders in development</div>
+        <div id="cgPipelineContent"></div>
+      </div>
+      <div class="card">
+        <h2>Group Attendance Health</h2>
+        <div class="card-sub">Sorted by attendance rate</div>
+        <div class="cg-table-ctrls">
+          <input type="text" id="cgTableSearch" placeholder="Search group&hellip;" oninput="cgFilterTable()">
+          <select id="cgTableSort" onchange="cgFilterTable()">
+            <option value="rate-d">Sort: attendance rate &#8595;</option>
+            <option value="rate-a">Sort: attendance rate &#8593;</option>
+            <option value="az">Sort: name A&ndash;Z</option>
+            <option value="members-d">Sort: members &#8595;</option>
+          </select>
+        </div>
+        <div class="tmod-table-wrap">
+          <table class="tmod-table">
+            <thead><tr><th>Group</th><th>Members</th><th>Avg Attended</th><th>Meetings</th><th>Rate</th></tr></thead>
+            <tbody id="cgTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cgModContent -->
+</div><!-- /cgModal overlay -->
+
 <script>
 let DASHBOARD_DATA = null;
 const DATA_URL = './dashboard-data.json';
@@ -1141,6 +1279,7 @@ function normalizeDashboardData() {
   DASHBOARD_DATA.communityGroups = DASHBOARD_DATA.communityGroups || { months: [], counts: [] };
   DASHBOARD_DATA.communityGroupMembers = DASHBOARD_DATA.communityGroupMembers || { months: [], counts: [] };
   DASHBOARD_DATA.baptisms = DASHBOARD_DATA.baptisms || { months: [], counts: [], total: 0 };
+  DASHBOARD_DATA.communityGroupsDetailed = DASHBOARD_DATA.communityGroupsDetailed || {};
 }
 
 function showDashboardError(err) {
@@ -1498,6 +1637,7 @@ function initAttendanceModalEvents() {
     if (e.key === 'Escape') {
       closeAttendanceModal();
       closeTeamsModal();
+      closeCGModal();
     }
   });
 }
@@ -1718,11 +1858,13 @@ function renderCGMembers() {
 function renderBaptisms() {
   const raw = DASHBOARD_DATA.baptisms || { months: [], counts: [], total: 0 };
 
-  // Aggregate monthly data into yearly buckets
+  // Aggregate monthly data into yearly buckets.
+  // raw.months are human labels like "Jan 2021" or "Apr 2026" — extract the 4-digit year.
   const yearMap = {};
   (raw.months || []).forEach((m, i) => {
-    const year = String(m).substring(0, 4);
-    if (!year || year === 'NaN') return;
+    const match = String(m).match(/\d{4}/);
+    const year = match ? match[0] : null;
+    if (!year) return;
     yearMap[year] = (yearMap[year] || 0) + (Number(raw.counts[i]) || 0);
   });
 
@@ -2308,6 +2450,298 @@ function mmApplyState() {
   if (existingChart) existingChart.destroy();
   renderGiving();
   mmUpdatePledgeDetails();
+}
+
+/* ================================================================
+   COMMUNITY GROUPS MODAL
+   Password: "groups2026"
+   SHA-256: ea8ef92da17727c9d74fbcd9f81cd423d1841112a0497f8d2b7ad8a0248531ca
+   To change: open dev tools → console → run:
+     (async()=>{const h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('YOUR_PW'));
+     console.log([...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join(''))})()
+   ================================================================ */
+const CG_HASH = 'ea8ef92da17727c9d74fbcd9f81cd423d1841112a0497f8d2b7ad8a0248531ca';
+const CG_SESSION_KEY = 'cg_unlocked';
+let cgRendered = false;
+
+function cgIsUnlocked() { return sessionStorage.getItem(CG_SESSION_KEY) === '1'; }
+
+function openCGModal() {
+  if (!DASHBOARD_DATA) return;
+  const modal = document.getElementById('cgModal');
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  const lu = DASHBOARD_DATA.lastUpdated
+    ? new Date(DASHBOARD_DATA.lastUpdated).toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' })
+    : 'unknown';
+  document.getElementById('cgModMeta').innerHTML = '<b>Data: ' + escapeHtml(lu) + '</b>';
+
+  if (cgIsUnlocked()) {
+    document.getElementById('cgModLocked').style.display = 'none';
+    document.getElementById('cgModContent').style.display = 'block';
+    if (!cgRendered) { cgRenderAll(); cgRendered = true; }
+  } else {
+    document.getElementById('cgModLocked').style.display = 'flex';
+    document.getElementById('cgModContent').style.display = 'none';
+    setTimeout(() => { const i = document.getElementById('cgPwInput'); if (i) { i.value = ''; i.focus(); } }, 50);
+  }
+}
+
+function closeCGModal() {
+  const modal = document.getElementById('cgModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+async function cgDoUnlock() {
+  const val = (document.getElementById('cgPwInput').value || '').trim();
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(val));
+  const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  if (hash === CG_HASH) {
+    sessionStorage.setItem(CG_SESSION_KEY, '1');
+    document.getElementById('cgModLocked').style.display = 'none';
+    document.getElementById('cgModContent').style.display = 'block';
+    if (!cgRendered) { cgRenderAll(); cgRendered = true; }
+  } else {
+    const err = document.getElementById('cgLockErr');
+    if (err) { err.style.display = 'block'; setTimeout(() => err.style.display = 'none', 3000); }
+  }
+}
+
+function cgRenderAll() {
+  const cg = DASHBOARD_DATA.communityGroupsDetailed || {};
+  cgRenderKPIs(cg);
+  cgRenderGoals(cg);
+  cgRenderGroupsByYear(cg);
+  cgRenderMembersByYear(cg);
+  cgRenderJoinFunnel(cg);
+  cgRenderOutsiders(cg);
+  cgRenderPipeline(cg);
+  cgRenderAttendanceTable(cg);
+}
+
+function cgRenderKPIs(cg) {
+  const cur = cg.current || {};
+  const goals = cg.goals2026 || {};
+  const el = document.getElementById('cgKPIs');
+  if (!el) return;
+  const kpis = [
+    { label: 'Active Groups',  value: cur.groups !== undefined ? cur.groups : '—',                 goal: goals.groups     ? 'Goal: ' + goals.groups      : '' },
+    { label: 'Total Members',  value: cur.members !== undefined ? cur.members : '—',               goal: goals.members    ? 'Goal: ' + goals.members     : '' },
+    { label: 'Avg Group Size', value: cur.groupSize !== undefined ? cur.groupSize : '—',           goal: goals.groupSize  ? 'Goal: ' + goals.groupSize   : '' },
+    { label: 'FM in Groups',   value: cur.fmInGroupsPct !== undefined ? cur.fmInGroupsPct + '%' : '—', goal: goals.fmInGroupsPct ? 'Goal: ' + goals.fmInGroupsPct + '%' : '' }
+  ];
+  el.innerHTML = kpis.map(k => `
+    <div class="cg-kpi-card">
+      <div class="cg-kpi-label">${escapeHtml(k.label)}</div>
+      <div class="cg-kpi-value">${escapeHtml(String(k.value))}</div>
+      ${k.goal ? '<div class="cg-kpi-goal">' + escapeHtml(k.goal) + '</div>' : ''}
+    </div>`).join('');
+}
+
+function cgRenderGoals(cg) {
+  const cur = cg.current || {};
+  const goals = cg.goals2026 || {};
+  const el = document.getElementById('cgGoals');
+  if (!el) return;
+  const items = [
+    { name: 'Active Groups',  cur: cur.groups,        goal: goals.groups,        pct: false },
+    { name: 'Total Members',  cur: cur.members,       goal: goals.members,       pct: false },
+    { name: 'FM in Groups',   cur: cur.fmInGroupsPct, goal: goals.fmInGroupsPct, pct: true  }
+  ];
+  el.innerHTML = items.map(item => {
+    const filled = (item.cur && item.goal) ? Math.min(100, Math.round((item.cur / item.goal) * 100)) : 0;
+    const suffix = item.pct ? '%' : '';
+    return `
+      <div class="cg-goal-row">
+        <div class="cg-goal-name">${escapeHtml(item.name)}</div>
+        <div class="cg-goal-track"><div class="cg-goal-fill${filled >= 100 ? ' at-goal' : ''}" style="width:${filled}%"></div></div>
+        <div class="cg-goal-val">${item.cur !== undefined ? item.cur : '?'}${suffix} / ${item.goal !== undefined ? item.goal : '?'}${suffix}</div>
+      </div>`;
+  }).join('');
+}
+
+const CG_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const CG_YEAR_COLORS = {
+  '2023': { border: 'rgba(107,114,128,0.8)',  bg: 'transparent' },
+  '2024': { border: 'rgba(96,165,250,0.85)',  bg: 'transparent' },
+  '2025': { border: 'rgba(251,146,60,0.9)',   bg: 'transparent' },
+  '2026': { border: 'rgba(167,139,250,1)',     bg: 'transparent' }
+};
+
+function cgBuildMultiYearDatasets(byYear) {
+  return Object.entries(byYear).sort(([a],[b]) => Number(a) - Number(b)).map(([yr, vals]) => {
+    const col = CG_YEAR_COLORS[yr] || { border: '#888', bg: 'transparent' };
+    return {
+      label: yr,
+      data: vals,
+      borderColor: col.border,
+      backgroundColor: col.bg,
+      borderWidth: yr === '2026' ? 2.5 : 1.8,
+      pointRadius: 3,
+      tension: 0.3,
+      spanGaps: false
+    };
+  });
+}
+
+function cgRenderGroupsByYear(cg) {
+  const byYear = cg.groupCountsByYear || {};
+  if (!Object.keys(byYear).length) return;
+  prepScrollableChart('cgModCountChart', 12);
+  const ctx = document.getElementById('cgModCountChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: CG_MONTHS, datasets: cgBuildMultiYearDatasets(byYear) },
+    options: {
+      responsive: false, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, labels: { color: '#aaa', font: { size: 11, family: 'Montserrat' }, boxWidth: 20 } },
+        tooltip: { ...baseTooltip, callbacks: { label: (c) => '  ' + c.dataset.label + ': ' + (c.parsed.y !== null ? c.parsed.y : '—') + ' groups' } }
+      },
+      scales: {
+        x: { ...baseGridOpts, grid: { display: false } },
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
+      }
+    }
+  });
+}
+
+function cgRenderMembersByYear(cg) {
+  const byYear = cg.peopleInGroupsByYear || {};
+  if (!Object.keys(byYear).length) return;
+  prepScrollableChart('cgModMembersChart', 12);
+  const ctx = document.getElementById('cgModMembersChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: CG_MONTHS, datasets: cgBuildMultiYearDatasets(byYear) },
+    options: {
+      responsive: false, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, labels: { color: '#aaa', font: { size: 11, family: 'Montserrat' }, boxWidth: 20 } },
+        tooltip: { ...baseTooltip, callbacks: { label: (c) => '  ' + c.dataset.label + ': ' + (c.parsed.y !== null ? c.parsed.y : '—') + ' people' } }
+      },
+      scales: {
+        x: { ...baseGridOpts, grid: { display: false } },
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
+      }
+    }
+  });
+}
+
+function cgRenderJoinFunnel(cg) {
+  const applied2025 = ((cg.appliedToJoin || {})['2025'] || []);
+  const joined2025  = ((cg.joinedGroup   || {})['2025'] || []);
+  const applied2026 = ((cg.appliedToJoin || {})['2026'] || []);
+  const joined2026  = ((cg.joinedGroup   || {})['2026'] || []);
+  const labels = [], appliedData = [], joinedData = [];
+  applied2025.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'25'); appliedData.push(v); joinedData.push(joined2025[i] ?? null); } });
+  applied2026.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'26'); appliedData.push(v); joinedData.push(joined2026[i] ?? null); } });
+  const ctx = document.getElementById('cgJoinChart');
+  if (!ctx) return;
+  prepScrollableChart('cgJoinChart', labels.length);
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Applied', data: appliedData, backgroundColor: 'rgba(167,139,250,0.55)', borderRadius: 4, maxBarThickness: 28 },
+        { label: 'Joined',  data: joinedData,  backgroundColor: 'rgba(74,222,128,0.7)',   borderRadius: 4, maxBarThickness: 28 }
+      ]
+    },
+    options: {
+      responsive: false, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, labels: { color: '#aaa', font: { size: 11, family: 'Montserrat' }, boxWidth: 16 } },
+        tooltip: { ...baseTooltip }
+      },
+      scales: {
+        x: { ...baseGridOpts, grid: { display: false }, ticks: { ...baseGridOpts.ticks, autoSkip: true, maxRotation: 45, minRotation: 45 } },
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
+      }
+    }
+  });
+}
+
+function cgRenderOutsiders(cg) {
+  const out2025 = ((cg.outsidersInsiders || {})['2025'] || []);
+  const out2026 = ((cg.outsidersInsiders || {})['2026'] || []);
+  const labels = [], data = [];
+  out2025.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'25'); data.push(v); } });
+  out2026.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'26'); data.push(v); } });
+  const ctx = document.getElementById('cgOutsidersChart');
+  if (!ctx) return;
+  prepScrollableChart('cgOutsidersChart', labels.length);
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ label: 'Outsiders joining', data, backgroundColor: data.map((_, i) => ['#a78bfa','#9333ea','#7c3aed','#c4b5fd'][i % 4]), borderRadius: 4, maxBarThickness: 28 }]
+    },
+    options: {
+      responsive: false, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { ...baseTooltip, callbacks: { label: (c) => '  ' + c.parsed.y + ' people' } }
+      },
+      scales: {
+        x: { ...baseGridOpts, grid: { display: false }, ticks: { ...baseGridOpts.ticks, autoSkip: true, maxRotation: 45, minRotation: 45 } },
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
+      }
+    }
+  });
+}
+
+function cgRenderPipeline(cg) {
+  const pipeline = cg.leaderPipeline || [];
+  const el = document.getElementById('cgPipelineContent');
+  if (!el) return;
+  const total = pipeline.reduce((s, p) => s + (p.count || 0), 0);
+  const subEl = document.getElementById('cgPipelineSub');
+  if (subEl) subEl.textContent = total + ' in pipeline' + (cg.leadersAdded && cg.leadersAdded.total2026 ? ' · ' + cg.leadersAdded.total2026 + ' added in 2026' : '');
+  el.innerHTML = pipeline.map(phase => `
+    <div class="cg-pipeline-phase">
+      <div class="cg-pipeline-hdr">
+        <span class="cg-phase-badge">${escapeHtml(phase.phase)}</span>
+        <span class="cg-phase-label">${escapeHtml(phase.label)}</span>
+        <span class="cg-phase-count">${phase.count}</span>
+      </div>
+      <div class="cg-pipeline-names">${(phase.names || []).map(n => '<span class="cg-name-tag">' + escapeHtml(n) + '</span>').join('')}</div>
+    </div>`).join('');
+}
+
+let cgTableData = [];
+function cgRenderAttendanceTable(cg) {
+  cgTableData = (cg.groupAttendance || []).slice();
+  cgFilterTable();
+}
+
+function cgFilterTable() {
+  const q    = (document.getElementById('cgTableSearch') ? document.getElementById('cgTableSearch').value : '').toLowerCase();
+  const sort = document.getElementById('cgTableSort') ? document.getElementById('cgTableSort').value : 'rate-d';
+  let rows = cgTableData.filter(r => !q || r.name.toLowerCase().includes(q));
+  if      (sort === 'rate-d')    rows.sort((a,b) => b.rate - a.rate);
+  else if (sort === 'rate-a')    rows.sort((a,b) => a.rate - b.rate);
+  else if (sort === 'az')        rows.sort((a,b) => a.name.localeCompare(b.name));
+  else if (sort === 'members-d') rows.sort((a,b) => b.members - a.members);
+  const tbody = document.getElementById('cgTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = rows.map(r => {
+    const cls = r.rate >= 70 ? 'cg-rate-high' : r.rate >= 50 ? 'cg-rate-mid' : 'cg-rate-low';
+    return `<tr>
+      <td>${escapeHtml(r.name)}</td>
+      <td>${r.members}</td>
+      <td>${r.avgAttended}</td>
+      <td>${r.meetings}</td>
+      <td><span class="cg-rate-badge ${cls}">${r.rate}%</span></td>
+    </tr>`;
+  }).join('');
 }
 
 /* Show/hide the dollar detail lines inside the pledge card */
