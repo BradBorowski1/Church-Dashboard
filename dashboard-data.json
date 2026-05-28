@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T22:46:09.416Z",
+  "lastUpdated": "2026-05-28T22:48:47.366Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5802,7 +5802,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 28, 2026, 3:46 PM",
+    "refreshed": "May 28, 2026, 3:48 PM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -6607,8 +6607,30 @@
     ]
   },
   "baptisms": {
-    "months": [],
-    "counts": [],
-    "total": 0
+    "months": [
+      "Jan '21",
+      "Jan '22",
+      "Jan '23",
+      "Jan '24",
+      "Jan '25",
+      "Jan '26",
+      "Feb '26",
+      "Mar '26",
+      "Apr '26",
+      "May '26"
+    ],
+    "counts": [
+      30,
+      51,
+      74,
+      53,
+      75,
+      4,
+      2,
+      7,
+      8,
+      3
+    ],
+    "total": 307
   }
 }
