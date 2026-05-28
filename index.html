@@ -922,12 +922,12 @@
   </div>
 
   <div class="grid" style="margin-top:24px;">
-    <div class="card teams-card" id="teamsCard" onclick="openTeamsModal()" style="cursor:pointer;" title="Click for full team detail">
+    <div class="card teams-card" id="teamsCard" onclick="openTeamsModal()" style="cursor:pointer;" title="Click for full team detail (members only)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
         <h2 style="margin:0;">Serve Teams · Volunteer Gaps</h2>
-        <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">Full detail →</span>
+        <span id="teamsCardLockBadge" style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Members only →</span>
       </div>
-      <div class="card-sub">Auto-sorted by greatest need · click for volunteers, services &amp; admin</div>
+      <div class="card-sub">Auto-sorted by greatest need · members: click for volunteers, services &amp; admin</div>
       <div class="teams-summary">
         <div class="stat">
           <div class="stat-label">Volunteers</div>
@@ -956,6 +956,18 @@
         <div class="card-sub">Total members in groups · full history</div>
         <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgMembersChart"></canvas></div></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Baptisms row -->
+  <div class="grid" style="margin-top:24px;">
+    <div class="card" id="baptismsCard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
+        <h2 style="margin:0;">Baptisms</h2>
+        <span id="baptismsTotalBadge" style="font-size:13px;color:var(--green);font-weight:700;padding-top:2px;"></span>
+      </div>
+      <div class="card-sub">PCO baptism records · grouped by year</div>
+      <div class="chart-wrap"><div class="chart-inner"><canvas id="baptismsChart"></canvas></div></div>
     </div>
   </div>
 
@@ -1128,6 +1140,7 @@ function normalizeDashboardData() {
   DASHBOARD_DATA.teamsMeta        = DASHBOARD_DATA.teamsMeta        || {};
   DASHBOARD_DATA.communityGroups = DASHBOARD_DATA.communityGroups || { months: [], counts: [] };
   DASHBOARD_DATA.communityGroupMembers = DASHBOARD_DATA.communityGroupMembers || { months: [], counts: [] };
+  DASHBOARD_DATA.baptisms = DASHBOARD_DATA.baptisms || { months: [], counts: [], total: 0 };
 }
 
 function showDashboardError(err) {
@@ -1702,6 +1715,65 @@ function renderCGMembers() {
   });
 }
 
+function renderBaptisms() {
+  const raw = DASHBOARD_DATA.baptisms || { months: [], counts: [], total: 0 };
+
+  // Aggregate monthly data into yearly buckets
+  const yearMap = {};
+  (raw.months || []).forEach((m, i) => {
+    const year = String(m).substring(0, 4);
+    if (!year || year === 'NaN') return;
+    yearMap[year] = (yearMap[year] || 0) + (Number(raw.counts[i]) || 0);
+  });
+
+  const years = Object.keys(yearMap).sort();
+  const counts = years.map(y => yearMap[y]);
+  const total = counts.reduce((s, v) => s + v, 0);
+
+  // Update total badge
+  const badge = document.getElementById('baptismsTotalBadge');
+  if (badge) badge.textContent = total > 0 ? total + ' total' : '';
+
+  // Hide card if no data
+  const card = document.getElementById('baptismsCard');
+  if (!total && card) { card.style.display = 'none'; return; }
+  if (card) card.style.display = '';
+
+  prepScrollableChart('baptismsChart', years.length);
+  const ctx = document.getElementById('baptismsChart');
+  if (!ctx) return;
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'Baptisms',
+        data: counts,
+        backgroundColor: counts.map((v, i) => {
+          const alpha = 0.55 + (i / Math.max(years.length - 1, 1)) * 0.45;
+          return `rgba(34,197,94,${alpha.toFixed(2)})`;
+        }),
+        borderRadius: 6,
+        borderSkipped: false,
+        maxBarThickness: 60
+      }]
+    },
+    options: {
+      responsive: false,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { ...baseTooltip, callbacks: { label: (ctx) => '  ' + ctx.parsed.y + ' baptism' + (ctx.parsed.y !== 1 ? 's' : '') } }
+      },
+      scales: {
+        x: { ...baseGridOpts, grid: { display: false }, ticks: { ...baseGridOpts.ticks, autoSkip: false, maxRotation: 0 } },
+        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0, stepSize: 1 } }
+      }
+    }
+  });
+}
+
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (m) => ({
     '&': '&amp;',
@@ -1723,6 +1795,7 @@ loadDashboardData()
     renderTeams();
     renderCGCount();
     renderCGMembers();
+    renderBaptisms();
   })
   .catch(showDashboardError);
 
@@ -1745,6 +1818,11 @@ let tmAdminUnlocked = false;
 /* ---- open / close ---- */
 function openTeamsModal() {
   if (!DASHBOARD_DATA) return;
+  // Require members login to see full team detail
+  if (!mmIsUnlocked()) {
+    mmShowPrompt(() => openTeamsModal());
+    return;
+  }
   const modal = document.getElementById('teamsModal');
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
@@ -2147,15 +2225,22 @@ const MM_SESSION_KEY = 'mm_unlocked';
 
 function mmIsUnlocked() { return sessionStorage.getItem(MM_SESSION_KEY) === '1'; }
 
+let _mmPendingAction = null;
+
+/* Show the members password prompt. Optional callback fires after successful unlock. */
+function mmShowPrompt(cb) {
+  _mmPendingAction = cb || null;
+  document.getElementById('mmPrompt').classList.add('on');
+  setTimeout(() => { const i = document.getElementById('mmPwInput'); if (i) { i.value = ''; i.focus(); } }, 50);
+}
+
 /* Called when the Members button in the header is clicked */
 function mmClick() {
   if (mmIsUnlocked()) {
     // Already unlocked — click again to lock
     mmLock();
   } else {
-    // Show the password prompt
-    document.getElementById('mmPrompt').classList.add('on');
-    setTimeout(() => { const i = document.getElementById('mmPwInput'); if (i) { i.value = ''; i.focus(); } }, 50);
+    mmShowPrompt();
   }
 }
 
@@ -2181,6 +2266,8 @@ async function mmDoUnlock() {
     sessionStorage.setItem(MM_SESSION_KEY, '1');
     mmClosePrompt();
     mmApplyState();
+    // Fire any pending action (e.g. open teams modal)
+    if (_mmPendingAction) { const fn = _mmPendingAction; _mmPendingAction = null; fn(); }
   } else {
     const err = document.getElementById('mmErr');
     if (err) { err.style.display = 'block'; setTimeout(() => err.style.display = 'none', 3000); }
@@ -2210,6 +2297,10 @@ function mmApplyState() {
     btn.classList.remove('unlocked');
     btn.title = 'Members area';
   }
+
+  // Update teams card lock badge
+  const badge = document.getElementById('teamsCardLockBadge');
+  if (badge) badge.textContent = unlocked ? '🔓 Full detail →' : '🔐 Members only →';
 
   // Re-render giving chart (tooltip on/off) and pledge details
   const givingCanvas = document.getElementById('givingChart');
