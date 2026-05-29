@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29T01:16:37.849Z",
+  "lastUpdated": "2026-05-29T01:47:01.639Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5802,7 +5802,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 28, 2026, 6:16 PM",
+    "refreshed": "May 28, 2026, 6:47 PM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -6603,7 +6603,7 @@
       380,
       406,
       429,
-      452
+      453
     ]
   },
   "baptisms": {
@@ -6642,7 +6642,7 @@
     },
     "current": {
       "groups": 36,
-      "members": 452,
+      "members": 453,
       "groupSize": 13,
       "fmInGroupsPct": 0,
       "asOfMonth": "May '26"
@@ -7117,7 +7117,7 @@
         380,
         406,
         429,
-        452,
+        453,
         null,
         null,
         null,
