@@ -1861,11 +1861,18 @@ function renderBaptisms() {
   const raw = DASHBOARD_DATA.baptisms || { months: [], counts: [], total: 0 };
 
   // Aggregate monthly data into yearly buckets.
-  // raw.months are human labels like "Jan 2021" or "Apr 2026" — extract the 4-digit year.
+  // Handles both "Jan 2021" (4-digit) and "Jan '21" / "Jan '21" (2-digit apostrophe) formats.
   const yearMap = {};
   (raw.months || []).forEach((m, i) => {
-    const match = String(m).match(/\d{4}/);
-    const year = match ? match[0] : null;
+    const s = String(m);
+    let year = null;
+    const full = s.match(/\b(\d{4})\b/);
+    if (full) {
+      year = full[1];
+    } else {
+      const short = s.match(/['‘’](\d{2})(?:\s*$|[^0-9])/);
+      if (short) year = '20' + short[1];
+    }
     if (!year) return;
     yearMap[year] = (yearMap[year] || 0) + (Number(raw.counts[i]) || 0);
   });
