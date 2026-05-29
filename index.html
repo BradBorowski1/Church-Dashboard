@@ -1870,7 +1870,7 @@ function renderBaptisms() {
     } else {
       // Any label ending in exactly 2 digits (e.g. "Jan ‘21", "Jan ‘21")
       const short = s.match(/(\d{2})\s*$/);
-      if (short) year = ‘20’ + short[1];
+      if (short) year = '20' + short[1];
     }
     if (!year) return;
     yearMap[year] = (yearMap[year] || 0) + (Number(raw.counts[i]) || 0);
