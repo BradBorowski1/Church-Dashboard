@@ -932,8 +932,8 @@
     </div>
   </div>
 
-  <!-- Row 2: Serve Teams (full width) -->
-  <div class="grid" style="margin-top:24px;grid-template-columns:1fr;">
+  <!-- Row 2: Serve Teams | Giving + Pledge -->
+  <div class="grid" style="margin-top:24px;">
     <div class="card teams-card" id="teamsCard" onclick="openTeamsModal()" style="cursor:pointer;" title="Click for full team detail (members only)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
         <h2 style="margin:0;">Serve Teams · Volunteer Gaps</h2>
@@ -956,10 +956,7 @@
       </div>
       <div class="team-list" id="teamList"></div>
     </div>
-  </div>
 
-  <!-- Row 3: Giving + Pledge | Community Groups -->
-  <div class="grid" style="margin-top:24px;">
     <div class="stack">
       <div class="card">
         <h2>Average Giving by Month</h2>
@@ -998,24 +995,25 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="right-col">
-      <div class="card" style="cursor:pointer;" onclick="openCGModal()" title="Click for full community group detail">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
-          <h2 style="margin:0;">Community Groups</h2>
-          <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Discipleship →</span>
-        </div>
-        <div class="card-sub">Total groups · click for full CG detail</div>
-        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgCountChart"></canvas></div></div>
+  <!-- Row 3: Community Groups -->
+  <div class="grid" style="margin-top:24px;">
+    <div class="card" style="cursor:pointer;" onclick="openCGModal()" title="Click for full community group detail">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
+        <h2 style="margin:0;">Community Groups</h2>
+        <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Discipleship →</span>
       </div>
-      <div class="card" style="cursor:pointer;" onclick="openCGModal()" title="Click for full community group detail">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
-          <h2 style="margin:0;">Community Group Members</h2>
-          <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Discipleship →</span>
-        </div>
-        <div class="card-sub">Total members · click for full CG detail</div>
-        <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgMembersChart"></canvas></div></div>
+      <div class="card-sub">Total groups · click for full CG detail</div>
+      <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgCountChart"></canvas></div></div>
+    </div>
+    <div class="card" style="cursor:pointer;" onclick="openCGModal()" title="Click for full community group detail">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;">
+        <h2 style="margin:0;">Community Group Members</h2>
+        <span style="font-size:12px;color:var(--text-muted);font-weight:600;white-space:nowrap;padding-top:2px;">🔐 Discipleship →</span>
       </div>
+      <div class="card-sub">Total members · click for full CG detail</div>
+      <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgMembersChart"></canvas></div></div>
     </div>
   </div>
 
@@ -1861,17 +1859,18 @@ function renderBaptisms() {
   const raw = DASHBOARD_DATA.baptisms || { months: [], counts: [], total: 0 };
 
   // Aggregate monthly data into yearly buckets.
-  // Handles both "Jan 2021" (4-digit) and "Jan '21" / "Jan '21" (2-digit apostrophe) formats.
+  // Handles "Jan 2021" (4-digit) and "Jan ‘21" (2-digit trailing) formats.
   const yearMap = {};
   (raw.months || []).forEach((m, i) => {
-    const s = String(m);
+    const s = String(m).trim();
     let year = null;
     const full = s.match(/\b(\d{4})\b/);
     if (full) {
       year = full[1];
     } else {
-      const short = s.match(/['‘’](\d{2})(?:\s*$|[^0-9])/);
-      if (short) year = '20' + short[1];
+      // Any label ending in exactly 2 digits (e.g. "Jan ‘21", "Jan ‘21")
+      const short = s.match(/(\d{2})\s*$/);
+      if (short) year = ‘20’ + short[1];
     }
     if (!year) return;
     yearMap[year] = (yearMap[year] || 0) + (Number(raw.counts[i]) || 0);
