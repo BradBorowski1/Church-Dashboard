@@ -2577,20 +2577,29 @@ const CG_YEAR_COLORS = {
 };
 
 function cgBuildMultiYearDatasets(byYear) {
-  return Object.entries(byYear).sort(([a],[b]) => Number(a) - Number(b)).map(([yr, vals]) => {
-    const col = CG_YEAR_COLORS[yr] || { border: '#888', bg: 'transparent' };
-    return {
-      label: yr,
-      data: vals,
-      borderColor: col.border,
-      backgroundColor: col.bg,
-      borderWidth: yr === '2026' ? 2.5 : 1.8,
-      pointRadius: 3,
-      tension: 0.3,
-      spanGaps: false
-    };
-  });
+  return Object.entries(byYear)
+    .sort(([a],[b]) => Number(a) - Number(b))
+    // Skip years where every month is null (e.g. 2010–2023 with zero data)
+    .filter(([, vals]) => (vals || []).some(v => v !== null && v !== undefined))
+    .map(([yr, vals]) => {
+      const col = CG_YEAR_COLORS[yr] || { border: 'rgba(150,150,150,0.7)', bg: 'transparent' };
+      return {
+        label: yr,
+        data: vals,
+        borderColor: col.border,
+        backgroundColor: col.bg,
+        borderWidth: yr === '2026' ? 2.5 : 1.8,
+        pointRadius: 3,
+        tension: 0.3,
+        spanGaps: false
+      };
+    });
 }
+
+const cgMultiYearScales = {
+  x: { ...baseGridOpts, grid: { display: false }, ticks: { ...baseGridOpts.ticks, autoSkip: false, maxRotation: 0 } },
+  y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
+};
 
 function cgRenderGroupsByYear(cg) {
   const byYear = cg.groupCountsByYear || {};
@@ -2607,10 +2616,7 @@ function cgRenderGroupsByYear(cg) {
         legend: { display: true, labels: { color: '#aaa', font: { size: 11, family: 'Montserrat' }, boxWidth: 20 } },
         tooltip: { ...baseTooltip, callbacks: { label: (c) => '  ' + c.dataset.label + ': ' + (c.parsed.y !== null ? c.parsed.y : '—') + ' groups' } }
       },
-      scales: {
-        x: { ...baseGridOpts, grid: { display: false } },
-        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
-      }
+      scales: cgMultiYearScales
     }
   });
 }
@@ -2630,12 +2636,20 @@ function cgRenderMembersByYear(cg) {
         legend: { display: true, labels: { color: '#aaa', font: { size: 11, family: 'Montserrat' }, boxWidth: 20 } },
         tooltip: { ...baseTooltip, callbacks: { label: (c) => '  ' + c.dataset.label + ': ' + (c.parsed.y !== null ? c.parsed.y : '—') + ' people' } }
       },
-      scales: {
-        x: { ...baseGridOpts, grid: { display: false } },
-        y: { ...baseGridOpts, beginAtZero: true, ticks: { ...baseGridOpts.ticks, precision: 0 } }
-      }
+      scales: cgMultiYearScales
     }
   });
+}
+
+function cgNoDataMsg(canvasId, msg) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const wrap = canvas.closest('.chart-wrap') || canvas.parentElement;
+  const el = document.createElement('div');
+  el.style.cssText = 'padding:24px;color:var(--text-dim);font-size:13px;font-style:italic;';
+  el.textContent = msg || 'No data entered yet.';
+  wrap.parentElement.insertBefore(el, wrap);
+  wrap.style.display = 'none';
 }
 
 function cgRenderJoinFunnel(cg) {
@@ -2648,6 +2662,7 @@ function cgRenderJoinFunnel(cg) {
   applied2026.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'26'); appliedData.push(v); joinedData.push(joined2026[i] ?? null); } });
   const ctx = document.getElementById('cgJoinChart');
   if (!ctx) return;
+  if (!labels.length) { cgNoDataMsg('cgJoinChart', 'No connection funnel data yet — add to CGJoinFunnel sheet.'); return; }
   prepScrollableChart('cgJoinChart', labels.length);
   new Chart(ctx, {
     type: 'bar',
@@ -2680,6 +2695,7 @@ function cgRenderOutsiders(cg) {
   out2026.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'26'); data.push(v); } });
   const ctx = document.getElementById('cgOutsidersChart');
   if (!ctx) return;
+  if (!labels.length) { cgNoDataMsg('cgOutsidersChart', 'No outsiders data yet — add to CGOutsiders sheet.'); return; }
   prepScrollableChart('cgOutsidersChart', labels.length);
   new Chart(ctx, {
     type: 'bar',
