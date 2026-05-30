@@ -1213,7 +1213,7 @@
     <div class="cg-charts-2col">
       <div class="card">
         <h2>Connection Funnel</h2>
-        <div class="card-sub">Applied to join vs. actually joined</div>
+        <div class="card-sub" id="cgFunnelSub">New members joining groups each month</div>
         <div class="chart-wrap tall"><div class="chart-inner"><canvas id="cgJoinChart"></canvas></div></div>
       </div>
       <div class="card">
@@ -1236,15 +1236,15 @@
         <div class="cg-table-ctrls">
           <input type="text" id="cgTableSearch" placeholder="Search group&hellip;" oninput="cgFilterTable()">
           <select id="cgTableSort" onchange="cgFilterTable()">
-            <option value="rate-d">Sort: attendance rate &#8595;</option>
-            <option value="rate-a">Sort: attendance rate &#8593;</option>
+            <option value="rate-d">Sort: fill % &#8595;</option>
+            <option value="rate-a">Sort: fill % &#8593;</option>
             <option value="az">Sort: name A&ndash;Z</option>
             <option value="members-d">Sort: members &#8595;</option>
           </select>
         </div>
         <div class="tmod-table-wrap">
           <table class="tmod-table">
-            <thead><tr><th>Group</th><th>Members</th><th>Avg Attended</th><th>Meetings</th><th>Rate</th></tr></thead>
+            <thead><tr><th>Group</th><th>Members</th><th>Leaders</th><th>Schedule</th><th>Fill %</th></tr></thead>
             <tbody id="cgTableBody"></tbody>
           </table>
         </div>
@@ -2664,18 +2664,32 @@ function cgRenderJoinFunnel(cg) {
   const applied2026 = ((cg.appliedToJoin || {})['2026'] || []);
   const joined2026  = ((cg.joinedGroup   || {})['2026'] || []);
   const labels = [], appliedData = [], joinedData = [];
-  applied2025.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'25'); appliedData.push(v); joinedData.push(joined2025[i] ?? null); } });
-  applied2026.forEach((v, i) => { if (v !== null && v !== undefined) { labels.push(CG_MONTHS[i] + ' \'26'); appliedData.push(v); joinedData.push(joined2026[i] ?? null); } });
+  // Only render a month if joined OR applied is > 0 (avoids all-zero months from churches
+  // without a PCO application step — joinedGroup still captures real new-member activity)
+  applied2025.forEach((v, i) => {
+    const j = joined2025[i];
+    if ((v != null && v > 0) || (j != null && j > 0)) {
+      labels.push(CG_MONTHS[i] + ' \'25'); appliedData.push(v ?? null); joinedData.push(j ?? null);
+    }
+  });
+  applied2026.forEach((v, i) => {
+    const j = joined2026[i];
+    if ((v != null && v > 0) || (j != null && j > 0)) {
+      labels.push(CG_MONTHS[i] + ' \'26'); appliedData.push(v ?? null); joinedData.push(j ?? null);
+    }
+  });
   const ctx = document.getElementById('cgJoinChart');
   if (!ctx) return;
   if (!labels.length) { cgNoDataMsg('cgJoinChart', 'No connection funnel data yet — add to CGJoinFunnel sheet.'); return; }
   prepScrollableChart('cgJoinChart', labels.length);
+  // If applied is always null/zero, hide that dataset label to keep chart clean
+  const hasApplied = appliedData.some(v => v != null && v > 0);
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels,
       datasets: [
-        { label: 'Applied', data: appliedData, backgroundColor: 'rgba(167,139,250,0.55)', borderRadius: 4, maxBarThickness: 28 },
+        { label: 'Applied', data: appliedData, backgroundColor: 'rgba(167,139,250,0.55)', borderRadius: 4, maxBarThickness: 28, hidden: !hasApplied },
         { label: 'Joined',  data: joinedData,  backgroundColor: 'rgba(74,222,128,0.7)',   borderRadius: 4, maxBarThickness: 28 }
       ]
     },
@@ -2758,12 +2772,14 @@ function cgFilterTable() {
   const tbody = document.getElementById('cgTableBody');
   if (!tbody) return;
   tbody.innerHTML = rows.map(r => {
-    const cls = r.rate >= 70 ? 'cg-rate-high' : r.rate >= 50 ? 'cg-rate-mid' : 'cg-rate-low';
+    // fill %: >=100 = at/above target (high), 60-99 = growing (mid), <60 = needs attention (low)
+    const cls = r.rate >= 100 ? 'cg-rate-high' : r.rate >= 60 ? 'cg-rate-mid' : 'cg-rate-low';
+    const scheduleStr = r.meetings ? escapeHtml(String(r.meetings)) : '—';
     return `<tr>
       <td>${escapeHtml(r.name)}</td>
       <td>${r.members}</td>
       <td>${r.avgAttended}</td>
-      <td>${r.meetings}</td>
+      <td style="font-size:11px;color:var(--text-dim)">${scheduleStr}</td>
       <td><span class="cg-rate-badge ${cls}">${r.rate}%</span></td>
     </tr>`;
   }).join('');
