@@ -783,9 +783,10 @@
   .cg-table-ctrls input:focus, .cg-table-ctrls select:focus { border-color: #a78bfa; }
 
   .cg-rate-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
-  .cg-rate-high { background: rgba(74,222,128,0.15); color: #4ade80; }
-  .cg-rate-mid  { background: rgba(251,191,36,0.15);  color: #fbbf24; }
-  .cg-rate-low  { background: rgba(248,113,113,0.15); color: #f87171; }
+  .cg-rate-high  { background: rgba(74,222,128,0.15);  color: #4ade80; }  /* Healthy: 7-12 */
+  .cg-rate-mid   { background: rgba(251,191,36,0.15);  color: #fbbf24; }  /* Growing (4-6) or Large (13-18) */
+  .cg-rate-low   { background: rgba(248,113,113,0.15); color: #f87171; }  /* Tiny: <4 */
+  .cg-rate-split { background: rgba(249,115,22,0.15);  color: #fb923c; }  /* Needs Split: >18 */
 
   .cg-pipeline-phase { margin-bottom: 18px; }
   .cg-pipeline-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
@@ -1234,20 +1235,19 @@
         <div id="cgPipelineContent"></div>
       </div>
       <div class="card">
-        <h2>Group Attendance Health</h2>
-        <div class="card-sub">Sorted by attendance rate</div>
+        <h2>Group Size Health</h2>
+        <div class="card-sub">Member count per group &middot; goal: 10 per group</div>
         <div class="cg-table-ctrls">
           <input type="text" id="cgTableSearch" placeholder="Search group&hellip;" oninput="cgFilterTable()">
           <select id="cgTableSort" onchange="cgFilterTable()">
-            <option value="rate-d">Sort: fill % &#8595;</option>
-            <option value="rate-a">Sort: fill % &#8593;</option>
-            <option value="az">Sort: name A&ndash;Z</option>
             <option value="members-d">Sort: members &#8595;</option>
+            <option value="members-a">Sort: members &#8593;</option>
+            <option value="az">Sort: name A&ndash;Z</option>
           </select>
         </div>
         <div class="tmod-table-wrap">
           <table class="tmod-table">
-            <thead><tr><th>Group</th><th>Members</th><th>Leaders</th><th>Schedule</th><th>Fill %</th></tr></thead>
+            <thead><tr><th>Group</th><th>Members</th><th>Leaders</th><th>Schedule</th><th>Size</th></tr></thead>
             <tbody id="cgTableBody"></tbody>
           </table>
         </div>
@@ -2797,24 +2797,29 @@ function cgRenderAttendanceTable(cg) {
 
 function cgFilterTable() {
   const q    = (document.getElementById('cgTableSearch') ? document.getElementById('cgTableSearch').value : '').toLowerCase();
-  const sort = document.getElementById('cgTableSort') ? document.getElementById('cgTableSort').value : 'rate-d';
+  const sort = document.getElementById('cgTableSort') ? document.getElementById('cgTableSort').value : 'members-d';
   let rows = cgTableData.filter(r => !q || r.name.toLowerCase().includes(q));
-  if      (sort === 'rate-d')    rows.sort((a,b) => b.rate - a.rate);
-  else if (sort === 'rate-a')    rows.sort((a,b) => a.rate - b.rate);
+  if      (sort === 'members-d') rows.sort((a,b) => b.members - a.members);
+  else if (sort === 'members-a') rows.sort((a,b) => a.members - b.members);
   else if (sort === 'az')        rows.sort((a,b) => a.name.localeCompare(b.name));
-  else if (sort === 'members-d') rows.sort((a,b) => b.members - a.members);
   const tbody = document.getElementById('cgTableBody');
   if (!tbody) return;
   tbody.innerHTML = rows.map(r => {
-    // fill %: >=100 = at/above target (high), 60-99 = growing (mid), <60 = needs attention (low)
-    const cls = r.rate >= 100 ? 'cg-rate-high' : r.rate >= 60 ? 'cg-rate-mid' : 'cg-rate-low';
+    // Size-health bucketing based on member count vs. 10-person target
+    // >18 = way over (needs split), 13-18 = large, 7-12 = healthy, 4-6 = small/growing, <4 = tiny
+    let cls, label;
+    if      (r.members > 18) { cls = 'cg-rate-split'; label = 'Needs Split'; }
+    else if (r.members >= 13) { cls = 'cg-rate-mid';   label = 'Large';       }
+    else if (r.members >= 7)  { cls = 'cg-rate-high';  label = 'Healthy';     }
+    else if (r.members >= 4)  { cls = 'cg-rate-mid';   label = 'Small';       }
+    else                      { cls = 'cg-rate-low';   label = 'Tiny';        }
     const scheduleStr = r.meetings ? escapeHtml(String(r.meetings)) : '—';
     return `<tr>
       <td>${escapeHtml(r.name)}</td>
       <td>${r.members}</td>
       <td>${r.avgAttended}</td>
       <td style="font-size:11px;color:var(--text-dim)">${scheduleStr}</td>
-      <td><span class="cg-rate-badge ${cls}">${r.rate}%</span></td>
+      <td><span class="cg-rate-badge ${cls}">${label}</span></td>
     </tr>`;
   }).join('');
 }
