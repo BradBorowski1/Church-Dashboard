@@ -2747,44 +2747,54 @@ function cgRenderPipeline(cg) {
   const el = document.getElementById('cgPipelineContent');
   if (!el) return;
 
-  const rosterTotal   = roster.reduce((s, p) => s + (p.count || 0), 0);
-  const pipelineTotal = pipeline.reduce((s, p) => s + (p.count || 0), 0);
+  // All roster entries collapse into a flat list (single "Current Leader" phase)
+  const allCurrentNames = [];
+  roster.forEach(p => (p.names || []).forEach(n => allCurrentNames.push(n)));
+  const rosterTotal = allCurrentNames.length;
+
+  // Pipeline entries (from PCO workflow, when it exists)
+  const allPipelineNames = [];
+  pipeline.forEach(p => (p.names || []).forEach(n => allPipelineNames.push(n)));
+  const pipelineTotal = allPipelineNames.length;
 
   const subEl = document.getElementById('cgPipelineSub');
   if (subEl) {
-    let sub = rosterTotal + ' active leader' + (rosterTotal !== 1 ? 's' : '');
-    if (pipelineTotal > 0) sub += ' · ' + pipelineTotal + ' in development';
+    let sub = rosterTotal + ' current leader' + (rosterTotal !== 1 ? 's' : '');
+    if (pipelineTotal > 0) sub += ' · ' + pipelineTotal + ' potential';
     if (cg.leadersAdded && cg.leadersAdded.total2026) sub += ' · ' + cg.leadersAdded.total2026 + ' added in 2026';
     subEl.textContent = sub;
   }
 
-  const renderPhase = (phase, badgeClass) => `
-    <div class="cg-pipeline-phase">
-      <div class="cg-pipeline-hdr">
-        <span class="${badgeClass}">${escapeHtml(phase.label)}</span>
-        <span class="cg-phase-count">${phase.count}</span>
-      </div>
-      <div class="cg-pipeline-names">${(phase.names || []).map(n => '<span class="cg-name-tag">' + escapeHtml(n) + '</span>').join('')}</div>
-    </div>`;
+  const renderNameList = (names) =>
+    '<div class="cg-pipeline-names">' +
+    names.map(n => '<span class="cg-name-tag">' + escapeHtml(n) + '</span>').join('') +
+    '</div>';
 
   let html = '';
 
-  // --- Active Leaders section ---
-  html += '<div class="cg-section-divider">Active Leaders (' + rosterTotal + ')</div>';
-  if (roster.length) {
-    // Sort: Established first (phase 3), then Developing (2), then New (1)
-    const sorted = roster.slice().sort((a, b) => b.phase.localeCompare(a.phase));
-    html += sorted.map(p => renderPhase(p, 'cg-roster-badge')).join('');
+  // --- Current Leaders section ---
+  html += '<div class="cg-section-divider">Current Leaders (' + rosterTotal + ')</div>';
+  if (allCurrentNames.length) {
+    html += renderNameList(allCurrentNames.sort((a, b) => a.localeCompare(b)));
   } else {
-    html += '<div class="cg-no-pipeline">No active leaders found.</div>';
+    html += '<div class="cg-no-pipeline">No current leaders found.</div>';
   }
 
-  // --- Development Pipeline section ---
-  html += '<div class="cg-section-divider" style="margin-top:22px">Development Pipeline (' + pipelineTotal + ')</div>';
+  // --- Potential Leaders section ---
+  html += '<div class="cg-section-divider" style="margin-top:22px">Potential Leaders (' + pipelineTotal + ')</div>';
   if (pipeline.length) {
-    html += pipeline.map(p => renderPhase(p, 'cg-phase-badge')).join('');
+    // If multiple workflow steps exist, show each step as a sub-group
+    pipeline.forEach(p => {
+      html += `<div class="cg-pipeline-phase">
+        <div class="cg-pipeline-hdr">
+          <span class="cg-phase-badge">${escapeHtml(p.label)}</span>
+          <span class="cg-phase-count">${p.count}</span>
+        </div>
+        ${renderNameList(p.names || [])}
+      </div>`;
+    });
   } else {
-    html += '<div class="cg-no-pipeline">No pipeline data found. To track leader candidates, create a workflow in Planning Center People named something like "Leader Development."</div>';
+    html += '<div class="cg-no-pipeline">No potential leaders tracked yet. To add someone here, create a workflow in Planning Center People named "Leader Development" and add candidates to it.</div>';
   }
 
   el.innerHTML = html;
