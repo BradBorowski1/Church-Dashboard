@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-30T18:49:39.023Z",
+  "lastUpdated": "2026-05-30T18:53:54.582Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5785,7 +5785,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 30, 2026, 11:49 AM",
+    "refreshed": "May 30, 2026, 11:53 AM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -7245,7 +7245,7 @@
         null
       ]
     },
-    "leaderRoster": [
+    "leaderPipeline": [
       {
         "phase": "2",
         "label": "Developing (1–2 yrs)",
@@ -7306,7 +7306,7 @@
       },
       {
         "phase": "1",
-        "label": "New (< 1 yr)",
+        "label": "New Leader (< 1 yr)",
         "names": [
           "Faith Howes",
           "Eric Sikora",
@@ -7324,7 +7324,6 @@
         "count": 12
       }
     ],
-    "leaderPipeline": [],
     "groupAttendance": [
       {
         "name": "Poleselli / McAlpine Community Group",
