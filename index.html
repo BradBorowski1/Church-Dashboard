@@ -1242,12 +1242,13 @@
           <select id="cgTableSort" onchange="cgFilterTable()">
             <option value="members-d">Sort: members &#8595;</option>
             <option value="members-a">Sort: members &#8593;</option>
+            <option value="att-d">Sort: avg attendance &#8595;</option>
             <option value="az">Sort: name A&ndash;Z</option>
           </select>
         </div>
         <div class="tmod-table-wrap">
           <table class="tmod-table">
-            <thead><tr><th>Group</th><th>Members</th><th>Leaders</th><th>Schedule</th><th>Size</th></tr></thead>
+            <thead><tr><th>Group</th><th>Members</th><th>Leaders</th><th>Avg Att.</th><th>Schedule</th><th>Size</th></tr></thead>
             <tbody id="cgTableBody"></tbody>
           </table>
         </div>
@@ -2801,23 +2802,30 @@ function cgFilterTable() {
   let rows = cgTableData.filter(r => !q || r.name.toLowerCase().includes(q));
   if      (sort === 'members-d') rows.sort((a,b) => b.members - a.members);
   else if (sort === 'members-a') rows.sort((a,b) => a.members - b.members);
+  else if (sort === 'att-d')     rows.sort((a,b) => (b.avgAttended||0) - (a.avgAttended||0));
   else if (sort === 'az')        rows.sort((a,b) => a.name.localeCompare(b.name));
   const tbody = document.getElementById('cgTableBody');
   if (!tbody) return;
   tbody.innerHTML = rows.map(r => {
     // Size-health bucketing based on member count vs. 10-person target
-    // >18 = way over (needs split), 13-18 = large, 7-12 = healthy, 4-6 = small/growing, <4 = tiny
+    // >18 = needs split, 13-18 = large, 7-12 = healthy, 4-6 = small, <4 = tiny
     let cls, label;
     if      (r.members > 18) { cls = 'cg-rate-split'; label = 'Needs Split'; }
     else if (r.members >= 13) { cls = 'cg-rate-mid';   label = 'Large';       }
     else if (r.members >= 7)  { cls = 'cg-rate-high';  label = 'Healthy';     }
     else if (r.members >= 4)  { cls = 'cg-rate-mid';   label = 'Small';       }
     else                      { cls = 'cg-rate-low';   label = 'Tiny';        }
-    const scheduleStr = r.meetings ? escapeHtml(String(r.meetings)) : '—';
+    const scheduleStr = r.schedule ? escapeHtml(String(r.schedule)) : '—';
+    const avgAtt = r.avgAttended || 0;
+    const attPct = r.attPct || (r.members > 0 && avgAtt > 0 ? Math.round((avgAtt / r.members) * 100) : 0);
+    const attStr = avgAtt > 0
+      ? `${avgAtt} <span style="font-size:10px;color:var(--text-dim)">(${attPct}%)</span>`
+      : `<span style="color:var(--text-dim)">—</span>`;
     return `<tr>
       <td>${escapeHtml(r.name)}</td>
       <td>${r.members}</td>
-      <td>${r.avgAttended}</td>
+      <td>${r.leaders != null ? r.leaders : (r.avgAttended||'—')}</td>
+      <td>${attStr}</td>
       <td style="font-size:11px;color:var(--text-dim)">${scheduleStr}</td>
       <td><span class="cg-rate-badge ${cls}">${label}</span></td>
     </tr>`;
