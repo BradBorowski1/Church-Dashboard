@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-30T22:33:18.765Z",
+  "lastUpdated": "2026-05-30T22:43:29.255Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5785,7 +5785,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 30, 2026, 3:33 PM",
+    "refreshed": "May 30, 2026, 3:43 PM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -7247,8 +7247,8 @@
     },
     "leaderRoster": [
       {
-        "phase": "2",
-        "label": "Developing (1–2 yrs)",
+        "phase": "1",
+        "label": "Current Leader",
         "names": [
           "John Turcich",
           "Joshua Wampler",
@@ -7300,14 +7300,7 @@
           "Laura Dykins",
           "Lauren Smith",
           "Geoffrey Caliger",
-          "Isabella Peissner"
-        ],
-        "count": 51
-      },
-      {
-        "phase": "1",
-        "label": "New (< 1 yr)",
-        "names": [
+          "Isabella Peissner",
           "Faith Howes",
           "Eric Sikora",
           "Diane Sikora",
@@ -7321,7 +7314,7 @@
           "Amber Brown",
           "Kathy Frank"
         ],
-        "count": 12
+        "count": 63
       }
     ],
     "leaderPipeline": [],
@@ -7331,272 +7324,272 @@
         "members": 24,
         "leaders": 2,
         "schedule": "Meets weekly on Wednesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 12,
+        "attPct": 50
       },
       {
         "name": "McCarthy Community Group",
         "members": 21,
         "leaders": 1,
         "schedule": "Meets every other week on Mondays from 6:30-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 14,
+        "attPct": 67
       },
       {
         "name": "Wampler/Colonna Community Group",
         "members": 19,
         "leaders": 2,
         "schedule": "Meets weekly on Fridays from 12:30-2:30pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 32
       },
       {
         "name": "Bell Community Group",
         "members": 19,
         "leaders": 2,
         "schedule": "Meets weekly on Sundays from 4-6pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 42
       },
       {
         "name": "Castaneda Community Group",
         "members": 19,
         "leaders": 3,
         "schedule": "Meets weekly on Mondays from 3-4:30pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 11,
+        "attPct": 58
       },
       {
         "name": "High School Community Group",
         "members": 19,
         "leaders": 2,
         "schedule": "Meets weekly on Wednesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 42
       },
       {
         "name": "Griffin Community Group",
         "members": 17,
         "leaders": 3,
         "schedule": "Meets weekly on Thursdays from 6:45-8am",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 10,
+        "attPct": 59
       },
       {
         "name": "Colonna/Mavros Community Group",
         "members": 17,
         "leaders": 2,
         "schedule": "Meets weekly on Thursdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 35
       },
       {
         "name": "Isaac Griffin Community Group",
         "members": 17,
         "leaders": 1,
         "schedule": "Meets weekly on Tuesdays from 6:30-8:30pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 47
       },
       {
         "name": "Howes/Peissner Community Group",
         "members": 16,
         "leaders": 2,
         "schedule": "Meets every other week on Tuesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 50
       },
       {
         "name": "Ray Brown Community Group",
         "members": 15,
         "leaders": 2,
         "schedule": "Meets weekly on Thursdays from 6-7:30am",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 53
       },
       {
         "name": "Thompson/Primus Community Group",
         "members": 15,
         "leaders": 2,
         "schedule": "Meets weekly on Wednesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 9,
+        "attPct": 60
       },
       {
         "name": "Men’s Tuesday Night: Better Call Paul",
         "members": 14,
         "leaders": 2,
         "schedule": "Meets weekly on Tuesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 57
       },
       {
         "name": "Bridges Community Group",
         "members": 14,
         "leaders": 1,
         "schedule": "Meets weekly on Tuesdays from 6:30-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 57
       },
       {
         "name": "Steuer Community Group",
         "members": 14,
         "leaders": 2,
         "schedule": "Meets weekly on Tuesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 57
       },
       {
         "name": "Peissner Community Group",
         "members": 14,
         "leaders": 2,
         "schedule": "Meets weekly on Thursdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 57
       },
       {
         "name": "Turcich Community Group",
         "members": 13,
         "leaders": 1,
         "schedule": "Meets weekly on Wednesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 46
       },
       {
         "name": "Wampler/Lattin Community Group",
         "members": 13,
         "leaders": 2,
         "schedule": "Meets weekly on Mondays from 6-7:30am",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 46
       },
       {
         "name": "Maidens Community Group",
         "members": 13,
         "leaders": 1,
         "schedule": "Meets weekly on Thursdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 46
       },
       {
         "name": "Gardner Community Group",
         "members": 13,
         "leaders": 2,
         "schedule": "Meets weekly on Sundays from 3-5pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 5,
+        "attPct": 38
       },
       {
         "name": "Flores/Norton Community Group",
         "members": 12,
         "leaders": 2,
         "schedule": "Meets weekly on Thursdays from 10am-12pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 67
       },
       {
         "name": "Murad Community Group",
         "members": 12,
         "leaders": 1,
         "schedule": "Meets weekly on Thursdays from 6:30-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 5,
+        "attPct": 42
       },
       {
         "name": "Durham Community Group",
         "members": 11,
         "leaders": 1,
         "schedule": "Meets weekly on Wednesdays from 10am-12pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 55
       },
       {
         "name": "England/Frederick Community Group",
         "members": 11,
         "leaders": 3,
         "schedule": "Meets weekly on Wednesdays from 6:30-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 55
       },
       {
         "name": "Ryan Griffin Community Group",
         "members": 10,
         "leaders": 1,
         "schedule": "Meets weekly on Wednesdays from 6:15-7:15am",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 8,
+        "attPct": 80
       },
       {
         "name": "Geoffrey Caliger Community Group",
         "members": 10,
         "leaders": 1,
         "schedule": "Meets weekly on Tuesdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 5,
+        "attPct": 50
       },
       {
         "name": "Dykins Community Group",
         "members": 9,
         "leaders": 2,
         "schedule": "Meets weekly on Thursdays from 6-7:30am",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 7,
+        "attPct": 78
       },
       {
         "name": "Sikora Community Group",
         "members": 9,
         "leaders": 2,
         "schedule": "Meets weekly on Wednesdays from 6-7:30pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 6,
+        "attPct": 67
       },
       {
         "name": "Brown/Frank Community Group",
         "members": 9,
         "leaders": 2,
         "schedule": "Meets weekly on Thursdays from 6-8pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 5,
+        "attPct": 56
       },
       {
         "name": "Taylor Community Group",
         "members": 7,
         "leaders": 4,
         "schedule": "Meets weekly on Wednesdays from 5-7pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 5,
+        "attPct": 71
       },
       {
         "name": "Borowski Community Group",
         "members": 7,
         "leaders": 1,
         "schedule": "Meets weekly on Wednesdays from 6-7:30am",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 5,
+        "attPct": 71
       },
       {
         "name": "Febo/Sanchez Community Group (Spanish Speaking)",
         "members": 6,
         "leaders": 2,
         "schedule": "Meets weekly on Wednesdays from 5-6pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 3,
+        "attPct": 50
       },
       {
         "name": "Caliger/Rankin Community Group",
         "members": 6,
         "leaders": 2,
         "schedule": "Meets weekly on Mondays from 5-7pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 2,
+        "attPct": 33
       },
       {
         "name": "Men's Recovery Community Group",
         "members": 5,
         "leaders": 1,
         "schedule": "Meets weekly on Wednesdays from 6-7:30pm",
-        "avgAttended": 0,
-        "attPct": 0
+        "avgAttended": 1,
+        "attPct": 20
       },
       {
         "name": "Coan Community Group",
