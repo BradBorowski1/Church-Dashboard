@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-30T18:58:58.029Z",
+  "lastUpdated": "2026-05-30T19:01:51.007Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5785,7 +5785,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 30, 2026, 11:58 AM",
+    "refreshed": "May 30, 2026, 12:01 PM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -7199,7 +7199,7 @@
       ]
     },
     "leadersAdded": {
-      "total2026": 0
+      "total2026": 12
     },
     "outsidersInsiders": {
       "2024": [
@@ -7247,21 +7247,79 @@
     },
     "leaderRoster": [
       {
-        "phase": "New Leader (< 1 yr)",
-        "label": "Faith Howes",
+        "phase": "2",
+        "label": "Developing (1–2 yrs)",
         "names": [
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes",
-          "Yes"
+          "John Turcich",
+          "Joshua Wampler",
+          "Don Lattin",
+          "Megan Wampler",
+          "Janet Colonna",
+          "Mike McCarthy",
+          "Carlos Flores",
+          "Richard Price",
+          "Fredy Bridges",
+          "Dena Steuer",
+          "Nick Steuer",
+          "Alexis Durham",
+          "Michael Poleselli",
+          "Kathy McAlpine",
+          "Chris Taylor",
+          "Nita Taylor",
+          "Diane Lane",
+          "Jan Colburn",
+          "David Peissner",
+          "Grace Peissner",
+          "Ray Brown",
+          "Thomas Peregrin",
+          "Deana Griffin",
+          "Jackie Smith",
+          "Kayleen Hagstrand",
+          "Nick Colonna",
+          "Scott Mavros",
+          "Katie Thompson",
+          "Rachel Primus",
+          "Justin Bell",
+          "Molly Bell",
+          "Lisa Castaneda",
+          "Anita Bigger",
+          "Whitney Maidens",
+          "Edward Jones",
+          "Sarah Jones",
+          "Matt Gardner",
+          "Evven Gardner",
+          "Jere England",
+          "Janet Frederick",
+          "Timothy Frederick",
+          "Ryan Griffin",
+          "Isaac Griffin",
+          "Heidi Flores",
+          "Sandy Norton",
+          "Kelly Coan",
+          "Ashley Murad",
+          "Laura Dykins",
+          "Lauren Smith",
+          "Geoffrey Caliger",
+          "Isabella Peissner"
+        ],
+        "count": 51
+      },
+      {
+        "phase": "1",
+        "label": "New (< 1 yr)",
+        "names": [
+          "Faith Howes",
+          "Eric Sikora",
+          "Diane Sikora",
+          "Jed Ingalls",
+          "Estefania (Steph) Febo",
+          "Jaime Sanchez",
+          "Bradley Borowski",
+          "Bob Watson",
+          "Savannah Caliger",
+          "Gina Rankin",
+          "Amber Brown",
+          "Kathy Frank"
         ],
         "count": 12
       }
