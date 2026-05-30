@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-30T04:47:17.805Z",
+  "lastUpdated": "2026-05-30T05:45:37.777Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -205,12 +205,12 @@
       311246,
       284174,
       323940,
-      298067
+      298100
     ]
   },
   "pledge": {
     "target": 8500000,
-    "raised": 4236447
+    "raised": 4236480
   },
   "attendance": {
     "months": [
@@ -5802,7 +5802,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 29, 2026, 9:47 PM",
+    "refreshed": "May 29, 2026, 10:45 PM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
