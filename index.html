@@ -2619,6 +2619,9 @@ function cgRenderGroupsByYear(cg) {
       scales: cgMultiYearScales
     }
   });
+  // Scroll to Jan (left) so the full year is visible from the start
+  const wrap = ctx.closest('.chart-wrap');
+  if (wrap) requestAnimationFrame(() => { wrap.scrollLeft = 0; });
 }
 
 function cgRenderMembersByYear(cg) {
@@ -2639,6 +2642,9 @@ function cgRenderMembersByYear(cg) {
       scales: cgMultiYearScales
     }
   });
+  // Scroll to Jan (left) so the full year is visible from the start
+  const wrap = ctx.closest('.chart-wrap');
+  if (wrap) requestAnimationFrame(() => { wrap.scrollLeft = 0; });
 }
 
 function cgNoDataMsg(canvasId, msg) {
