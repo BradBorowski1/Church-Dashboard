@@ -790,10 +790,13 @@
   .cg-pipeline-phase { margin-bottom: 18px; }
   .cg-pipeline-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
   .cg-phase-badge { background: rgba(167,139,250,0.15); color: #a78bfa; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+  .cg-roster-badge { background: rgba(74,222,128,0.12); color: #4ade80; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
   .cg-phase-label { font-size: 13px; font-weight: 600; }
   .cg-phase-count { font-size: 12px; color: var(--text-muted); margin-left: auto; }
   .cg-pipeline-names { display: flex; flex-wrap: wrap; gap: 6px; }
   .cg-name-tag { background: #1c1c1c; border: 1px solid #333; border-radius: 14px; padding: 4px 10px; font-size: 12px; }
+  .cg-section-divider { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); font-weight: 600; margin: 16px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--card-border); }
+  .cg-no-pipeline { font-size: 12px; color: var(--text-dim); font-style: italic; padding: 6px 0; }
 
   .tmod-adminbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; padding: 10px 14px; background: var(--card-bg); border: 1px solid var(--yellow-2); border-radius: 8px; }
   .tmod-adminbar span { color: var(--yellow-2); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
@@ -1226,8 +1229,8 @@
     <!-- Leader Pipeline + Attendance table -->
     <div class="cg-charts-2col">
       <div class="card">
-        <h2>Leader Pipeline</h2>
-        <div class="card-sub" id="cgPipelineSub">Leaders in development</div>
+        <h2>CG Leadership</h2>
+        <div class="card-sub" id="cgPipelineSub">Active leaders &amp; development pipeline</div>
         <div id="cgPipelineContent"></div>
       </div>
       <div class="card">
@@ -2738,21 +2741,52 @@ function cgRenderOutsiders(cg) {
 }
 
 function cgRenderPipeline(cg) {
+  const roster   = cg.leaderRoster   || [];
   const pipeline = cg.leaderPipeline || [];
   const el = document.getElementById('cgPipelineContent');
   if (!el) return;
-  const total = pipeline.reduce((s, p) => s + (p.count || 0), 0);
+
+  const rosterTotal   = roster.reduce((s, p) => s + (p.count || 0), 0);
+  const pipelineTotal = pipeline.reduce((s, p) => s + (p.count || 0), 0);
+
   const subEl = document.getElementById('cgPipelineSub');
-  if (subEl) subEl.textContent = total + ' in pipeline' + (cg.leadersAdded && cg.leadersAdded.total2026 ? ' · ' + cg.leadersAdded.total2026 + ' added in 2026' : '');
-  el.innerHTML = pipeline.map(phase => `
+  if (subEl) {
+    let sub = rosterTotal + ' active leader' + (rosterTotal !== 1 ? 's' : '');
+    if (pipelineTotal > 0) sub += ' · ' + pipelineTotal + ' in development';
+    if (cg.leadersAdded && cg.leadersAdded.total2026) sub += ' · ' + cg.leadersAdded.total2026 + ' added in 2026';
+    subEl.textContent = sub;
+  }
+
+  const renderPhase = (phase, badgeClass) => `
     <div class="cg-pipeline-phase">
       <div class="cg-pipeline-hdr">
-        <span class="cg-phase-badge">${escapeHtml(phase.phase)}</span>
-        <span class="cg-phase-label">${escapeHtml(phase.label)}</span>
+        <span class="${badgeClass}">${escapeHtml(phase.label)}</span>
         <span class="cg-phase-count">${phase.count}</span>
       </div>
       <div class="cg-pipeline-names">${(phase.names || []).map(n => '<span class="cg-name-tag">' + escapeHtml(n) + '</span>').join('')}</div>
-    </div>`).join('');
+    </div>`;
+
+  let html = '';
+
+  // --- Active Leaders section ---
+  html += '<div class="cg-section-divider">Active Leaders (' + rosterTotal + ')</div>';
+  if (roster.length) {
+    // Sort: Established first (phase 3), then Developing (2), then New (1)
+    const sorted = roster.slice().sort((a, b) => b.phase.localeCompare(a.phase));
+    html += sorted.map(p => renderPhase(p, 'cg-roster-badge')).join('');
+  } else {
+    html += '<div class="cg-no-pipeline">No active leaders found.</div>';
+  }
+
+  // --- Development Pipeline section ---
+  html += '<div class="cg-section-divider" style="margin-top:22px">Development Pipeline (' + pipelineTotal + ')</div>';
+  if (pipeline.length) {
+    html += pipeline.map(p => renderPhase(p, 'cg-phase-badge')).join('');
+  } else {
+    html += '<div class="cg-no-pipeline">No pipeline data found. To track leader candidates, create a workflow in Planning Center People named something like "Leader Development."</div>';
+  }
+
+  el.innerHTML = html;
 }
 
 let cgTableData = [];
