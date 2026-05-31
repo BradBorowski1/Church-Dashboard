@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-31T18:47:00.419Z",
+  "lastUpdated": "2026-05-31T19:01:10.096Z",
   "giving": {
     "months": [
       "Jan '18",
@@ -5785,7 +5785,7 @@
     }
   ],
   "teamsMeta": {
-    "refreshed": "May 31, 2026, 11:47 AM",
+    "refreshed": "May 31, 2026, 12:01 PM",
     "lookback": "Last 90 days",
     "source": "Planning Center Online"
   },
@@ -7392,20 +7392,20 @@
         "attPct": 47
       },
       {
+        "name": "Ray Brown Community Group",
+        "members": 16,
+        "leaders": 2,
+        "schedule": "Meets weekly on Thursdays from 6-7:30am",
+        "avgAttended": 8,
+        "attPct": 50
+      },
+      {
         "name": "Howes/Peissner Community Group",
         "members": 16,
         "leaders": 2,
         "schedule": "Meets every other week on Tuesdays from 6-8pm",
         "avgAttended": 8,
         "attPct": 50
-      },
-      {
-        "name": "Ray Brown Community Group",
-        "members": 15,
-        "leaders": 2,
-        "schedule": "Meets weekly on Thursdays from 6-7:30am",
-        "avgAttended": 8,
-        "attPct": 53
       },
       {
         "name": "Thompson/Primus Community Group",
